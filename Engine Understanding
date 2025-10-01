@@ -7,8 +7,8 @@
 
 ## Introduction (100-150 words) (94 words)
 
-Nanite, Unreal Engine 5's virtualised geometry system, represents a fundemental shift in the rendering pipeline by redefining how high detail 3D assets are processed, optimised and displayed in real time.
-While both Nanite and teh traditional rendering pipeline aim to take everthing in a scene and render it on screen, they achieve this in very different ways, each with it own advantages and limitations. This essay will examine how Nanite fits into the rendering pipeline, compare it with the conventional geometry handling and evaluate the benefits, drawbacks and most suitable applications of each approach.
+Nanite, Unreal Engine 5's virtualised geometry system, represents a fundamental shift in the rendering pipeline by redefining how high detail 3D assets are processed, optimised and displayed in real time.
+While both Nanite and teh traditional rendering pipeline aim to take everything in a scene and render it on screen, they achieve this in very different ways, each with it own advantages and limitations. This essay will examine how Nanite fits into the rendering pipeline, compare it with the conventional geometry handling and evaluate the benefits, drawbacks and most suitable applications of each approach.
 
 ## How It Works - Rendering Pipeline (241 words)
 
@@ -20,7 +20,7 @@ Input assembly is the stage that is responsible for all the data from the draw c
 
 In the vertex processing stage, where each vertex of a 3D model is changed from it's local object space into screen space.
 
-Next is rasterisation, which is the process of converting the transfromed 3D vertices into 2D pixels on the screen. It determines which pixels correspond to each triangle in the scene and prepares them for shading, texturing and further processing. 
+Next is rasterisation, which is the process of converting the transformed 3D vertices into 2D pixels on the screen. It determines which pixels correspond to each triangle in the scene and prepares them for shading, texturing and further processing. 
 
 Pixel processing handles the colouring and shading of each pixel generated during rasterisation. This stage is where textures are applied, lighting is calculated and effects such as transparency are added.
 
@@ -30,13 +30,13 @@ Post processing is the final stage and applies the final visual effects to the i
 
 The pipeline rendering concept evolved over time, but early examples of the pipeline date back to the 1970s, with the first dedicated hardware for graphics pipelines appearing in the 1980s. According to Paul Joseph (1996) the early stages of the rendering pipeline were developed due to "the power of today’s graphics workstations has increased, so too have the demands of the user. Whereas realism and interaction were previously mutually exclusive, today’s graphic workstations are providing the platform to develop applications with photo-realistic, interactive, dynamic, comprehensible environments." He goes on to talk about how the earliest graphics were primarily just used for early military applications such as project SAGE in the 1950s. But as the "power of today's graphics workstations has increased so too have the demand of the user", the render pipeline was worked on so that the computers can evolve with the demand for better graphical power.
 
-## How it works - Nanite
+## How it works - Nanite (65 words)
 
 Nanite uses cluster culling within Unreal Engine 5 to render polygons more efficiently then the traditional render pipeline. It does this by breaking models down into tiny clusters and then only rendering the clusters that are visible or needed at the current level of detail. For clusters outside the view or blocked by other geometry, Nanite either reduces their detail or skips rendering them entirely.
 
 ## Nanite Background and Historical Context (150-200 words) 123 words
 
-Nanite was released to the public on April 19th 2022 with the goal of artists no longer having to worry about the budget for polycounts, draw calls or memory. When I was researching the development process for Nanite, I read something from one of the graphics engineers at Epic Games. Brian Karis (2021) "How sad is it that once a game is released, the art team posts a ton of their work to artstation, and a huge amount of what was posted are high polys and offline rendered images of the models they proudly made but the player never sees look like that?" I feel that this sentence really shed light on why it was important to focus on new and improved rendering methods to allow artists to express themselves further and have more of their hard work actually put into the final project. Not only will it help the artists but it will also mean that companies are spending less money on making assets that won't ever be seen in the end.
+Nanite was released to the public on April 19th 2022 with the goal of artists no longer having to worry about the budget for polycounts, draw calls or memory. When I was researching the development process for Nanite, I read something from one of the graphics engineers at Epic Games. Brian Karis (2021) "How sad is it that once a game is released, the art team posts a ton of their work to ArtStation, and a huge amount of what was posted are high polys and offline rendered images of the models they proudly made but the player never sees look like that?" I feel that this sentence really shed light on why it was important to focus on new and improved rendering methods to allow artists to express themselves further and have more of their hard work actually put into the final project. Not only will it help the artists but it will also mean that companies are spending less money on making assets that won't ever be seen in the end.
 
 !maybe come back and add another quote!
 
@@ -58,39 +58,29 @@ Nanite was released to the public on April 19th 2022 with the goal of artists no
 
 This is the core of your essay. Address multiple perspectives:
 
-### Technical Perspective (319 words)
+### Technical Perspective 
 
-#### Improvements from traditional rendering pipelines
+#### Improvements from traditional rendering pipelines (133 words)
 Nanite manages to solve the problems that the traditional rendering pipeline couldn't. The main problem was that artists couldn't use too many polygons for their models as it massively increased the file size. But Nanite is able to compress file sizes very well due to its cluster based representation. According to a video I watched (Nanite: Everything You Should Know [Unreal Engine 5], 2021), Nanite is able to compress a one million polygon object down to just 14mb on disc. This is exactly what game developers and artists have been needing to make their games bigger without compromising file size.
 Another advantage of Nanite is the fact that is only updates things in the frame that change, meaning that it will be much quicker to load each frame, therefore, increasing frames per second.
-#### Limitations With Unsupported Geometry
-Unfortunately, there are some limitations that go along with these advantages. One of the limitations is that Nanite doesn't work well with aggregate geometry and instead makes the performance worse. This is because it Nanite speeds up rendering but it doesn't change how collision is calculated meaning the CPU will struggle to keep up and hurt performance.
-Another limitation of Nanite doesn't support translucent/masked materials, two sided faces, deforming objects/skeletal meshes or tessellation/displacement. The reason that translucent materials aren't supported is because translucency and masked cutouts require per-pixel depth sorting which breaks Nanites cluster culling as they break the assumption that a cluster is either fully visible or hidden. 
-Two sided faces don't work as Nanite stores geometry in clusters that only assume one consistant face orientation. Nanites clusters are heavily pre-processed, compressed and stored in a way that assumes no vertex positions will change so deforming object and skeletal meshes would not work with it. Finally, as Nanite works pre-processing, tesselation adding new geometry at runtime would mean it would need to constantly rebuild its clusters which is impossible at real-time speeds.
+#### Limitations With Unsupported Geometry (114 words)
+Despite its advantages, Nanite has several limitations. It performs poorly with aggregate geometry because, while it accelerates rendering, collision is still handled by the CPU, creating a performance bottleneck. Nanite also does not support translucent or masked materials, two-sided faces, deforming objects such as skeletal meshes or tesselation/displacement. Translucency and masking require per-pixel depth sorting, which breaks Nanite's assumption that clusters are either fully visable or fully hidden. Two-sided faces are unsupported because slusters assume a consistant orientation, while deformation is incompatible since Nanite's clusters are pre-processed and static. Likewise, tesselation cannot be used, as dynamically generating new geometry would require clusters to be rebuilt every frame, which is impractical in real time.
 
-
-### Industry Practice
-- How do professional studios implement this?
-- What workflows or best practices have emerged?
-- Reference real game examples or case studies
 
 ### Critical Considerations
+
+
 - Performance implications
 - Accessibility for different team sizes/budgets
 - Platform-specific considerations
 - Environmental/ethical considerations (e.g., power consumption, accessibility)
 
-**Use subheadings** to organize complex analysis:
-```markdown
-### Performance Trade-offs
-[Analysis content...]
-
-### Workflow Implications
-[Analysis content...]
-```
 
 
-## Future Implications/Conclusion (100-150 words)
+## Future Implications/Conclusion (100-150 words) (78 words)
+The release of Nanite has immensely changed the way that developers and artists work with Unreal Engine and provides more freedom to make bigger and better games without much worry about any form of budget. Overall, even though Nanite does have it's limitations, it is definitely a huge step in the right direction for the future of game development and film creation within Unreal Engine.
+
+
 *Assessment Focus: Synthesizing + Situating*
 
 - Synthesize your key findings
