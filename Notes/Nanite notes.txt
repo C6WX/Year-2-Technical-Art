@@ -1,6 +1,8 @@
 Nanite:
 
-an efficient way to render triangles/polygons in unreal engine 5 using cluster culling. Cluster culling break models down into clusters that decrease the details of clusters that currently can't be seen by the camera. This means that more polygons can be in a scene without needing a high end computer to run. Nanite only updates scene changes instead of the whole frame, making draw calls much shorter.
+Nanite in Unreal Engine 5 does use a system called cluster culling to optimize the rendering of complex models. It works by breaking models into many small clusters and only rendering those clusters that are visible or needed at the current level of detail. For clusters outside the view or blocked by other geometry, Nanite either reduces their detail or skips rendering them entirely. This approach allows for much more efficient rendering compared to traditional pipelines, especially for very high-polygon assets, because it avoids drawing hidden or unnecessary detail and manages level of detail automatically at a granular cluster level.
+
+
 
 When to use Nanite - Nanite should be used wherever possible as you will be getting much better performance, better shadow maps, better memory management and better file size. 
 
@@ -15,8 +17,8 @@ Pros:
 Cons:
 -Nanite won't perform as well the higher the resolution is
 -Overdraw can really affect performance as Nanite needs to render stacked geometry.
-- Nanite doesn't support translucent/masked materials, two sided faces, deforming objects/skeletal meshes, tessellation/displacement.
-- Does not work well with aggregate geometry and makes performance worse
+-Nanite doesn't support translucent/masked materials, two sided faces, deforming objects/skeletal meshes, tessellation/displacement.
+-Does not work well with aggregate geometry and makes performance worse
 
 Unreal Engine features:
 To enable nanite - 

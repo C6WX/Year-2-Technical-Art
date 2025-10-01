@@ -10,7 +10,37 @@
 Nanite, Unreal Engine 5's virtualised geometry system, represents a fundemental shift in the rendering pipeline by redefining how high detail 3D assets are processed, optimised and displayed in real time.
 While both Nanite and teh traditional rendering pipeline aim to take everthing in a scene and render it on screen, they achieve this in very different ways, each with it own advantages and limitations. This essay will examine how Nanite fits into the rendering pipeline, compare it with the conventional geometry handling and evaluate the benefits, drawbacks and most suitable applications of each approach.
 
-## Background/Historical Context (150-200 words)
+## How It Works - Rendering Pipeline (241 words)
+
+The rendering pipeline is a very important process that converts 3D models into 2D images displayed on screen. The process can be broken up into five key stages that are all started with a draw call. The five stages are as follows: Input assembly, Vertex Processing, Rasterisation, Pixel Processing and Post Processing.
+
+A draw call is where the CPU collects scene data, including vertex/index buffers, shaders, textures and state objects and sends it to the GPU via API calls. Draw calls are created whenever teh scene contains unique meshes, materials, dynamic objects or lights.
+
+Input assembly is the stage that is responsible for all the data from the draw call and organising the data into primitives based on the specified primitive type.
+
+In the vertex processing stage, where each vertex of a 3D model is changed from it's local object space into screen space.
+
+Next is rasterisation, which is the process of converting the transfromed 3D vertices into 2D pixels on the screen. It determines which pixels correspond to each triangle in the scene and prepares them for shading, texturing and further processing. 
+
+Pixel processing handles the colouring and shading of each pixel generated during rasterisation. This stage is where textures are applied, lighting is calculated and effects such as transparency are added.
+
+Post processing is the final stage and applies the final visual effects to the image. these effects include anti-aliasing, motion blur, depth of field, colour grading and bloom.
+
+## Rendering Pipeline Background and Historical Context (150-200 words) (93 words)
+
+The pipeline rendering concept evolved over time, but early examples of the pipeline date back to the 1970s, with the first dedicated hardware for graphics pipelines appearing in the 1980s. According to Paul Joseph (1996) the early stages of the rendering pipeline were developed due to "the power of today’s graphics workstations has increased, so too have the demands of the user. Whereas realism and interaction were previously mutually exclusive, today’s graphic workstations are providing the platform to develop applications with photo-realistic, interactive, dynamic, comprehensible environments." He goes on to talk about how the earliest graphics were primarily just used for early military applications such as project SAGE in the 1950s. But as the "power of today's graphics workstations has increased so too have the demand of the user", the render pipeline was worked on so that the computers can evolve with the demand for better graphical power.
+
+## How it works - Nanite
+
+Nanite uses cluster culling within Unreal Engine 5 to render polygons more efficiently then the traditional render pipeline. It does this by breaking models down into tiny clusters and then only rendering the clusters that are visible or needed at the current level of detail. For clusters outside the view or blocked by other geometry, Nanite either reduces their detail or skips rendering them entirely.
+
+## Nanite Background and Historical Context (150-200 words) 123 words
+
+Nanite was released to the public on April 19th 2022 with the goal of artists no longer having to worry about the budget for polycounts, draw calls or memory. When I was researching the development process for Nanite, I read something from one of the graphics engineers at Epic Games. Brian Karis (2021) "How sad is it that once a game is released, the art team posts a ton of their work to artstation, and a huge amount of what was posted are high polys and offline rendered images of the models they proudly made but the player never sees look like that?" I feel that this sentence really shed light on why it was important to focus on new and improved rendering methods to allow artists to express themselves further and have more of their hard work actually put into the final project. Not only will it help the artists but it will also mean that companies are spending less money on making assets that won't ever be seen in the end.
+
+!maybe come back and add another quote!
+
+
 *Assessment Focus: Exploring + Connecting*
 
 - Provide technical foundation and definitions
@@ -28,10 +58,16 @@ While both Nanite and teh traditional rendering pipeline aim to take everthing i
 
 This is the core of your essay. Address multiple perspectives:
 
-### Technical Perspective
-- How does the technology work?
-- What are the technical advantages and limitations?
-- Include specific examples from game engines (Unity, Unreal, etc.)
+### Technical Perspective (319 words)
+
+#### Improvements from traditional rendering pipelines
+Nanite manages to solve the problems that the traditional rendering pipeline couldn't. The main problem was that artists couldn't use too many polygons for their models as it massively increased the file size. But Nanite is able to compress file sizes very well due to its cluster based representation. According to a video I watched (Nanite: Everything You Should Know [Unreal Engine 5], 2021), Nanite is able to compress a one million polygon object down to just 14mb on disc. This is exactly what game developers and artists have been needing to make their games bigger without compromising file size.
+Another advantage of Nanite is the fact that is only updates things in the frame that change, meaning that it will be much quicker to load each frame, therefore, increasing frames per second.
+#### Limitations With Unsupported Geometry
+Unfortunately, there are some limitations that go along with these advantages. One of the limitations is that Nanite doesn't work well with aggregate geometry and instead makes the performance worse. This is because it Nanite speeds up rendering but it doesn't change how collision is calculated meaning the CPU will struggle to keep up and hurt performance.
+Another limitation of Nanite doesn't support translucent/masked materials, two sided faces, deforming objects/skeletal meshes or tessellation/displacement. The reason that translucent materials aren't supported is because translucency and masked cutouts require per-pixel depth sorting which breaks Nanites cluster culling as they break the assumption that a cluster is either fully visible or hidden. 
+Two sided faces don't work as Nanite stores geometry in clusters that only assume one consistant face orientation. Nanites clusters are heavily pre-processed, compressed and stored in a way that assumes no vertex positions will change so deforming object and skeletal meshes would not work with it. Finally, as Nanite works pre-processing, tesselation adding new geometry at runtime would mean it would need to constantly rebuild its clusters which is impossible at real-time speeds.
+
 
 ### Industry Practice
 - How do professional studios implement this?
@@ -67,6 +103,10 @@ Example:
 > "The evolution of [topic] demonstrates how technical art continues to bridge..."
 
 ## References
+- Pipeline rendering: Interaction and realism through hardware-based multi-pass rendering - ProQuest (s.d.) At: https://www.proquest.com/openview/c61970ea62b0fbd4c28c517f984d6e62/1?pq-origsite=gscholar&cbl=18750&diss=y (Accessed  01/10/2025).
 
+- Karis_Nanite_SIGGRAPH_Advances_2021_final (s.d.) At: https://advances.realtimerendering.com/s2021/Karis_Nanite_SIGGRAPH_Advances_2021_final.pdf (Accessed  01/10/2025).
+
+- Nanite: Everything You Should Know [Unreal Engine 5] (2021) Directed by William Faucher. At: https://www.youtube.com/watch?v=P65cADzsP8Q (Accessed  01/10/2025).
 
 
