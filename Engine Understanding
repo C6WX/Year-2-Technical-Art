@@ -5,17 +5,10 @@
 ## Nanite and the Rendering Pipeline
 
 
-## Introduction (100-150 words)
-*Assessment Focus: Exploring + Synthesizing*
+## Introduction (100-150 words) (94 words)
 
-- **Hook**: Open with a compelling statement or industry example
-- **Context**: Briefly introduce the topic and its relevance to technical art
-- **Thesis Statement**: Clearly state your main argument or perspective
-- **Roadmap**: Outline what the essay will cover
-
-Example opening:
-> "As game engines evolve, [topic] has become increasingly critical for..."
-
+Nanite, Unreal Engine 5's virtualised geometry system, represents a fundemental shift in the rendering pipeline by redefining how high detail 3D assets are processed, optimised and displayed in real time.
+While both Nanite and teh traditional rendering pipeline aim to take everthing in a scene and render it on screen, they achieve this in very different ways, each with it own advantages and limitations. This essay will examine how Nanite fits into the rendering pipeline, compare it with the conventional geometry handling and evaluate the benefits, drawbacks and most suitable applications of each approach.
 
 ## Background/Historical Context (150-200 words)
 *Assessment Focus: Exploring + Connecting*
