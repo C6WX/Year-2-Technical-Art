@@ -10,21 +10,9 @@
 Nanite, Unreal Engine 5's virtualised geometry system, represents a fundamental shift in the rendering pipeline by redefining how high detail 3D assets are processed, optimised and displayed in real time.
 While both Nanite and teh traditional rendering pipeline aim to take everything in a scene and render it on screen, they achieve this in very different ways, each with it own advantages and limitations. This essay will examine how Nanite fits into the rendering pipeline, compare it with the conventional geometry handling and evaluate the benefits, drawbacks and most suitable applications of each approach.
 
-## How It Works - Rendering Pipeline (241 words)
+## How It Works - Rendering Pipeline (128 words)
 
-The rendering pipeline is a very important process that converts 3D models into 2D images displayed on screen. The process can be broken up into five key stages that are all started with a draw call. The five stages are as follows: Input assembly, Vertex Processing, Rasterisation, Pixel Processing and Post Processing.
-
-A draw call is where the CPU collects scene data, including vertex/index buffers, shaders, textures and state objects and sends it to the GPU via API calls. Draw calls are created whenever teh scene contains unique meshes, materials, dynamic objects or lights.
-
-Input assembly is the stage that is responsible for all the data from the draw call and organising the data into primitives based on the specified primitive type.
-
-In the vertex processing stage, where each vertex of a 3D model is changed from it's local object space into screen space.
-
-Next is rasterisation, which is the process of converting the transformed 3D vertices into 2D pixels on the screen. It determines which pixels correspond to each triangle in the scene and prepares them for shading, texturing and further processing. 
-
-Pixel processing handles the colouring and shading of each pixel generated during rasterisation. This stage is where textures are applied, lighting is calculated and effects such as transparency are added.
-
-Post processing is the final stage and applies the final visual effects to the image. these effects include anti-aliasing, motion blur, depth of field, colour grading and bloom.
+The rendering pipeline is a critical process that converts 3D models into 2D images on screen, consisting of five stages: Input assembly, Vertex processing, Rasterisation, Pixel processing and Post-processing, all initiated by a draw call. During a draw call, the CPU collects scene data-including vertex/index buffers, shaders, textures and state objects and sends it to the GPU via API calls. Input assembly organises this data into primitives, while vertex processing transforms each vertex from local object space into screen space. Rasterisation converts these vertices into 2D pixels, determining which pixels correspond to each triangle and preparing them for shading. Pixel processing then applies colours, lighting, textures and effects, and post processing adds final visual enhancements such as anti-aliasing, motion blur, depth of field, colour grading and bloom.
 
 ## Rendering Pipeline Background and Historical Context (150-200 words) (93 words)
 
@@ -64,11 +52,19 @@ This is the core of your essay. Address multiple perspectives:
 Nanite manages to solve the problems that the traditional rendering pipeline couldn't. The main problem was that artists couldn't use too many polygons for their models as it massively increased the file size. But Nanite is able to compress file sizes very well due to its cluster based representation. According to a video I watched (Nanite: Everything You Should Know [Unreal Engine 5], 2021), Nanite is able to compress a one million polygon object down to just 14mb on disc. This is exactly what game developers and artists have been needing to make their games bigger without compromising file size.
 Another advantage of Nanite is the fact that is only updates things in the frame that change, meaning that it will be much quicker to load each frame, therefore, increasing frames per second.
 #### Limitations With Unsupported Geometry (114 words)
-Despite its advantages, Nanite has several limitations. It performs poorly with aggregate geometry because, while it accelerates rendering, collision is still handled by the CPU, creating a performance bottleneck. Nanite also does not support translucent or masked materials, two-sided faces, deforming objects such as skeletal meshes or tesselation/displacement. Translucency and masking require per-pixel depth sorting, which breaks Nanite's assumption that clusters are either fully visable or fully hidden. Two-sided faces are unsupported because slusters assume a consistant orientation, while deformation is incompatible since Nanite's clusters are pre-processed and static. Likewise, tesselation cannot be used, as dynamically generating new geometry would require clusters to be rebuilt every frame, which is impractical in real time.
+Despite its advantages, Nanite has several limitations. It performs poorly with aggregate geometry because, while it accelerates rendering, collision is still handled by the CPU, creating a performance bottleneck. Nanite also does not support translucent or masked materials, two-sided faces, deforming objects such as skeletal meshes or tesselation/displacement. Translucency and masking require per-pixel depth sorting, which breaks Nanite's assumption that clusters are either fully visible or fully hidden. Two-sided faces are unsupported because clusters assume a consistent orientation, while deformation is incompatible since Nanite's clusters are pre-processed and static. Likewise, tesselation cannot be used, as dynamically generating new geometry would require clusters to be rebuilt every frame, which is impractical in real time.
 
 
 ### Critical Considerations
 
+#### Performance implications (52 words)
+As well as decreasing the file size of games made on Unreal Engine, Nanite also makes decreases processing time and increases frames per second. This occurs due to clustering objects being a great method for compression and also only objects that have changed in a frame are update, unlike standard rendering pipelines. 
+
+#### Environmental considerations (45 words)
+While being able to make higher detailed assets is a great thing for artists, it can also encourage the creation of extremely detailed scene. While rendering these efficiently on a GPU is optimised, the overall energy demand for game development and hardware usage can increase. 
+
+#### Platform considerations (44 words)
+Currently, Nanite is fully supported on Unreal Engine 5 for PC, next gen consoles (PS5, Xbox Series X&S), and high-end GPUs. However, platforms like mobile devices, VR headsets and older consoles are limited due to a lack of memory bandwidth and computational power required. 
 
 - Performance implications
 - Accessibility for different team sizes/budgets
@@ -77,7 +73,7 @@ Despite its advantages, Nanite has several limitations. It performs poorly with 
 
 
 
-## Future Implications/Conclusion (100-150 words) (78 words)
+## Conclusion (100-150 words) (78 words)
 The release of Nanite has immensely changed the way that developers and artists work with Unreal Engine and provides more freedom to make bigger and better games without much worry about any form of budget. Overall, even though Nanite does have it's limitations, it is definitely a huge step in the right direction for the future of game development and film creation within Unreal Engine.
 
 
@@ -89,8 +85,6 @@ The release of Nanite has immensely changed the way that developers and artists 
 - Reflect on what this means for technical artists
 - End with a strong concluding statement
 
-Example:
-> "The evolution of [topic] demonstrates how technical art continues to bridge..."
 
 ## References
 - Pipeline rendering: Interaction and realism through hardware-based multi-pass rendering - ProQuest (s.d.) At: https://www.proquest.com/openview/c61970ea62b0fbd4c28c517f984d6e62/1?pq-origsite=gscholar&cbl=18750&diss=y (Accessed  01/10/2025).
