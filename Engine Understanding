@@ -1,0 +1,79 @@
+# Engine Understanding
+
+**Callum Wade** **2404781** **01/10/25** 
+
+## Nanite and the Rendering Pipeline
+
+
+## Introduction (100-150 words)
+*Assessment Focus: Exploring + Synthesizing*
+
+- **Hook**: Open with a compelling statement or industry example
+- **Context**: Briefly introduce the topic and its relevance to technical art
+- **Thesis Statement**: Clearly state your main argument or perspective
+- **Roadmap**: Outline what the essay will cover
+
+Example opening:
+> "As game engines evolve, [topic] has become increasingly critical for..."
+
+
+## Background/Historical Context (150-200 words)
+*Assessment Focus: Exploring + Connecting*
+
+- Provide technical foundation and definitions
+- Explain the evolution or current state of the technology
+- Reference key developments or milestones
+- Use academic and industry sources to support claims
+
+**Research Integration:**
+- Include at least 2-3 academic or industry sources
+- Use inline citations: "According to Smith (2023), [concept]..."
+- Reference technical documentation, GDC talks, or research papers
+
+## Critical Analysis (300-400 words)
+*Assessment Focus: Exploring + Connecting + Situating*
+
+This is the core of your essay. Address multiple perspectives:
+
+### Technical Perspective
+- How does the technology work?
+- What are the technical advantages and limitations?
+- Include specific examples from game engines (Unity, Unreal, etc.)
+
+### Industry Practice
+- How do professional studios implement this?
+- What workflows or best practices have emerged?
+- Reference real game examples or case studies
+
+### Critical Considerations
+- Performance implications
+- Accessibility for different team sizes/budgets
+- Platform-specific considerations
+- Environmental/ethical considerations (e.g., power consumption, accessibility)
+
+**Use subheadings** to organize complex analysis:
+```markdown
+### Performance Trade-offs
+[Analysis content...]
+
+### Workflow Implications
+[Analysis content...]
+```
+
+
+## Future Implications/Conclusion (100-150 words)
+*Assessment Focus: Synthesizing + Situating*
+
+- Synthesize your key findings
+- Discuss future trends or developments
+- Consider broader implications for the industry
+- Reflect on what this means for technical artists
+- End with a strong concluding statement
+
+Example:
+> "The evolution of [topic] demonstrates how technical art continues to bridge..."
+
+## References
+
+
+
