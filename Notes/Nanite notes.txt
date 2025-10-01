@@ -1,0 +1,32 @@
+Nanite:
+
+an efficient way to render triangles/polygons in unreal engine 5 using cluster culling. Cluster culling break models down into clusters that decrease the details of clusters that currently can't be seen by the camera. This means that more polygons can be in a scene without needing a high end computer to run. Nanite only updates scene changes instead of the whole frame, making draw calls much shorter.
+
+When to use Nanite - Nanite should be used wherever possible as you will be getting much better performance, better shadow maps, better memory management and better file size. 
+
+
+Pros:
+-Compresses very well (makes a 1 million polygon mesh only 14mb)
+-Can handle millions of polygons on the screen at one time
+-Only updates things in the frame that changes.
+-Nanite allows overhanging landscape with the landscape editor
+-Kitbashing is much easier due to the decrease in draw calls required for all the objects 
+
+Cons:
+-Nanite won't perform as well the higher the resolution is
+-Overdraw can really affect performance as Nanite needs to render stacked geometry.
+- Nanite doesn't support translucent/masked materials, two sided faces, deforming objects/skeletal meshes, tessellation/displacement.
+- Does not work well with aggregate geometry and makes performance worse
+
+Unreal Engine features:
+To enable nanite - 
+To see clusters - show - nanite visualisation - clusters
+To see overdraw - show - nanite visualisation - overdraw
+
+
+Terminology:
+Draw calls- a set of commands from the CPU to the GPU, telling it what and how to draw specific objects on the screen, including information about textures, shaders, and buffers
+
+LOD- Level of detail
+
+Aggregate geometry - fine detail geometry (hair, grass, leaves, foliage)
