@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TextSlideV2 – Modern Minimal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    
+/* Theme: Modern Minimal */
+:root {
+  --color-primary: #3b82f6;
+  --color-secondary: #8b5cf6;
+  --color-background: #fafafa;
+  --color-background-secondary: #f3f4f6;
+  --color-foreground: #1f2937;
+  --color-accent: #10b981;
+  --color-muted: #64748b;
+  --font-family-primary: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-family-secondary: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 2rem;
+  --font-size-h4: 1.5rem;
+  --font-size-body: 1.125rem;
+  --font-size-quote: 1rem;
+  --font-size-footer: 0.875rem;
+  --font-size-small: 1rem;
+  --color-bold: #111827;
+  --color-italic: #334155;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --spacing-section: 3rem;
+  --spacing-element: 1.5rem;
+  --slide-padding: 3rem;
+  --border-radius: 0.5rem;
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --ts-border-color: rgba(226, 232, 240, 0.8);
+  --ts-divider-color: #e5e7eb;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-secondary, 'Inter', sans-serif);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Presentation container */
+.presentation {
+  width: 100%;
+  min-height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+/* Slide styles */
+.slide {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  padding: var(--slide-padding, 3rem);
+  background: linear-gradient(135deg, #fafafa, #f3f4f6);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: var(--shadow-card, 0 10px 25px -5px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Typography */
+.slide h1 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h1, 3.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #3b82f6;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0 0 var(--spacing-element, 1.5rem) 0;
+}
+
+.slide h2 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h2, 2.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #3b82f6;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--ts-divider-color, #e5e7eb);
+  margin: var(--spacing-element, 1.5rem) 0 var(--spacing-element, 1.5rem) 0;
+}
+
+.slide h3 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h3, 2rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: var(--spacing-element, 1.5rem) 0 1rem 0;
+}
+
+.slide h4 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h4, 1.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: 1rem 0 0.75rem 0;
+}
+
+.slide h5, .slide h6 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h4, 1.25rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.slide p {
+  font-size: var(--font-size-body, 1.125rem);
+  font-weight: var(--font-weight-body, 400);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.slide ul, .slide ol {
+  font-size: var(--font-size-body, 1.125rem);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.slide li {
+  margin-bottom: 0.5rem;
+}
+
+/* Improved list marker contrast and spacing */
+.slide ul li::marker, .slide ol li::marker {
+  color: var(--color-accent, #3b82f6);
+  font-weight: 600;
+}
+
+/* Text styling */
+.slide strong, .slide b {
+  color: var(--color-bold, #1f2937);
+  font-weight: 700;
+}
+
+.slide em, .slide i {
+  color: var(--color-italic, #1f2937);
+  font-style: italic;
+}
+
+.slide code {
+  font-family: var(--font-family-mono, 'JetBrains Mono', monospace);
+  font-size: 0.9em;
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.slide pre {
+  font-family: var(--font-family-mono, 'JetBrains Mono', monospace);
+  background: #f8fafc;
+  color: #1e293b;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+}
+
+.slide pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Layout containers */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container styles */
+.info, .warning, .error, .success {
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  margin: 1rem 0;
+  border-left: 4px solid;
+}
+
+.info {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.warning {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.error {
+  background: #fee2e2;
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+.success {
+  background: #d1fae5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+/* Links */
+.slide a {
+  color: #3b82f6;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.slide a:hover {
+  border-bottom-color: #3b82f6;
+}
+
+/* Images */
+.slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+.slide table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.slide th,
+.slide td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.slide th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Blockquotes */
+.slide blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  font-size: var(--font-size-quote, 1rem);
+  color: #64748b;
+}
+
+/* Enhanced custom containers */
+.info-box {
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+  border-radius: var(--border-radius, 0.5rem);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #3b82f6;
+}
+
+.info-box h1, .info-box h2, .info-box h3, .info-box h4, .info-box h5, .info-box h6 {
+  color: #3b82f6;
+  margin-top: 0;
+}
+
+.presentation-header, .presentation-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: var(--font-size-footer, 0.875rem);
+  color: #64748b;
+  border-top: 1px solid #e2e8f0;
+  margin: 2rem 0 1rem 0;
+}
+
+.presentation-header {
+  border-top: none;
+  border-bottom: 1px solid #e2e8f0;
+  margin: 1rem 0 2rem 0;
+}
+
+/* Enhanced multi-column layouts */
+.three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.two-columns .col, .three-columns .col {
+  min-width: 0;
+}
+
+/* Widget containers */
+.widget-container {
+  margin: 2rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.widget-container iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.widget-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Citations */
+.ts-citation {
+  font-size: var(--font-size-quote, 0.875rem);
+  color: #64748b;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .two-columns, .three-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .widget-container {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .widget-container iframe {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+
+    body { margin: 0; padding: 0; }
+    html { font-size: 80%; }
+
+    /* Deck modes */
+    body.presentation-mode { background: #000; overflow: hidden; }
+    .presentation-mode .presentation {
+      position: fixed; inset: 0; padding: 0; gap: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .presentation-mode .stage {
+      width: 1280px; height: 720px; position: relative;
+      transform-origin: center center;
+      display: grid; grid-template-rows: 1fr auto; align-items: stretch; justify-items: stretch;
+    }
+    .presentation-mode .stage .stage-slide-wrap { position: relative; grid-row: 1; width: 100%; height: 100%; }
+    .presentation-mode .stage .stage-footer {
+      grid-row: 2; width: 100%; margin: 0; background: transparent;
+      padding: 0; /* no separator gap; flush to slides */
+      padding-left: var(--slide-pad-x, var(--slide-padding, clamp(12px, 35%, 256px))); /* align with slide content */
+      font-size: 0.7rem; /* compact footer */
+      text-align: left; z-index: 60;
+    }
+    /* Normalize cloned footer content: no borders/extra spacing, left aligned */
+    .presentation-mode .stage .stage-footer .presentation-footer,
+    .presentation-mode .stage .stage-footer .ts-global-footer {
+      border: 0 !important; border-top: 0 !important; background: transparent !important;
+      margin: 0 !important; padding: 0 !important; text-align: left !important;
+    }
+    .presentation-mode .stage .stage-footer > * { margin-left: 0 !important; margin-right: 0 !important; }
+    .presentation-mode .slide {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; margin: 0; padding: var(--slide-padding, clamp(12px, 35%, 256px));
+      opacity: 0; transition: opacity .25s ease; overflow: hidden;
+      display: grid; grid-template-rows: 1fr auto; align-items: stretch; justify-items: stretch;
+      align-content: stretch; justify-content: stretch; row-gap: 0; column-gap: 0;
+      box-sizing: border-box;
+    }
+    .presentation-mode .slide.active { opacity: 1; }
+    /* Ensure only the active slide is interactive and on top */
+    .presentation-mode .slide { pointer-events: none; z-index: 0; }
+    .presentation-mode .slide.active { pointer-events: auto; z-index: 10; }
+
+    .scroll-mode .presentation { padding: 2rem 1rem; gap: 2rem; }
+    .scroll-mode .stage { width: 100%; height: auto; transform: none; position: static; }
+    .scroll-mode .slide { position: relative; opacity: 1; transform: none; width: 100%; margin: 0 auto; display:flex; justify-content:center; align-items:center; }
+    /* Remove max constraints from slides in both modes */
+    .presentation-mode .slide, .scroll-mode .slide { max-width: none !important; max-height: none !important; }
+
+
+    /* Present-mode: slides are absolutely stacked and clip content; a dedicated viewport scrolls above footer */
+    .presentation-mode .slide { overflow: hidden; }
+    .presentation-mode .slide .slide-viewport {
+      position: relative;
+      grid-row: 1 / 2;
+      width: 100%;
+      min-height: 0; min-width: 0; /* allow 1fr track to shrink for footer */
+      overflow: auto;
+      box-sizing: border-box;
+    }
+    .presentation-mode .slide .slide-viewport::-webkit-scrollbar { width: 0; height: 0; }
+
+    /* Arrows: permanent when overflow; JS toggles display none/flex. No hover/opacity transitions. */
+    .presentation-mode .slide .slide-arrows {
+      position: absolute;
+      top: var(--slide-padding, clamp(12px, 35%, 256px));
+      bottom: var(--slide-padding, clamp(12px, 35%, 256px));
+      right: 8px;
+      width: 24px;
+      pointer-events: none;
+      display: none; /* shown as flex by JS when overflow exists */
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 70;
+    }
+    .presentation-mode .slide .slide-arrows .arrow {
+      width: 22px; height: 22px; border-radius: 999px;
+      background: rgba(0,0,0,.35); color: #fff;
+      font-size: 12px; line-height: 22px; text-align: center;
+      pointer-events: auto; cursor: pointer; user-select: none;
+      box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    }
+    .presentation-mode .slide .slide-arrows .arrow:active { transform: scale(.95); }
+
+    .presentation-mode .slide .ts-global-footer,
+    .presentation-mode .slide .presentation-footer { display: none !important; }
+
+    /* Controls */
+    .export-controls {
+      position: fixed; bottom: 8px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,255,255,.95); backdrop-filter: blur(10px);
+      border: 1px solid #e5e7eb; border-radius: 6px; padding: 4px 8px;
+      display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px -2px rgba(0,0,0,.1); z-index: 1000;
+      font-family: Inter, system-ui, sans-serif; font-size: 11px;
+    }
+    .export-controls button { background: #3b82f6; color: #fff; border: 0; border-radius: 4px; padding: 3px 6px; font-size: 10px; font-weight: 600; cursor: pointer; }
+    .export-controls button:hover { background: #2563eb; }
+    .export-controls .view-mode-btn { background: #6b7280; }
+    .export-controls .view-mode-btn:hover { background: #4b5563; }
+    .slide-counter { min-width: 44px; text-align: center; color: #374151; font-weight: 600; }
+
+    /* Print */
+    @media print {
+      .export-controls { display: none !important; }
+      .presentation { padding: 0 !important; gap: 0 !important; }
+      .slide { page-break-after: always; position: relative !important; transform: none !important; opacity: 1 !important; width: 100% !important; height: 100vh !important; }
+    }
+  </style>
+</head>
+<body class="presentation-mode">
+  <div class="presentation"><section class="slide" data-slide-index="0"><h1>Advanced Materials in Unreal Engine 5</h1>
+<p><strong>Mastering Material Systems</strong></p>
+<p>Topics covered in this presentation:</p>
+<ul>
+<li>Material Functions &amp; MPC</li>
+<li>Dynamic Material Instances &amp; Post Process</li>
+<li>Virtual Textures &amp; RVT</li>
+<li>Surface Techniques (POM, WPO, Triplanar)</li>
+<li>Normals &amp; Distance Fields</li>
+</ul>
+</section>
+<section class="slide" data-slide-index="1"><h2>What Are Material Functions?</h2>
+<p><strong>Reusable Graphs Inside Materials</strong></p>
+<p>Material Functions are self-contained material graphs that can be reused across multiple materials. Think of them as “functions” in programming - write once, use everywhere.</p>
+<p><strong>Why Use Material Functions?</strong></p>
+<ul>
+<li>Avoid duplicating complex node setups</li>
+<li>Update all materials at once by editing the function</li>
+<li>Share functionality across team members</li>
+<li>Reduce material graph complexity</li>
+</ul>
+<h2>Material Functions - Tiling Example</h2>
+<figure style="max-width:800px;margin:1rem auto;text-align:center;">
+  <img
+    src="https://cdnb.artstation.com/p/media_assets/images/images/001/041/587/medium/02_InsideMF_Tile.jpg?1677865118"
+    alt="Inside Material Function tile from 'Intro to Unreal Engine Material Functions' tutorial by Pat"
+    loading="lazy"
+    style="width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.12);"
+  />
+  <figcaption style="font-size:0.9rem;color:#444;margin-top:0.5rem;">
+    Image from: 
+    <cite>
+      Pat (2023). <span style="font-style:normal;">Tutorial: Intro to Unreal Engine Material Functions.</span>
+      [online] Artstation.com. Available at:
+      <a href="https://www.artstation.com/blogs/qdwach/omDD/tutorial-unreal-engine-material-functions" target="_blank" rel="noopener noreferrer">
+        https://www.artstation.com/blogs/qdwach/omDD/tutorial-unreal-engine-material-functions
+      </a>
+      [Accessed 3 Oct. 2025].
+    </cite>
+  </figcaption>
+</figure>
+<div class="info-box"><p><strong>Key Concept:</strong> Material Functions have inputs and outputs, just like blueprint functions. They encapsulate logic that can be called from any material.</p>
+</div>
+<h2>Material Functions - Key Benefits</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Modularity &amp; Reusability</h3>
+<ul>
+<li>“One master graph, many children”</li>
+<li>Store math, UV manipulation, or surface effects</li>
+<li>Save time and maintain consistency</li>
+<li>Easy to update and iterate</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Common Examples</h3>
+<ul>
+<li>Tiling function</li>
+<li>Fresnel effects</li>
+<li>Triplanar blend</li>
+<li>Custom noise generators</li>
+<li>UV manipulation utilities</li>
+<li>Color grading functions</li>
+</ul>
+</div>
+</div>
+<h2>Creating a Material Function</h2>
+<p><strong>Step-by-Step Process:</strong></p>
+<ol>
+<li><strong>Right-click</strong> in Content Browser → Materials &amp; Textures → Material Function</li>
+<li><strong>Add Function Inputs</strong> - Define what parameters your function needs</li>
+<li><strong>Build the Logic</strong> - Create your node graph</li>
+<li><strong>Add Function Output</strong> - Define what the function returns</li>
+<li><strong>Save and Use</strong> - Call it from any material with the MaterialFunctionCall node</li>
+</ol>
+<div class="info-box"><p>Name your inputs clearly and add descriptions. Future you (and your team) will thank you!</p>
+</div></section>
+<section class="slide" data-slide-index="2"><h2>Material Parameter Collections (MPC)</h2>
+<p><strong>Global Parameters Accessible Across Multiple Materials</strong></p>
+<p>MPCs are special assets that store parameters accessible by ALL materials in your scene simultaneously. Perfect for scene-wide effects.</p>
+<figure class="figure-responsive" aria-labelledby="mpc-caption">
+  <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/using-material-parameter-collections-in-unreal-engine" target="_blank" rel="noopener noreferrer">
+    <img
+      src="https://d1iv7db44yhgxn.cloudfront.net/documentation/images/c02d8535-66bc-4b79-94a6-9e7886d88701/mpc-details-panel.png"
+      alt="Material Parameter Collections details panel from Unreal Engine documentation"
+      loading="lazy"
+    />
+  </a>
+  <figcaption id="mpc-caption" class="fig-caption">
+    Epic Games Developer. (2025). <cite>Using Material Parameter Collections in Unreal Engine | Unreal Engine 5.6 Documentation | Epic Developer Community</cite>. <a class="source-link" href="https://dev.epicgames.com/documentation/en-us/unreal-engine/using-material-parameter-collections-in-unreal-engine" target="_blank" rel="noopener noreferrer">https://dev.epicgames.com/documentation/en-us/unreal-engine/using-material-parameter-collections-in-unreal-engine</a> [Accessed 3 Oct. 2025].
+  </figcaption>
+</figure>
+<h3>How They Work:</h3>
+<ul>
+<li>Create one MPC asset</li>
+<li>Add scalar and vector parameters</li>
+<li>Reference from any material</li>
+<li>Update values at runtime via Blueprint/C++</li>
+</ul>
+<h2>MPC - When to Use</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Perfect For:</h3>
+<ul>
+<li>Time of day systems</li>
+<li>Weather effects (rain intensity, wetness)</li>
+<li>Damage systems (global burn amount)</li>
+<li>UI → world synchronization</li>
+<li>Global color grading</li>
+<li>Wind direction and strength</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Not Ideal For:</h3>
+<ul>
+<li>Per-object parameters</li>
+<li>Material-specific settings</li>
+<li>Instance-level customization</li>
+</ul>
+</div>
+</div>
+<h2>MPC Example: Weather System</h2>
+<img src="https://i.vgy.me/NRojxN.png" alt="NRojxN.png">
+<h1></h1>
+<h1></h1>
+<p><strong>Scenario:</strong> You want rain to affect all surfaces in your scene.</p>
+<h3>MPC Parameters:</h3>
+<ul>
+<li><code>RainIntensity</code> (0-1) - How much it’s raining</li>
+<li><code>WetnessAmount</code> (0-1) - How wet surfaces are</li>
+<li><code>PuddleDepth</code> (0-1) - Puddle accumulation</li>
+</ul>
+<h3>Blueprint Control:</h3>
+<img src="https://i.vgy.me/0WQvYw.png" alt="0WQvYw.png">
+<h2>MPC - Implementation Details</h2>
+<p><strong>Creating an MPC:</strong></p>
+<ol>
+<li>Content Browser → Right-click → Materials &amp; Textures → Material Parameter Collection</li>
+<li>Open the MPC asset</li>
+<li>Add Scalar or Vector Parameters</li>
+<li>Name them clearly (e.g., <code>Global_SunAngle</code>)</li>
+</ol>
+<p><strong>Using in Materials:</strong></p>
+<ul>
+<li>Add <code>CollectionParameter</code> node (or drag one in from the content drawer)</li>
+<li>Select your MPC in the details panel</li>
+<li>Choose the parameter name</li>
+<li>Connect to your material logic</li>
+</ul>
+</section>
+<section class="slide" data-slide-index="3"><h2>Dynamic Material Instances &amp; Post Process</h2>
+<p><strong>Runtime Material Control &amp; Screen Effects</strong></p>
+<p>Understanding how to modify materials at runtime and apply camera-based effects for maximum visual impact.</p>
+<h2>What Are Material Instances?</h2>
+<p><strong>The Foundation of Runtime Material Control</strong></p>
+<p>Material Instances are lightweight copies of a parent material that expose specific parameters for customization.</p>
+<h3>Two Types:</h3>
+<ol>
+<li><strong>Material Instance Constant (MIC)</strong> - Created in editor, static</li>
+<li><strong>Dynamic Material Instance (DMI)</strong> - Created at runtime, fully dynamic</li>
+</ol>
+<div class="info-box"><p><strong>Key Difference:</strong> MICs are set in the editor and don’t change. DMIs can be modified every frame during gameplay.</p>
+</div>
+<h2>Dynamic Material Instances (DMI)</h2>
+<p><strong>Runtime Material Modification</strong></p>
+<p>DMIs are created during gameplay and can have their parameters changed every frame. Essential for interactive and responsive materials.</p>
+<h3>When to Use DMI:</h3>
+<ul>
+<li>Parameters change during gameplay</li>
+<li>Need per-object customization</li>
+<li>Responding to game events</li>
+<li>Player-driven customization</li>
+</ul>
+<p><strong>Important:</strong> Create DMI once (e.g., BeginPlay), then reuse it. Don’t create new DMIs every time you want to update a parameter!</p>
+<h2>DMI - Key Features</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Technical Features</h3>
+<ul>
+<li>Created at runtime via Blueprint</li>
+<li>Change parameters without recompiling</li>
+<li>Minimal performance overhead</li>
+<li>Supports all parameter types</li>
+<li>Can be created from MIC or parent material</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Common Applications</h3>
+<ul>
+<li>Health bar color changes</li>
+<li>Dissolve effects</li>
+<li>Weapon glow intensity</li>
+<li>Character customization</li>
+<li>Interactive UI elements</li>
+<li>Damage visualization</li>
+</ul>
+</div>
+</div>
+<h2>Creating a DMI - Blueprint Example</h2>
+<img src="https://i.vgy.me/k5wCyR.png" alt="k5wCyR.png">
+<h1></h1>
+<h1></h1>
+<p><strong>Blueprint Setup:</strong></p>
+<ol>
+<li><strong>Get the mesh component</strong> (Static Mesh, Skeletal Mesh, etc.)</li>
+<li><strong>Create Dynamic Material Instance</strong> node
+<ul>
+<li>Source Material: Your material or MIC</li>
+<li>Element Index: Which material slot (usually 0)</li>
+</ul>
+</li>
+<li><strong>Store the reference</strong> in a variable</li>
+<li><strong>Use Set Scalar/Vector Parameter Value</strong> to modify it</li>
+</ol>
+<div class="info-box"><p><strong>Key Node:</strong> <code>Create Dynamic Material Instance</code> - Returns a reference you can modify</p>
+</div>
+<h2>DMI Example: Hit detection</h2>
+<p><strong>Scenario:</strong> Character or enemy gets hit and flashes red.</p>
+<h3>Material Setup:</h3>
+<ul>
+<li>Create material with <code>HitEmissiveColor</code> parameter (Vector3)</li>
+<li>Create material with <code>HitEmissiveValue</code> parameter (Scalar)</li>
+</ul>
+<h3>Blueprint Logic:</h3>
+<h1></h1>
+<img src="https://i.vgy.me/ZaZLEd.png" alt="ZaZLEd.png">
+<h1></h1>
+<h1></h1>
+<p><strong>Alternative Use Case:</strong> Character death or teleport effect</p>
+<h3>Material Parameters:</h3>
+<ul>
+<li><code>DissolveAmount</code> (0-1) - How much is dissolved</li>
+<li><code>EdgeColor</code> - Color of the dissolve edge</li>
+<li><code>EdgeWidth</code> - Width of the glowing edge</li>
+</ul>
+<h3>Material Logic:</h3>
+<ul>
+<li>Use noise texture as dissolve pattern</li>
+<li>Compare noise with DissolveAmount</li>
+<li>Clip pixels below threshold</li>
+<li>Add edge glow where noise ≈ DissolveAmount</li>
+</ul>
+</section>
+<section class="slide" data-slide-index="4"><h2>Post Process Materials</h2>
+<p><img src="https://outsidergaming.com/wp-content/uploads/2024/12/borderlands-4-2.webp" alt="bg"></p>
+<p class="ts-citation">Frigo, A. (2024). Borderlands 4 Unveils New Trailer Featuring Characters, Gameplay, and a Villainous Twist - Outsider Gaming. [online] Outsider Gaming. Available at: https://outsidergaming.com/borderlands-4-unveils-new-trailer-featuring-characters-gameplay-and-a-villainous-twist/ [Accessed 6 Oct. 2025].  ‌</p>
+<h1></h1>
+<h1></h1>
+<p><strong>Materials Applied to Camera Pass → Affects Final Image</strong></p>
+<p>Post Process materials are special materials that run AFTER the scene is rendered, allowing you to modify the final image before it’s displayed.</p>
+<h3>How They Work:</h3>
+<ol>
+<li>Scene renders normally</li>
+<li>Post Process material runs on the full-screen image</li>
+<li>Material can read scene color, depth, custom depth, etc.</li>
+<li>Output becomes the final image</li>
+</ol>
+<div class="info-box"><p><strong>Key Concept:</strong> Post Process materials operate on the 2D screen image, not on 3D geometry</p>
+</div>
+<h2>Post Process - Blendable Locations</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Before Tonemapping</h3>
+<ul>
+<li>Full HDR range available</li>
+<li>Access to bright values &gt; 1.0</li>
+<li>Best for bloom, exposure effects</li>
+<li>Can create physically accurate effects</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>After Tonemapping</h3>
+<ul>
+<li>LDR (0-1 range)</li>
+<li>Post-color grading</li>
+<li>Best for stylized effects</li>
+<li>Faster performance</li>
+</ul>
+</div>
+</div>
+<h3>Replacing Scene Color:</h3>
+<ul>
+<li>Complete control over final output</li>
+<li>Can completely override the image</li>
+<li>Most flexible but most complex</li>
+</ul>
+<h2>Post Process Material Setup</h2>
+<img src="https://i.vgy.me/fnmfZS.png" alt="fnmfZS.png">
+<h1></h1>
+<h1></h1>
+<p><strong>Creating a Post Process Material:</strong></p>
+<ol>
+<li>Create new Material</li>
+<li>Set <strong>Material Domain</strong> to “Post Process”</li>
+<li>Set <strong>Blendable Location</strong> (Before/After Tonemapping)</li>
+<li>Connect nodes to <strong>Emissive Color</strong> output</li>
+<li>Add to Post Process Volume or Camera</li>
+</ol>
+<p><strong>Post Process materials ONLY use the Emissive Color output. Other outputs are ignored</strong></p>
+<h2>Post Process Example: Outline Shader</h2>
+<p><strong>Use Case:</strong> Highlight selected objects with colored outline</p>
+<h3>Material Inputs:</h3>
+<ul>
+<li><strong>Scene Texture: Custom Depth</strong> - Objects marked for outline</li>
+<li><strong>Scene Texture: Scene Color</strong> - Original image</li>
+</ul>
+<h3>Logic:</h3>
+<ol>
+<li>Sample Custom Depth at current pixel and neighbors</li>
+<li>If depth difference detected → edge found</li>
+<li>Draw outline color at edges</li>
+<li>Blend with original scene color</li>
+</ol>
+<h2>Post Process Example: Screen Distortion</h2>
+<p><strong>Use Case:</strong> Heat waves, water droplets, damage effects</p>
+<h3>Material Setup:</h3>
+<ul>
+<li>Sample Scene Color with <strong>offset UVs</strong></li>
+<li>Use noise texture to create distortion pattern</li>
+<li>Animate noise over time for movement</li>
+<li>Multiply by intensity parameter</li>
+</ul>
+<h3>Blueprint Control:</h3>
+<pre><code class="language-cpp">// Increase distortion when player is damaged
+PostProcessDMI->SetScalarParameterValue("DistortionIntensity", DamageAmount);
+</code></pre>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Optimize Performance</h3>
+<ul>
+<li>Keep shader instructions low</li>
+<li>Avoid complex math</li>
+<li>Minimize texture samples</li>
+<li>Use lower resolution when possible</li>
+<li>Profile with <code>stat RHI</code></li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Best Practices</h3>
+<ul>
+<li>Use Post Process Volumes for level-specific effects</li>
+<li>Blend between effects smoothly</li>
+<li>Test on target hardware</li>
+<li>Consider mobile limitations</li>
+<li>Use Material Quality nodes for scalability</li>
+</ul>
+</div>
+</div></section>
+<section class="slide" data-slide-index="5"><h2>Virtual Textures &amp; Memory</h2>
+<p><strong>Optimizing Texture Memory Usage</strong></p>
+<p>Understanding how to manage texture memory efficiently for large-scale environments and high-resolution assets.</p>
+<h2>The Texture Memory Problem</h2>
+<p><strong>Why We Need Virtual Textures</strong></p>
+<h3>Traditional Texture Loading:</h3>
+<ul>
+<li>Entire texture loaded into VRAM</li>
+<li>8K texture = ~256 MB uncompressed</li>
+<li>Large landscape = dozens of 8K textures</li>
+<li><strong>Result:</strong> VRAM exhausted quickly!</li>
+</ul>
+<h3>The Solution:</h3>
+<p>Virtual Textures stream only the visible portions of textures, dramatically reducing memory usage.</p>
+<p><strong>A 16K texture would use 1 GB of VRAM if fully loaded. VT can reduce this to 50-100 MB!</strong></p>
+<h2>Virtual Textures (VT)</h2>
+<p><strong>Stream Textures in “Tiles” Rather Than Loading Full Texture</strong></p>
+<p><img src="https://docs.unrealengine.com/4.26/Images/RenderingAndGraphics/VirtualTexturing/Streaming/Vis_VTBorders.jpg" alt="bg"></p>
+<p class="ts-citation">Epic Games (n.d.). Streaming Virtual Texturing. [online] https://dev.epicgames.com/documentation/. Available at: https://dev.epicgames.com/documentation/en-us/unreal-engine/streaming-virtual-texturing?application_version=4.27 [Accessed 6 Oct. 2025].  ‌</p>
+<h3>How VT Works:</h3>
+<ol>
+<li>Texture divided into small tiles (e.g., 128x128)</li>
+<li>Only visible tiles loaded into memory</li>
+<li>Tiles stream in/out based on camera view</li>
+<li>Automatic mipmap selection per tile</li>
+</ol>
+<h3>Benefits:</h3>
+<ul>
+<li>Reduce memory usage by 80-90%</li>
+<li>Essential for huge landscapes</li>
+<li>Consistent texture quality at any distance</li>
+<li>Supports textures larger than VRAM</li>
+</ul>
+<h2>Virtual Texture Setup</h2>
+<p><strong>Enabling VT in Your Project</strong></p>
+<h3>Project Settings:</h3>
+<ol>
+<li>Edit → Project Settings → Engine → Rendering</li>
+<li>Enable <strong>Virtual Texture Support</strong></li>
+<li>Set <strong>Virtual Texture Tile Size</strong> (128 recommended)</li>
+<li>Restart editor</li>
+</ol>
+<h3>Per-Texture Settings:</h3>
+<ol>
+<li>Open texture asset</li>
+<li>Check <strong>Virtual Texture Streaming</strong></li>
+<li>Set appropriate <strong>Virtual Texture Tile Size</strong></li>
+<li>Save and rebuild</li>
+</ol>
+<div class="info-box"><p>Not all textures benefit from VT. Best for large landscape textures and high-res detail maps.</p>
+</div>
+<h2>Virtual Texture - When to Use</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Perfect For:</h3>
+<ul>
+<li>Landscape base textures</li>
+<li>Large terrain detail maps</li>
+<li>Mega-scans assets</li>
+<li>Open world environments</li>
+<li>High-resolution detail textures</li>
+<li>Unique, non-repeating textures</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Not Ideal For:</h3>
+<ul>
+<li>Small, frequently used textures</li>
+<li>UI textures</li>
+<li>Particle textures</li>
+<li>Textures &lt; 1024x1024</li>
+<li>Tiling detail textures</li>
+<li>Mobile platforms (limited support)</li>
+</ul>
+</div>
+</div>
+<h2>Runtime Virtual Textures (RVT)</h2>
+<p><strong>Bake Scene Data Into Usable Textures</strong></p>
+<p>RVT is a special type of Virtual Texture that captures and stores rendered scene data (color, normals, height) that can be sampled by materials.</p>
+<h3>Key Difference:</h3>
+<ul>
+<li><strong>VT:</strong> Streams pre-authored texture data</li>
+<li><strong>RVT:</strong> Captures and stores runtime scene data</li>
+</ul>
+<p><strong>RVT allows materials to “see” what’s rendered above them, enabling effects like footprints, decals, and dynamic blending.</strong></p>
+<h2>RVT - How It Works</h2>
+<img src="https://i.vgy.me/2ufcPl.png" alt="2ufcPl.png">
+<h3>Setup Process:</h3>
+<ol>
+<li><strong>Place RVT Volume</strong> in level (defines capture area)</li>
+<li><strong>Configure RVT</strong> - Choose what to capture (Base Color, Normal, Height)</li>
+<li><strong>Mark objects</strong> to render into RVT</li>
+<li><strong>Sample RVT</strong> in materials using WorldPosition</li>
+</ol>
+<h3>What Gets Captured:</h3>
+<ul>
+<li>Base Color (RGB)</li>
+<li>World Normal</li>
+<li>Height/Displacement</li>
+<li>Custom data channels</li>
+</ul>
+</section>
+<section class="slide" data-slide-index="6"><h2>Debugging Texture Streaming</h2>
+<p><strong>Console Commands and Tools</strong></p>
+<h3>Essential Commands:</h3>
+<pre><code>stat streaming          // Show streaming statistics
+stat streamingdetails   // Detailed streaming info
+r.Streaming.PoolSize    // View/set pool size
+r.Streaming.MaxTempMemoryAllowed  // Temp memory budget
+</code></pre>
+<h3>Visual Debugging:</h3>
+<pre><code>r.Streaming.ShowMipLevels 1  // Color-code by mip level
+  Red = High res
+  Blue = Low res
+  Green = Medium res
+</code></pre>
+<div class="info-box"><p><strong>Pro Tip:</strong> Use <code>stat streaming</code> during gameplay to identify streaming bottlenecks</p>
+</div>
+<h2>Texture Groups</h2>
+<p><strong>Organizing Textures by Priority</strong></p>
+<p>Texture Groups allow you to set different streaming priorities and quality settings for different types of textures.</p>
+<h3>Default Groups:</h3>
+<ul>
+<li><strong>World</strong> - Environment textures</li>
+<li><strong>Character</strong> - Character textures (high priority)</li>
+<li><strong>Weapon</strong> - Weapon textures (highest priority)</li>
+<li><strong>Effects</strong> - VFX textures (can be lower res)</li>
+<li><strong>UI</strong> - Never stream, always loaded</li>
+</ul>
+<h3>Custom Groups:</h3>
+<p>Create groups for your specific needs (e.g., “Hero_Props”, “Background_Clutter”)</p>
+<h2>Profiling VRAM Usage</h2>
+<p><strong>Tools and Techniques</strong></p>
+<h3>In-Editor Profiling:</h3>
+<ul>
+<li><strong>Stat Memory</strong> - Overall memory usage</li>
+<li><strong>Stat RHI</strong> - GPU memory breakdown</li>
+<li><strong>Texture Stats</strong> - Per-texture memory</li>
+</ul>
+<h3>GPU Profiler:</h3>
+<ul>
+<li>Window → Developer Tools → GPU Visualizer</li>
+<li>Shows texture memory per material</li>
+<li>Identifies memory-heavy assets</li>
+</ul>
+<p><strong>Always Profile:</strong> Test on target hardware with realistic content. Editor memory usage ≠ packaged game!</p>
+</section>
+<section class="slide" data-slide-index="7"><h1>Surface Techniques</h1>
+<p><strong>Advanced Material Surface Methods</strong></p>
+<p>Exploring techniques that add depth, detail, and realism to surfaces without adding geometry.</p>
+<h2>The Depth Illusion Problem</h2>
+<p><strong>Creating 3D Detail Without Geometry</strong></p>
+<h3>The Challenge:</h3>
+<ul>
+<li>Flat surfaces look flat</li>
+<li>Adding geometry is expensive</li>
+<li>Need depth perception without polygons</li>
+</ul>
+<h3>Solutions:</h3>
+<ol>
+<li><strong>Normal Maps</strong> - Fake lighting (no actual depth)</li>
+<li><strong>BumpOffset</strong> - Simple UV shift (cheap parallax)</li>
+<li><strong>POM</strong> - Advanced raymarching (realistic depth)</li>
+<li><strong>Displacement</strong> - Actual geometry (expensive)</li>
+</ol>
+<div class="info-box"><p><strong>Goal:</strong> Maximum visual depth with minimum performance cost</p>
+</div>
+<h2>BumpOffset (Simple Parallax)</h2>
+<p><strong>Basic UV Offset for Depth Illusion</strong></p>
+<img src="https://i.vgy.me/1wb5fE.png" alt="1wb5fE.png">
+<h3>How It Works:</h3>
+<ol>
+<li>Sample height map</li>
+<li>Offset UVs based on height and view angle</li>
+<li>Sample color/normal with offset UVs</li>
+<li><strong>Result:</strong> Slight depth perception</li>
+</ol>
+<h3>Material Setup:</h3>
+<pre><code>Height Map → Multiply by Strength → Add to UV
+Offset UV → Sample Base Color
+</code></pre>
+<h2>BumpOffset - Pros and Cons</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Advantages</h3>
+<ul>
+<li><strong>Very cheap</strong> - Single texture sample + math</li>
+<li><strong>Minimal performance cost</strong> - ~0.1ms</li>
+<li><strong>Works on all platforms</strong> - Even mobile</li>
+<li><strong>No artifacts</strong> - Stable at all angles</li>
+<li><strong>Easy to implement</strong> - Simple node setup</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Limitations</h3>
+<ul>
+<li><strong>Flat appearance</strong> - Limited depth</li>
+<li><strong>No self-occlusion</strong> - Can’t hide surfaces</li>
+<li><strong>No self-shadowing</strong> - No depth shadows</li>
+<li><strong>Breaks at edges</strong> - UV stretching visible</li>
+<li><strong>Subtle effect</strong> - Only works for small details</li>
+</ul>
+</div>
+</div></section>
+<section class="slide" data-slide-index="8"><h2>Parallax Occlusion Mapping (POM)</h2>
+<p><strong>Advanced Raymarching for Realistic Depth</strong></p>
+<p><img src="https://automaton-media.com/en/wp-content/uploads/2023/12/20231201-23558-header.jpeg" alt="bg"></p>
+<p class="ts-citation">Fujiwara, H. (2023). Are there really rooms behind every window in Marvel’s Spider-Man? This is how developers create the illusion  - AUTOMATON WEST. [online] AUTOMATON WEST. Available at: https://automaton-media.com/en/news/20231201-23558/ [Accessed 6 Oct. 2025].  ‌</p>
+<h3>How It Works:</h3>
+<ol>
+<li><strong>Raymarch</strong> through height map (8-32 steps)</li>
+<li>Find intersection point with surface</li>
+<li>Sample textures at intersection</li>
+<li>Calculate self-shadowing</li>
+<li><strong>Result:</strong> Convincing 3D depth</li>
+</ol>
+<h3>Performance Cost:</h3>
+<ul>
+<li>8 steps: ~0.5ms</li>
+<li>16 steps: ~1.0ms</li>
+<li>32 steps: ~2.0ms</li>
+</ul>
+<h2>POM - Technical Details</h2>
+<p><strong>Understanding the Raymarching Process</strong></p>
+<h3>Algorithm:</h3>
+<pre><code>For each step (0 to NumSteps):
+  1. Calculate ray position in height map
+  2. Sample height at current position
+  3. If ray below surface → intersection found
+  4. Refine intersection (optional)
+  5. Return final UV offset
+</code></pre>
+<h3>Parameters:</h3>
+<ul>
+<li><strong>Height Scale</strong> - Depth intensity (0.01-0.1)</li>
+<li><strong>Min Steps</strong> - Quality at perpendicular angles (8-16)</li>
+<li><strong>Max Steps</strong> - Quality at grazing angles (16-32)</li>
+<li><strong>Refine Steps</strong> - Intersection accuracy (0-4)</li>
+</ul>
+<p><strong>How it works</strong></p>
+<p><a href="https://learnopengl.com/Advanced-Lighting/Parallax-Mapping">https://learnopengl.com/Advanced-Lighting/Parallax-Mapping</a></p>
+<h2>POM - Pros and Cons</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Advantages</h3>
+<ul>
+<li><strong>Realistic depth</strong> - Convincing 3D illusion</li>
+<li><strong>Self-occlusion</strong> - Surfaces hide behind others</li>
+<li><strong>Self-shadowing</strong> - Depth creates shadows</li>
+<li><strong>Parallax motion</strong> - Depth shifts with view</li>
+<li><strong>Works with lighting</strong> - Proper depth response</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Limitations</h3>
+<ul>
+<li><strong>Expensive</strong> - 8-32 texture samples</li>
+<li><strong>Grazing angle artifacts</strong> - Stretching at edges</li>
+<li><strong>Silhouette issues</strong> - Edges still flat</li>
+<li><strong>Not suitable for mobile</strong> - Too expensive</li>
+<li><strong>Requires good height maps</strong> - Quality dependent</li>
+</ul>
+</div>
+</div>
+<h2>POM - Material Setup</h2>
+<img src="https://i.vgy.me/aemE3d.png" alt="aemE3d.png">
+<h1></h1>
+<h1></h1>
+<p><strong>UE5 POM Node:</strong></p>
+<p>The <code>ParallaxOcclusionMapping</code> node handles the complexity:</p>
+<h3>Inputs:</h3>
+<ul>
+<li><strong>Height Map</strong> - Grayscale height texture</li>
+<li><strong>Height Ratio</strong> - Depth scale (0.01-0.1)</li>
+<li><strong>Min Steps</strong> - Minimum raymarch steps</li>
+<li><strong>Max Steps</strong> - Maximum raymarch steps</li>
+</ul>
+<h3>Output:</h3>
+<ul>
+<li><strong>Parallax UVs</strong> - Use for all texture samples</li>
+</ul>
+<p>ALL textures (color, normal, roughness) should use the POM offset UVs</p>
+</section>
+<section class="slide" data-slide-index="9"><h2>World Position Offset (WPO)</h2>
+<p><strong>Vertex Movement in Material Shader</strong></p>
+<p>WPO allows you to move vertices in the material shader, creating animation and deformation without skeletal animation or morph targets.</p>
+<h3>How It Works:</h3>
+<ul>
+<li>Material shader runs on each vertex</li>
+<li>WPO output offsets vertex position</li>
+<li>Happens on GPU (very fast)</li>
+<li>Can use textures, math, time, etc.</li>
+</ul>
+<div class="info-box"><p><strong>Key Concept:</strong> WPO moves vertices, but doesn’t add new geometry. Limited by mesh vertex density.</p>
+</div>
+<h2>WPO - Common Use Cases</h2>
+<img src="https://i.vgy.me/h7EBG8.png" alt="h7EBG8.png">
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Animation</h3>
+<ul>
+<li>Grass/foliage wind</li>
+<li>Flag waving</li>
+<li>Cloth simulation</li>
+<li>Water waves</li>
+<li>Breathing/idle motion</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Deformation</h3>
+<ul>
+<li>Explosion shockwaves</li>
+<li>Magic effects</li>
+<li>Vertex displacement</li>
+<li>Procedural animation</li>
+<li>Interactive vegetation</li>
+</ul>
+</div>
+</div></section>
+<section class="slide" data-slide-index="10"><h2>Triplanar Mapping</h2>
+<p><strong>Projection from 3 Axes (X, Y, Z)</strong></p>
+<p>Triplanar mapping projects textures from three orthogonal directions (X, Y, Z axes) and blends them based on surface normal, eliminating UV stretching.</p>
+<h3>The UV Stretching Problem:</h3>
+<ul>
+<li>Complex geometry has UV distortion</li>
+<li>Cliffs and rocks stretch textures badly</li>
+<li>Procedural meshes may lack good UVs</li>
+<li><strong>Solution:</strong> Project from world space instead</li>
+</ul>
+<div class="info-box"><p><strong>Key Concept:</strong> Sample texture 3 times (XY, XZ, YZ planes), blend based on surface normal direction</p>
+</div>
+<h2>Triplanar - How It Works</h2>
+<p><img src="https://docs.otoy.com/ArchiCADH/Resources/Images/ArchiCAD/Triplanar.png" alt="bg"></p>
+<p class="ts-citation">OTOY Docs. (2025). Octane for ArchiCAD - Triplanar. [online] Available at: https://docs.otoy.com/ArchiCADH/ArchiCAD/Triplanar.htm [Accessed 6 Oct. 2025].  ‌</p>
+<h3>Algorithm:</h3>
+<ol>
+<li>
+<p><strong>Sample texture 3 times:</strong></p>
+<ul>
+<li>X-axis projection (YZ plane)</li>
+<li>Y-axis projection (XZ plane)</li>
+<li>Z-axis projection (XY plane)</li>
+</ul>
+</li>
+<li>
+<p><strong>Calculate blend weights:</strong></p>
+<ul>
+<li>Use world normal to determine which projection is most visible</li>
+<li>Normalize weights so they sum to 1</li>
+</ul>
+</li>
+<li>
+<p><strong>Blend results:</strong></p>
+<ul>
+<li>Multiply each sample by its weight</li>
+<li>Add them together</li>
+</ul>
+</li>
+</ol>
+<h2>Triplanar - UE5 Node</h2>
+<img src="https://i.vgy.me/fC42QA.png" alt="fC42QA.png">
+<h1></h1>
+<h1></h1>
+<p><strong>Using the Built-In Node</strong></p>
+<p>UE5 provides <code>WorldAlignedTexture</code> node that handles triplanar automatically:</p>
+<h3>Inputs:</h3>
+<ul>
+<li><strong>Texture</strong> - The texture to project</li>
+<li><strong>World Position</strong> - Usually WorldPosition node</li>
+<li><strong>World Normal</strong> - Usually VertexNormalWS</li>
+<li><strong>Texture size</strong> - Scale of projection</li>
+<li><strong>Blend contrast</strong> - Transition sharpness</li>
+</ul>
+<h3>Output:</h3>
+<ul>
+<li><strong>RGB</strong> - Blended color result</li>
+</ul>
+<p>One node does all the work! Much cleaner than manual setup.</p>
+<h2>Triplanar - Key Benefits</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Advantages</h3>
+<ul>
+<li><strong>No UV stretching</strong> - Perfect projection</li>
+<li><strong>No UVs required</strong> - Works on any mesh</li>
+<li><strong>Seamless</strong> - No visible seams</li>
+<li><strong>World-aligned</strong> - Consistent across objects</li>
+<li><strong>Procedural-friendly</strong> - Great for generated meshes</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Limitations</h3>
+<ul>
+<li><strong>3x texture samples</strong> - Performance cost</li>
+<li><strong>World-aligned only</strong> - Can’t rotate per-object</li>
+<li><strong>Tiling visible</strong> - Need good tiling textures</li>
+<li><strong>No unique detail</strong> - Same texture everywhere</li>
+<li><strong>Normal map complexity</strong> - Needs special handling</li>
+</ul>
+</div>
+</div>
+<h2>Triplanar + Vertex Painting</h2>
+<p><strong>Combining Techniques for Best Results</strong></p>
+<h3>Hybrid Approach:</h3>
+<ol>
+<li>Base material uses standard UVs</li>
+<li>Triplanar detail layer for world-aligned effects</li>
+<li>Vertex paint to control triplanar blend</li>
+</ol>
+<h3>Use Case:</h3>
+<ul>
+<li>Cliff face with moss growing on it</li>
+<li>Moss uses triplanar (world-aligned, grows “down”)</li>
+<li>Vertex paint controls where moss appears</li>
+<li>Base rock uses UVs for unique detail</li>
+</ul>
+</section>
+<section class="slide" data-slide-index="11"><h2>Distance Fields Introduction</h2>
+<p><strong>Volumetric Representation of Meshes</strong></p>
+<p><img src="https://docs.unrealengine.com/4.26/Images/BuildingWorlds/LightingAndShadows/MeshDistanceFields/VisualizeMeshDistanceFields.jpg" alt="bg"></p>
+<p class="ts-citation">Epic Games Developer. (2025). 网格体距离场 | 虚幻引擎 4.27 文档 | Epic Developer Community. [online] Available at: https://dev.epicgames.com/documentation/zh-cn/unreal-engine/mesh-distance-fields?application_version=4.27 [Accessed 6 Oct. 2025].  ‌</p>
+<p>Distance Fields are 3D volumetric data structures that store the distance from any point in space to the nearest surface.</p>
+<h3>How They Work:</h3>
+<ul>
+<li>Mesh is converted to volumetric grid</li>
+<li>Each voxel stores distance to nearest surface</li>
+<li>Positive = outside mesh</li>
+<li>Negative = inside mesh</li>
+<li>Zero = on surface</li>
+</ul>
+<h2>Distance Fields - Why Use Them?</h2>
+<p><strong>Advantages Over Traditional Methods</strong></p>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Traditional Approach</h3>
+<ul>
+<li>Ray tracing for shadows (expensive)</li>
+<li>Screen-space AO (limited range)</li>
+<li>No proximity detection</li>
+<li>Expensive collision queries</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Distance Field Approach</h3>
+<ul>
+<li>Fast shadow approximation</li>
+<li>Long-range AO</li>
+<li>Cheap proximity queries</li>
+<li>Efficient collision detection</li>
+<li>Material effects based on distance</li>
+</ul>
+</div>
+</div>
+<div class="info-box"><p><strong>Key Benefit:</strong> Query “how far to nearest surface” is extremely fast with distance fields</p>
+</div>
+<h2>Enabling Distance Fields</h2>
+<p><strong>Project Setup</strong></p>
+<h3>Project Settings:</h3>
+<ol>
+<li>Edit → Project Settings</li>
+<li>Engine → Rendering</li>
+<li>Check <strong>Generate Mesh Distance Fields</strong></li>
+<li>Restart editor</li>
+<li>Wait for distance fields to build</li>
+</ol>
+<h3>Per-Mesh Settings:</h3>
+<ul>
+<li>Most meshes auto-generate</li>
+<li>Check Static Mesh Editor → Details → Distance Field</li>
+<li>Adjust resolution if needed (higher = more accurate, more memory)</li>
+</ul>
+<div class="warning-box">
+**Build Time:** Large projects may take hours to generate all distance fields. Plan accordingly!
+</div>
+<h2>Mesh Distance Fields</h2>
+<p><strong>Proximity Detection for Materials</strong></p>
+<p><img src="https://i.pinimg.com/originals/53/17/2c/53172c94b11d5ae8d6fbb38cc55a9c8a.jpg" alt="bg"></p>
+<p class="ts-citation">Gumroad. (2017). [UE4] Stylized Water Shader (Distance Fields). [online] Available at: https://codekitten.gumroad.com/l/fCfyd [Accessed 6 Oct. 2025].  ‌</p>
+<h3>Use Cases:</h3>
+<ul>
+<li><strong>Snow accumulation</strong> - Snow avoids overhangs</li>
+<li><strong>Wetness propagation</strong> - Water flows around objects</li>
+<li><strong>Dirt/weathering</strong> - Accumulates in crevices</li>
+<li><strong>Procedural effects</strong> - React to nearby geometry</li>
+</ul>
+<h3>How to Use:</h3>
+<p>Sample distance field in material to detect proximity to other objects.</p>
+<h2>Distance Field - Performance</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Performance Costs</h3>
+<ul>
+<li><strong>Memory:</strong> ~1-5 MB per mesh</li>
+<li><strong>Build Time:</strong> One-time cost</li>
+<li><strong>Runtime:</strong> Fast queries (0.1-0.5ms)</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Optimization</h3>
+<ul>
+<li>Reduce distance field resolution</li>
+<li>Disable on low-end hardware</li>
+<li>Profile with <code>stat GPU</code></li>
+</ul>
+</div>
+</div></section>
+<section class="slide" data-slide-index="12"><h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+<h1>Any questions?</h1>
+</section></div>
+
+  <div class="export-controls">
+    <button id="prevBtn" title="Previous (←/↑)">← Prev</button>
+    <span class="slide-counter" id="slideCounter">1 / 13</span>
+    <button id="nextBtn" title="Next (→/↓)">Next →</button>
+    <button id="viewModeBtn" class="view-mode-btn" title="Toggle Scroll/Present (Space)">🎯 Present</button>
+    <button id="fullscreenBtn" class="view-mode-btn" title="Toggle Fullscreen (F)">⛶ Fullscreen</button>
+  </div>
+
+  <script>
+    (function(){
+      const slides = Array.from(document.querySelectorAll('.slide'))
+      let current = 0
+      const total = slides.length
+      const counter = document.getElementById('slideCounter')
+      const body = document.body
+
+      const viewModeBtn = document.getElementById('viewModeBtn')
+      function isMobileDevice(){
+        return window.matchMedia('(max-width: 900px)').matches || (('ontouchstart' in window || navigator.maxTouchPoints>0))
+      }
+      function updateViewModeButton(){
+        if (isMobileDevice()){
+          viewModeBtn.textContent = '📱 Scroll only'
+          viewModeBtn.disabled = true
+          return
+        }
+        const isPresent = body.classList.contains('presentation-mode')
+        viewModeBtn.textContent = isPresent ? '🧭 Scroll' : '🎯 Present'
+        viewModeBtn.disabled = false
+      }
+
+      // Build a dedicated scroll viewport above the footer and add arrows if missing
+      slides.forEach(slide => {
+        // Create .slide-viewport and move non-footer/arrows children into it
+        let viewport = slide.querySelector('.slide-viewport')
+        if (!viewport){
+          viewport = document.createElement('div')
+          viewport.className = 'slide-viewport'
+          const children = Array.from(slide.children)
+          children.forEach(child => {
+            const cls = (child.className && child.className.toString()) || ''
+            if (/(presentation-footer|ts-global-footer|slide-arrows)/.test(cls)) return
+            viewport.appendChild(child)
+          })
+          slide.insertBefore(viewport, slide.firstChild)
+        }
+        // Add arrows if missing
+        if (!slide.querySelector('.slide-arrows')){
+          const ui = document.createElement('div')
+          ui.className = 'slide-arrows'
+          ui.innerHTML = '<div class="arrow up">▲</div><div class="arrow down">▼</div>'
+          slide.appendChild(ui)
+        }
+      })
+      // Stage wrapper for presentation scaling (1280x720 like Marp)
+      const bodyEl = document.body
+      let pres = document.querySelector('.presentation')
+      if (!pres) {
+        pres = document.createElement('div')
+        pres.className = 'presentation'
+        // Move slides into presentation container
+        slides.forEach(s => pres.appendChild(s))
+        const controls = document.querySelector('.export-controls')
+        bodyEl.insertBefore(pres, controls)
+      }
+      let stage = pres.querySelector('.stage')
+      if (!stage) {
+        stage = document.createElement('div')
+        stage.className = 'stage'
+        pres.appendChild(stage)
+      }
+      // Ensure stage has slide wrap and footer containers
+      let stageWrap = stage.querySelector('.stage-slide-wrap')
+      if (!stageWrap) {
+        stageWrap = document.createElement('div')
+        stageWrap.className = 'stage-slide-wrap'
+        stage.appendChild(stageWrap)
+        const currentSlides = Array.from(pres.querySelectorAll('.slide'))
+        currentSlides.forEach(s => stageWrap.appendChild(s))
+      }
+      let stageFooter = stage.querySelector('.stage-footer')
+      if (!stageFooter) {
+        stageFooter = document.createElement('div')
+        stageFooter.className = 'stage-footer'
+        stage.appendChild(stageFooter)
+      }
+
+      function fitStage(){
+        const BASE_W = 1280, BASE_H = 720
+        if (body.classList.contains('presentation-mode')){
+          const fit = Math.min(window.innerWidth/BASE_W, window.innerHeight/BASE_H)
+          stage.style.transform = 'scale(' + fit + ')'
+          // After fitting, update footer heights (in unscaled CSS px) and scroll UI
+          requestAnimationFrame(() => { updateFooterHeights(); updateAllScrollUI(); })
+        } else {
+          stage.style.transform = 'none'
+          requestAnimationFrame(() => { updateFooterHeights(); })
+        }
+      }
+
+      function getStageScale(){
+        if (!body.classList.contains('presentation-mode')) return 1
+        const r = stage.getBoundingClientRect()
+        return r.height / 720
+      }
+
+      function updateFooterHeights(){
+        const scale = getStageScale() || 1
+        const stageFooter = stage.querySelector('.stage-footer')
+        const fh = stageFooter ? stageFooter.getBoundingClientRect().height : 0
+        const unscaled = (fh/scale)
+        // Set on stage and slides for convenience
+        stage.style.setProperty('--footer-height', unscaled + 'px')
+        slides.forEach(slide => slide.style.setProperty('--footer-height', unscaled + 'px'))
+      }
+
+
+      function setActive(i){
+        slides.forEach((s, idx) => s.classList.toggle('active', idx===i))
+        counter.textContent = (i+1) + ' / ' + total
+        // Update stage footer to match active slide footer
+        const stageFooter = stage.querySelector('.stage-footer')
+        if (stageFooter){
+          stageFooter.innerHTML = ''
+          const footer = slides[i].querySelector('.presentation-footer, .ts-global-footer')
+          if (footer) stageFooter.appendChild(footer.cloneNode(true))
+        }
+        requestAnimationFrame(() => { updateFooterHeights(); updateScrollUIForSlide(slides[i]) })
+      }
+
+      function updateAllScrollUI(){
+        slides.forEach(updateScrollUIForSlide)
+      }
+
+      function detectOverflow(slide){
+        const viewport = slide.querySelector('.slide-viewport') || slide
+        // Basic check first
+        if (viewport.scrollHeight > viewport.clientHeight + 1) return true
+        // Fallback for absolutely-positioned content: compute visual bottom of non-footer elements
+        const excluded = new Set(['presentation-footer','ts-global-footer','slide-arrows'])
+        const rect = viewport.getBoundingClientRect()
+        let maxBottom = 0
+        viewport.querySelectorAll(':scope > *').forEach(el => {
+          const cls = (el.className && el.className.toString()) || ''
+          if ([...excluded].some(c => cls.includes(c))) return
+          const r = el.getBoundingClientRect()
+          const bottom = (r.bottom - rect.top) + viewport.scrollTop
+          if (bottom > maxBottom) maxBottom = bottom
+        })
+        return maxBottom > viewport.clientHeight + 1
+      }
+
+      function updateScrollUIForSlide(slide){
+        if (!slide || !body.classList.contains('presentation-mode')) return
+        const viewport = slide.querySelector('.slide-viewport') || slide
+        const ui = slide.querySelector('.slide-arrows')
+        if (!viewport || !ui) return
+        const up = ui.querySelector('.arrow.up')
+        const down = ui.querySelector('.arrow.down')
+
+        // Show UI only if overflow exists (permanently visible when shown)
+        const overflow = detectOverflow(slide)
+        ui.style.display = overflow ? 'flex' : 'none'
+        if (!overflow) return
+
+        // Update arrow enablement (only show if content above/below)
+        const atTop = viewport.scrollTop <= 0
+        const atBottom = (viewport.scrollTop + viewport.clientHeight) >= (viewport.scrollHeight - 1)
+        if (up) up.style.display = atTop ? 'none' : 'block'
+        if (down) down.style.display = atBottom ? 'none' : 'block'
+
+        // Bind interactions once
+        if (!ui._bound){
+          ui._bound = true
+          // Prevent clicks from affecting slide navigation
+          ui.addEventListener('pointerdown', e => e.stopPropagation())
+          up && up.addEventListener('click', e => { e.stopPropagation(); viewport.scrollTo({ top: 0, behavior: 'smooth' }) })
+          down && down.addEventListener('click', e => { e.stopPropagation(); viewport.scrollTo({ top: viewport.scrollHeight, behavior: 'smooth' }) })
+          viewport.addEventListener('scroll', () => { requestAnimationFrame(() => updateScrollUIForSlide(slide)) })
+        }
+      }
+
+
+      /* computeGlobalScale removed: we now rely solely on stage scaling for present-mode and no global scaling in scroll-mode */
+function computeGlobalScale_REMOVED(){
+        // Measure natural content size at scale(1)
+        const BASE_W = 1920, BASE_H = 1080
+        let minS = 1
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content');
+          if (!c) return;
+          c.style.transform = 'scale(1)';
+          c.getBoundingClientRect();
+          const cr = c.getBoundingClientRect();
+          const cs = getComputedStyle(slide);
+          const maxW = BASE_W - (parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight) || 0)
+          const maxH = BASE_H - (parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom) || 0)
+          const sW = cr.width>0 && maxW>0 ? Math.min(1, maxW/cr.width) : 1
+          const sH = cr.height>0 && maxH>0 ? Math.min(1, maxH/cr.height) : 1
+          const need = Math.min(sW, sH)
+          if (need < minS) minS = need
+        })
+        return Math.max(0.5, Math.min(1, isFinite(minS) ? minS : 1))
+      }
+
+      /* applyGlobalScale removed: no per-slide or global scaling, stage-only */
+function applyGlobalScale_REMOVED(){
+        // Do NOT scale inner content in presentation-mode; stage scaling handles fit.
+        if (body.classList.contains('presentation-mode')){
+          // Presentation-mode: per-slide smart shrink instead of global scaling
+          applySmartShrinkPresentation()
+          return
+        }
+        const s = computeGlobalScale()
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content')
+          if (!c) return
+          c.style.transform = 'scale(' + s + ')'
+          c.style.marginLeft = '0'
+          c.style.marginRight = '0'
+        })
+      }
+
+      /* applySmartShrinkPresentation removed: uniform stage scaling ensures proportionality */
+function applySmartShrinkPresentation_REMOVED(){
+        if (!body.classList.contains('presentation-mode')) return
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content')
+          if (!c) return
+          // Reset to natural size
+          c.style.transform = 'scale(1)'
+          c.style.width = '100%'
+          // Measure
+          const cs = getComputedStyle(slide)
+          const availW = slide.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)
+          const availH = slide.clientHeight - (parseFloat(cs.paddingTop)||0) - (parseFloat(cs.paddingBottom)||0)
+          const rect = c.getBoundingClientRect()
+          const needH = rect.height > 0 ? (availH / rect.height) : 1
+          let s = Math.min(1, needH)
+          if (!isFinite(s) || s <= 0) s = 1
+          if (s < 1) {
+            // Keep full visual width while shrinking proportionally:
+            // set logical width to 100%/s so after scale(s) visual width == 100%
+            c.style.width = (100 / s) + '%'
+            c.style.transform = 'scale(' + s + ')'
+          }
+        })
+      }
+
+
+      function prev(){ if (current>0){ current--; setActive(current) } }
+      function next(){ if (current<total-1){ current++; setActive(current) } }
+      function go(i){ if (i>=0 && i<total){ current = i; setActive(current) } }
+
+      function toggleMode(){
+        if (isMobileDevice()){
+          // Force scroll-only on mobile
+          body.classList.remove('presentation-mode')
+          body.classList.add('scroll-mode')
+          setActive(current)
+          updateViewModeButton()
+          fitStage()
+          return
+        }
+        const present = body.classList.contains('presentation-mode')
+        body.classList.toggle('presentation-mode', !present)
+        body.classList.toggle('scroll-mode', present)
+        setActive(current)
+        updateViewModeButton()
+        fitStage()
+      }
+
+      // Event wiring
+      document.getElementById('prevBtn').addEventListener('click', prev)
+      document.getElementById('nextBtn').addEventListener('click', next)
+      document.getElementById('viewModeBtn').addEventListener('click', toggleMode)
+      document.getElementById('fullscreenBtn').addEventListener('click', () => {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      })
+
+      document.addEventListener('keydown', (e) => {
+        switch(e.key){
+          case 'ArrowLeft': case 'ArrowUp': e.preventDefault(); prev(); break;
+          case 'ArrowRight': case 'ArrowDown': e.preventDefault(); next(); break;
+          case ' ': e.preventDefault(); toggleMode(); break;
+          case 'Home': e.preventDefault(); go(0); break;
+          case 'End': e.preventDefault(); go(total-1); break;
+          case 'f': case 'F': e.preventDefault();
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+            break;
+        }
+      })
+
+      // Initialize
+      // Mobile: force scroll-mode and disable present
+      if (isMobileDevice()){
+        body.classList.remove('presentation-mode')
+        body.classList.add('scroll-mode')
+      }
+      updateFooterHeights()
+      setActive(0)
+      updateViewModeButton()
+
+      fitStage()
+      window.addEventListener('resize', () => { fitStage() })
+    })();
+  </script>
+
+</body>
+</html>
