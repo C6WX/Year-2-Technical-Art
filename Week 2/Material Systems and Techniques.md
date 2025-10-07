@@ -4,8 +4,6 @@
 
 ### 1. Stylized Water Material with World Position Offset  
 
-#### Step-by-step
-
 #### Problems during creation
 
 #### Solutions
@@ -16,12 +14,14 @@
 
 #### Blueprint
 
+<br>
+<iframe width="600" height="600" src="https://blueprintue.com/render/nk_eyujq/" scrolling="no" allowfullscreen></iframe>
+<br>
+
 #### About topic (guiding questions)
 
 
 ### 2. Material Parameter Collection (MPC) System    
-
-#### Step-by-step
 
 #### Problems during creation
 
@@ -39,8 +39,6 @@
 
 ### 3. Dynamic Material Instance with Runtime Control    
 
-#### Step-by-step
-
 #### Problems during creation
 
 #### Solutions
@@ -57,8 +55,6 @@
 
 ### 4. Parallax Occlusion Mapping (POM) Material      
 
-#### Step-by-step
-
 #### Problems during creation
 
 #### Solutions
@@ -73,8 +69,6 @@
 
 
 ### 5. Post Process Material   
-
-#### Step-by-step
 
 #### Problems during creation
 
