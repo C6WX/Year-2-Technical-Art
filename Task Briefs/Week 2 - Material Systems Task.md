@@ -78,11 +78,6 @@ You must create **all five** of the following materials/systems in a single UE5 
 - Apply POM offset to all relevant texture samples (base color, normal, roughness)
 - Demonstrate self-occlusion and depth parallax
 
-**Technical Considerations:**
-- Height ratio: 0.01-0.1 (adjust for desired depth)
-- Min steps: 8-16 (perpendicular view quality)
-- Max steps: 16-32 (grazing angle quality)
-- Test at multiple viewing angles
 
 **Guiding Questions:**
 - How does step count affect visual quality and performance?
@@ -101,11 +96,12 @@ You must create **all five** of the following materials/systems in a single UE5 
 - Implement effect using Scene Texture nodes
 - Examples: outline shader, screen distortion, custom color grading, stylized effect
 
-#### Option B: Triplanar Mapping Material
-- Implement world-aligned texture projection
+#### Option B: Comprehensive Master Material and Triplanar Mapping Material
+- Develop a comprehensive Master Material
+- Implement world-aligned texture projection blending with the master material
 - Use UE5's WorldAlignedTexture node or custom setup
-- Demonstrate elimination of UV stretching
-- Apply to complex geometry (rocks, cliffs, procedural meshes)
+- Demonstate the customization and organization of your material instance and material graph.
+
 
 #### Option C: Material Function Library
 - Create at least 3 reusable Material Functions
@@ -125,30 +121,30 @@ You must create **all five** of the following materials/systems in a single UE5 
 
 Your work will be evaluated against the following criteria:
 
-### Exploring (20%)
+### Exploring
 - Engaging in critical and creative inquiry through questioning, research, and material/process-based investigations
 - Demonstrating understanding of technical concepts through implementation
 - Experimenting with parameters and techniques to understand their effects
 
-### Making (30%)
+### Making
 - Developing and refining creative work through iteration, risk-taking, and material engagement
 - Technical proficiency in material creation and Blueprint implementation
 - Quality of visual output and attention to detail
 - Problem-solving when encountering technical challenges
 
-### Connecting (20%)
+### Connecting
 - Communicating technical decisions and implementation choices
 - Engaging with professional workflows and industry-standard practices
 - Demonstrating understanding of when and why to use specific techniques
 - Clear documentation of your materials and systems
 
-### Situating (15%)
+### Situating
 - Critically positioning work within professional game development contexts
 - Understanding performance implications and optimization considerations
 - Awareness of platform limitations and scalability
 - Ethical consideration of accessibility (e.g., motion, visual effects)
 
-### Synthesizing (15%)
+### Synthesizing
 - Bringing together disparate elements into meaningful, cohesive outcomes
 - Creating a unified showcase that demonstrates multiple techniques working together
 - Integrating materials into a coherent scene or demonstration
@@ -156,58 +152,21 @@ Your work will be evaluated against the following criteria:
 
 ---
 
-## Submission Requirements
 
-### What to Submit:
-
-1. **UE5 Project Files** (zipped or via cloud storage link)
-   - Include all materials, blueprints, and assets
-   - Ensure project opens without errors
-   - Include a demo map showcasing all deliverables
-
-2. **Video Demonstration** (2-4 minutes)
-   - Show each material/system in action
-   - Demonstrate runtime controls and parameter changes
-   - Highlight key technical features
-   - Narration or text overlays explaining what's being shown (optional but recommended)
-
-3. **Technical Documentation** (500-800 words)
+**Technical Documentation** 
    - Brief description of each deliverable
    - Technical challenges encountered and solutions
    - Performance considerations and optimization choices
    - Reflection on learning outcomes and professional applications
+   - Include screenshots, gifs and any other applicable media
+   - Show before / after where relevant
+   - Detail your understanding of your implementation
 
-4. **Screenshots** (minimum 5)
-   - High-quality screenshots of each major deliverable
-   - Include material graph screenshots showing key node setups
-   - Show before/after comparisons where relevant
-
-### Submission Format:
-- Project files: .zip or cloud storage link (Google Drive, OneDrive, Dropbox)
-- Video: .mp4 format (1080p recommended)
-- Documentation: .pdf or .docx
-- Screenshots: .png or .jpg
-
-**Deadline:** Formative - 14th of November | Summative - 12th of December
 
 ---
 
-## Tips for Success
 
-### Technical Tips:
-- Start with simple implementations, then add complexity
-- Test performance regularly using `stat FPS` and `stat GPU`
-- Use Material Quality nodes for scalability
-- Comment your Blueprint nodes for clarity
-- Save iterations of your materials as you develop them
-
-### Creative Tips:
-- Choose a cohesive visual theme for your showcase
-- Consider how materials work together in a scene
-- Don't just replicate tutorials—add your own creative spin
-- Think about practical game development applications
-
-### Documentation Tips:
+### Documentation:
 - Take screenshots of your material graphs as you work
 - Record video clips of interesting developments
 - Note down problems and solutions as they occur
@@ -215,23 +174,6 @@ Your work will be evaluated against the following criteria:
 
 ---
 
-## Resources
-
-### Official Documentation:
-- [UE5 Material Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-materials)
-- [Material Parameter Collections](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-material-parameter-collections-in-unreal-engine)
-- [Dynamic Material Instances](https://dev.epicgames.com/documentation/en-us/unreal-engine/material-instances-in-unreal-engine)
-
-### Week 2 Presentation:
-- Review the Week 2 lecture slides for technical details and examples
-- Reference code snippets and node setups shown in class
-
-### Community Resources:
-- Unreal Engine Forums - Materials & Textures section
-- YouTube tutorials (verify they're for UE5)
-- Artstation for visual inspiration
-
----
 
 **Remember:** This task is about demonstrating technical understanding through practical application. Focus on clean implementation, good documentation, and showing that you understand *why* these techniques are used in professional workflows.
 
