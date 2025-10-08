@@ -13,6 +13,9 @@
 #### Final result
 
 ![Water Material](WaterMaterialTest.gif)
+<br>
+
+[Water Material Test](https://youtu.be/AhRgMAfL9Xo)
 
 #### Blueprints
 
@@ -44,6 +47,10 @@
 #### Final result
 
 ![Material Parameter Collection System](MPC.gif)
+<br>
+
+[Material Parameter Collection (MPC) System](https://youtu.be/deUyHrih2bI)
+
 
 #### Blueprints
 
@@ -75,6 +82,9 @@
 #### Final result
 
 ![Dynamic Material Instance](DynamicMaterialInstance.gif)
+<br>
+
+[Dynamic Material Instance Showcase](https://youtu.be/xfOOHRgTqFM)
 
 #### Blueprints
 
@@ -126,6 +136,8 @@
 #### Final result
 
 ![Post Process Material](CellShading.gif)
+<br>
+[Cell Shading Showcase](https://youtu.be/tTgUgA00RYY)
 
 #### Blueprints
 
