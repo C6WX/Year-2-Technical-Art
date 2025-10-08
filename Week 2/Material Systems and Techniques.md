@@ -43,7 +43,7 @@
 
 #### Final result
 
-![Material Parameter Collection System](WaterMaterialTest.gif)
+![Material Parameter Collection System](MPC.gif)
 
 #### Blueprint
 
