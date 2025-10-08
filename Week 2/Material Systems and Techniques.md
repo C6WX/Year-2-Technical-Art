@@ -105,6 +105,24 @@
 
 #### Final result
 
+![Post Process Material](CellShading.gif)
+
 #### Blueprint
+
+##### Cell Shader
+<iframe width="600" height="600" src="https://blueprintue.com/render/2costsu5/" scrolling="no" allowfullscreen></iframe>
+<br>
+
+##### Character Material
+<iframe width="600" height="600" src="https://blueprintue.com/render/4upsvvjy/" scrolling="no" allowfullscreen></iframe>
+<br>
+
+##### Character Outline
+<iframe width="600" height="600" src="https://blueprintue.com/render/4zd15p_q/" scrolling="no" allowfullscreen></iframe>
+<br>
+
+##### Emissive Material
+<iframe width="600" height="600" src="https://blueprintue.com/render/a5raxtpb/" scrolling="no" allowfullscreen></iframe>
+<br>
 
 #### About topic (guiding questions)
