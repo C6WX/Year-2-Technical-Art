@@ -14,7 +14,7 @@
 
 ![Water Material](WaterMaterialTest.gif)
 
-#### Blueprint
+#### Blueprints
 
 <br>
 <iframe width="600" height="600" src="https://blueprintue.com/render/nk_eyujq/" scrolling="no" allowfullscreen></iframe>
@@ -45,7 +45,7 @@
 
 ![Material Parameter Collection System](MPC.gif)
 
-#### Blueprint
+#### Blueprints
 
 ##### Landscape Material
 <iframe width="600" height="600" src="https://blueprintue.com/render/9t4olk6n/" scrolling="no" allowfullscreen></iframe>
@@ -74,7 +74,17 @@
 
 #### Final result
 
-#### Blueprint
+![Dynamic Material Instance](DynamicMaterialInstance.gif)
+
+#### Blueprints
+
+##### Wood Material
+<iframe width="600" height="600" src="https://blueprintue.com/render/5zp4cm7t/" scrolling="no" allowfullscreen></iframe>
+<br>
+
+##### Dynamic Panel
+<iframe width="600" height="600" src="https://blueprintue.com/render/xp2fivgm/" scrolling="no" allowfullscreen></iframe>
+<br>
 
 #### About topic (guiding questions)
 
@@ -84,13 +94,23 @@
 
 #### Problems during creation
 
+1. A glitch occured with the material where the shadows took over the whole material so that it could'nt be seen.
+
 #### Solutions
+
+2. To solve this problem, I disabled cast shadows. 
 
 #### Technical choices
 
 #### Final result
 
-#### Blueprint
+![Brick POM Material](https://raw.githubusercontent.com/C6WX/Images/refs/heads/main/Images/POM%20Brick%20material.png)
+
+#### Blueprints
+
+##### Brick Texture
+<iframe width="600" height="600" src="https://blueprintue.com/render/chrrzmir/"   scrolling="no" allowfullscreen></iframe>
+<br>
 
 #### About topic (guiding questions)
 
@@ -107,7 +127,7 @@
 
 ![Post Process Material](CellShading.gif)
 
-#### Blueprint
+#### Blueprints
 
 ##### Cell Shader
 <iframe width="600" height="600" src="https://blueprintue.com/render/2costsu5/" scrolling="no" allowfullscreen></iframe>
