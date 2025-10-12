@@ -121,6 +121,15 @@ Gameplay scenarios that benefit from runtime material modification includes: dam
 ### 4. Parallax Occlusion Mapping (POM) Material      
 
 #### What is it?
+A parallax occlusion mapping (POM) material is a type of shader material technique used in 3D rendering to create the illusion of complex 3D surface detail on flat textures without added geometric complexity. Height maps are used to simulate depth and 3D surface variation relative to the viewer's perspective.
+<br>
+The step count in POM significantly affects both visual and quality performance. Increasing the step count improves the visual quality of the parallax effect by providing finer sampling of the height map along the view ray. Doing this reduces the amount of stair stepping or slicing effects seen at lower step counts, creating more realistic and continuous depth illusion. A higher step count however increases GPU workload as the shader performs more samples per pixel, which directly impacts rendering performance, making the material more expensive to compute.
+<br>
+The surfaces that benefit most from parallax occlusion mapping are surfaces with distinct height variations and depth. For example, surfaces with tiles, rough surfaces and patterned surfaces all are surfaces with distinct height variations that will look much more realistic if made using parallax occlusion mapping.
+<br>
+An alternative to POM is bump offset, which does the same job but with worse visuals and better performance. Bump offset adjusts texture coordinates based on the view angle and height map but only uses a single sample, giving a basic illusion of depth which tends to bread down or look flat at sharp angles. Whereas POM performs multiple height map samples to more accurately create an illusion of depth. The positive to bump offset is that it is much cheaper to render as it uses fewer texture samples. As POM uses a more iterative sampling method, it is more GPU intensive.
+<br>
+When it comes to silhouette edges, POM cannot alter the the actual geometry silhouette of the mesh creating issues. One of these issues is that at extreme glancing angles, the outline of objects can reveal the underlying flat geometry, breaking the illusion of depth that POM creates. Another issue is that as the parallax effect happens only within the surface are of the polygon, viewing the edges or ends of teh mesh will expose that the depth effect is simulated.
 
 #### Problems during creation
 
@@ -145,11 +154,8 @@ Gameplay scenarios that benefit from runtime material modification includes: dam
 
 ### 5. Post Process Material   
 
-#### Problems during creation
-
-#### Solutions
-
-#### Technical choices
+#### What is it?
+A post process material is a type of material that applies visual effects to the entire rendered scene after the main rendering process has finished. This is used to apply effects like colour grading, bloom, depth of field, motion blur or screen tinting to the entire scene.
 
 #### Final result
 
