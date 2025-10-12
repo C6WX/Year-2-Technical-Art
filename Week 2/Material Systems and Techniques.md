@@ -89,17 +89,30 @@ As well as being a more efficient method, using a MPC provides several performan
 
 #### Blueprints
 
+##### MPC
+![MPC](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/MPC/MPC.png)
+
+
 ##### Landscape Material
 <iframe width="600" height="600" src="https://blueprintue.com/render/9t4olk6n/" scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
+
+![Landscape Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/MPC/Landscape.png)
 
 ##### Bush Material
 <iframe width="600" height="600" src="https://blueprintue.com/render/iccj0cnb/"   scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
+
+![Bush Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/MPC/Bush.png)
 
 ##### Global Controller
 <iframe width="600" height="600" src="https://blueprintue.com/render/p3g1jaar/"   scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
+
+![Global Controller](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/MPC/Global%20Controller.png)
 
 
 
@@ -128,10 +141,16 @@ Gameplay scenarios that benefit from runtime material modification includes: dam
 ##### Wood Material
 <iframe width="600" height="600" src="https://blueprintue.com/render/5zp4cm7t/" scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
+
+![Wood](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/DMI/Wood%20Material.png)
 
 ##### Dynamic Panel
 <iframe width="600" height="600" src="https://blueprintue.com/render/xp2fivgm/" scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
+
+![Dynamic Panel](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/DMI/Dynamic%20Panel.png)
 
 
 
@@ -167,6 +186,9 @@ When it comes to silhouette edges, POM cannot alter the the actual geometry silh
 ##### Brick Texture
 <iframe width="600" height="600" src="https://blueprintue.com/render/chrrzmir/"   scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
+
+![Brick](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/POM/POM.png)
 
 
 
@@ -187,16 +209,50 @@ A post process material is a type of material that applies visual effects to the
 ##### Cell Shader
 <iframe width="600" height="600" src="https://blueprintue.com/render/2costsu5/" scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
+
+![Cell Shader Entire Blueprint](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Entire%20Blueprint.png)
+
+###### Cell Shading Base Colour and Lighting
+![Colour](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Base%20Colour.png)
+
+###### Cell Shading Light Bands
+![Light Bands](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Light%20Bands.png)
+
+###### Cell Shading Adding Coloured Lights Back
+![Coloured Lights](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Coloured%20Lights.png)
+
+###### Cell Shading Tint Scene and Ambient Occlusion
+![Tint Scene](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Tint%20Scene%20and%20AO.png)
+
+###### Cell Shading Exclusions 
+![Exclusions](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Exclusion.png)
 
 ##### Character Material
 <iframe width="600" height="600" src="https://blueprintue.com/render/4upsvvjy/" scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
+
+![Character Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Character%20Entire%20Blueprint.png)
+<br>
+<br>
+
+![Part 1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Character%20P1.png)
+<br>
+<br>
+
+![Part 2](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Character%20P2.png)
 
 ##### Character Outline
 <iframe width="600" height="600" src="https://blueprintue.com/render/4zd15p_q/" scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
+
+![Outline](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Outline.png)
 
 ##### Emissive Material
 <iframe width="600" height="600" src="https://blueprintue.com/render/a5raxtpb/" scrolling="no" allowfullscreen></iframe>
 <br>
+<br>
 
+![Emissive Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Emissive%20Material.png)
