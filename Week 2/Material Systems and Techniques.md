@@ -29,7 +29,26 @@ The water material uses and reacts to light in different ways to create realisti
 <iframe width="600" height="600" src="https://blueprintue.com/render/nk_eyujq/" scrolling="no" allowfullscreen></iframe>
 <br>
 
+##### Colour Blueprint
+![Colour](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Water%20Material/Colour%20Script.png)
 
+##### Shoreline Blueprint
+![Shoreline](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Water%20Material/Shoreline%20Script.png)
+
+##### Roughness Blueprint
+![Roughness](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Water%20Material/Roughness.png)
+
+##### Normals Blueprint
+![Normals](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Water%20Material/Normals.png)
+
+##### Opacity Blueprint
+![Opacity](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Water%20Material/Opacity.png)
+
+##### Refraction Blueprint
+![Refraction](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Water%20Material/Refraction.png)
+
+##### Entire Blueprint
+![Water Blueprint](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Water%20Material/Entire%20Script.png)
 
 
 ### 2. Material Parameter Collection (MPC) System    
