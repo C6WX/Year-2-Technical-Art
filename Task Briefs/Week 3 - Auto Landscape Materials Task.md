@@ -16,10 +16,10 @@ You must create a **single, sophisticated landscape material** that incorporates
 
 ### 1. Height-Based Blending System  
 **Technical Requirements:**  
-- Implement **automatic texture blending** based on world height/elevation
+- Implement **automatic texture blending** based on world height/elevation x
 - Create smooth transitions between at least **3 height zones** (e.g., valley floor, hillside, mountain peak)
-- Use **LandscapeLayerBlend** nodes with height-driven alpha masks
-- Include **transition falloff controls** for artistic adjustment
+- Use **LandscapeLayerBlend** nodes with height-driven alpha masks x
+- Include **transition falloff controls** for artistic adjustment x
 - Demonstrate **snow region**, **grass region** and **mountain region** transitions
 
 
