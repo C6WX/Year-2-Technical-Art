@@ -18,8 +18,40 @@ Height blending works with other blending systems by mixing their masks together
 
 #### Blueprints
 
-#### Images
+##### Base Layer Blueprint
+This blueprint was duplicated for all 5 material layers.
+<br>
 
+![Base Layer](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Base%20Layer%20Blueprint.png)
+
+##### UVs and depth fading 
+
+![UVs](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/UVs%20and%20depth%20fade%20mask.png)
+
+##### Tiling Variation
+
+![Tiling Variation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Tiling%20Variation.png)
+
+##### Near/Far Tiling
+
+![Near/Far Tiling](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Near%20Far%20Tiling.png)
+
+##### Material Blending
+
+![Material Blending](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Material%20Blending.png)
+
+##### Snow Mask
+
+![Snow Mask](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Snow%20Mask.png)
+
+##### Height Based Snow Blending 
+
+![Snow Blending](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Height%20Based%20Snow%20blending%20system.png)
+
+
+#### Final result
+
+[Snow Height Blending](https://youtu.be/Pi4WpL4WLGk)
 
 ### 2. Slope-Based Blending System 
 
@@ -35,7 +67,8 @@ Slope blending enhances the sense of geological realism by copying how natural e
 
 #### Blueprints
 
-#### Images
+
+#### Final result
 
 
 ### 3. Foliage Type Integration and Generation  
@@ -53,4 +86,4 @@ To balance visual richness with performance, optimising foliage placement using 
 
 #### Blueprints
 
-#### Images
+#### Final result
