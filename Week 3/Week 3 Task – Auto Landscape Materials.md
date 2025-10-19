@@ -32,6 +32,10 @@ This blueprint was duplicated for all 5 material layers.
 
 ![Tiling Variation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Tiling%20Variation.png)
 
+##### Tiling Variation Function
+
+![Tiling Variation F](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Tiling%20Variation%20Function.png)
+
 ##### Near/Far Tiling
 
 ![Near/Far Tiling](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Near%20Far%20Tiling.png)
@@ -66,6 +70,7 @@ The most natural-looking transitions are usually created on gentle slopes of abo
 Slope blending enhances the sense of geological realism by copying how natural erosion and weathering distributes materials differently on steep versus flat surfaces. It ensures the flat surfaces will be covered in grass whereas steeper surfaces will be covered in rock.
 
 #### Blueprints
+
 
 
 #### Final result
