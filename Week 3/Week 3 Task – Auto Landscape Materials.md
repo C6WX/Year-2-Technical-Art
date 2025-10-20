@@ -109,3 +109,18 @@ To balance visual richness with performance, optimising foliage placement using 
 #### Blueprints
 
 #### Final result
+
+
+### 4. Extras
+
+
+#### Blueprints
+
+
+##### Colour Variation
+
+
+##### Tiling Variation 
+
+
+##### Puddles
