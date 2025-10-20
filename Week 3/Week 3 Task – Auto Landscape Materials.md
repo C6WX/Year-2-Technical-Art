@@ -108,7 +108,10 @@ To balance visual richness with performance, optimising foliage placement using 
 
 #### Blueprints
 
+
+
 #### Final result
+
 
 
 ### 4. Extras
@@ -124,3 +127,6 @@ To balance visual richness with performance, optimising foliage placement using 
 
 
 ##### Puddles
+
+
+##### Rocks Using Grass Types
