@@ -128,11 +128,46 @@ To balance visual richness with performance, optimising foliage placement using 
 
 ##### Colour Variation
 
+![Colour Variation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Colour%20Variation.png)
+<br>
+<br>
+
+###### Before
+
+![CV Before](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Colour%20Variation%20Before.png)
+
+###### After
+
+![CV After](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Colour%20Variation%20After.png)
 
 ##### Tiling Variation 
 
+![Tiling Variation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Tiling%20Variation.png)
+
+###### Before
+
+![TV Before](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Tiling%20Variation%20Before.png)
+
+###### After
+
+![TV After](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Tiling%20Variation%20After.png)
 
 ##### Puddles
 
+![Puddles](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Puddles.png)
+
+###### Before
+
+![Puddles Before](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Puddles%20Before.png)
+
+###### After
+
+![Puddles After](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Puddles%20After.png)
 
 ##### Rocks Using Grass Types
+
+![Rocks Using Grass Types](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Rocks%20Using%20Grass%20Type.png)
+<br>
+<br>
+
+![Rocks](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Rocks.png)
