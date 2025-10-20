@@ -18,9 +18,9 @@ Height blending works with other blending systems by mixing their masks together
 
 #### Blueprints
 
-##### Base Layer Blueprint
+##### Ground Layer Blueprint
 
-![Base Layer](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Base%20Layer%20Blueprint.png)
+![Base Layer](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Ground%20Layer.png)
 
 ##### Snow Layer
 
@@ -44,7 +44,7 @@ Height blending works with other blending systems by mixing their masks together
 
 ##### Material Blending
 
-![Material Blending](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Material%20Blending.png)
+![Material Blending](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%201/Material%20Blending%20V2.png)
 
 ##### Snow Mask
 
@@ -108,11 +108,17 @@ To balance visual richness with performance, optimising foliage placement using 
 
 #### Blueprints
 
+##### Physical Material Output Setup
 
+![Physical Material Output Setup](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%203/Physical%20Material%20Output%20Setup.png)
+
+##### PCG Graph
+
+![PCG Graph](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Task%203/PCG%20Graph.png)
 
 #### Final result
 
-
+[PCG Foliage](https://youtu.be/kLMtKnpIvwU)
 
 ### 4. Extras
 
