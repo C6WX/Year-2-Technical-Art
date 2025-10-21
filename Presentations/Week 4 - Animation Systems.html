@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TextSlideV2 – Modern Minimal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    
+/* Theme: Modern Minimal */
+:root {
+  --color-primary: #3b82f6;
+  --color-secondary: #8b5cf6;
+  --color-background: #fafafa;
+  --color-background-secondary: #f3f4f6;
+  --color-foreground: #1f2937;
+  --color-accent: #10b981;
+  --color-muted: #64748b;
+  --font-family-primary: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-family-secondary: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 2rem;
+  --font-size-h4: 1.5rem;
+  --font-size-body: 1.125rem;
+  --font-size-quote: 1rem;
+  --font-size-footer: 0.875rem;
+  --font-size-small: 1rem;
+  --color-bold: #111827;
+  --color-italic: #334155;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --spacing-section: 3rem;
+  --spacing-element: 1.5rem;
+  --slide-padding: 3rem;
+  --border-radius: 0.5rem;
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --ts-border-color: rgba(226, 232, 240, 0.8);
+  --ts-divider-color: #e5e7eb;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-secondary, 'Inter', sans-serif);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Presentation container */
+.presentation {
+  width: 100%;
+  min-height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+/* Slide styles */
+.slide {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  padding: var(--slide-padding, 3rem);
+  background: linear-gradient(135deg, #fafafa, #f3f4f6);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: var(--shadow-card, 0 10px 25px -5px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Typography */
+.slide h1 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h1, 3.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #3b82f6;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0 0 var(--spacing-element, 1.5rem) 0;
+}
+
+.slide h2 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h2, 2.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #3b82f6;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--ts-divider-color, #e5e7eb);
+  margin: var(--spacing-element, 1.5rem) 0 var(--spacing-element, 1.5rem) 0;
+}
+
+.slide h3 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h3, 2rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: var(--spacing-element, 1.5rem) 0 1rem 0;
+}
+
+.slide h4 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h4, 1.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: 1rem 0 0.75rem 0;
+}
+
+.slide h5, .slide h6 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h4, 1.25rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.slide p {
+  font-size: var(--font-size-body, 1.125rem);
+  font-weight: var(--font-weight-body, 400);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.slide ul, .slide ol {
+  font-size: var(--font-size-body, 1.125rem);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.slide li {
+  margin-bottom: 0.5rem;
+}
+
+/* Improved list marker contrast and spacing */
+.slide ul li::marker, .slide ol li::marker {
+  color: var(--color-accent, #3b82f6);
+  font-weight: 600;
+}
+
+/* Text styling */
+.slide strong, .slide b {
+  color: var(--color-bold, #1f2937);
+  font-weight: 700;
+}
+
+.slide em, .slide i {
+  color: var(--color-italic, #1f2937);
+  font-style: italic;
+}
+
+.slide code {
+  font-family: var(--font-family-mono, 'JetBrains Mono', monospace);
+  font-size: 0.9em;
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.slide pre {
+  font-family: var(--font-family-mono, 'JetBrains Mono', monospace);
+  background: #f8fafc;
+  color: #1e293b;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+}
+
+.slide pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Layout containers */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container styles */
+.info, .warning, .error, .success {
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  margin: 1rem 0;
+  border-left: 4px solid;
+}
+
+.info {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.warning {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.error {
+  background: #fee2e2;
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+.success {
+  background: #d1fae5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+/* Links */
+.slide a {
+  color: #3b82f6;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.slide a:hover {
+  border-bottom-color: #3b82f6;
+}
+
+/* Images */
+.slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+.slide table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.slide th,
+.slide td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.slide th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Blockquotes */
+.slide blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  font-size: var(--font-size-quote, 1rem);
+  color: #64748b;
+}
+
+/* Enhanced custom containers */
+.info-box {
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+  border-radius: var(--border-radius, 0.5rem);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #3b82f6;
+}
+
+.info-box h1, .info-box h2, .info-box h3, .info-box h4, .info-box h5, .info-box h6 {
+  color: #3b82f6;
+  margin-top: 0;
+}
+
+.presentation-header, .presentation-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: var(--font-size-footer, 0.875rem);
+  color: #64748b;
+  border-top: 1px solid #e2e8f0;
+  margin: 2rem 0 1rem 0;
+}
+
+.presentation-header {
+  border-top: none;
+  border-bottom: 1px solid #e2e8f0;
+  margin: 1rem 0 2rem 0;
+}
+
+/* Enhanced multi-column layouts */
+.three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.two-columns .col, .three-columns .col {
+  min-width: 0;
+}
+
+/* Widget containers */
+.widget-container {
+  margin: 2rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.widget-container iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.widget-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Citations */
+.ts-citation {
+  font-size: var(--font-size-quote, 0.875rem);
+  color: #64748b;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .two-columns, .three-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .widget-container {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .widget-container iframe {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+
+    body { margin: 0; padding: 0; }
+    html { font-size: 80%; }
+
+    /* Deck modes */
+    body.presentation-mode { background: #000; overflow: hidden; }
+    .presentation-mode .presentation {
+      position: fixed; inset: 0; padding: 0; gap: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .presentation-mode .stage {
+      width: 1280px; height: 720px; position: relative;
+      transform-origin: center center;
+      display: grid; grid-template-rows: 1fr auto; align-items: stretch; justify-items: stretch;
+    }
+    .presentation-mode .stage .stage-slide-wrap { position: relative; grid-row: 1; width: 100%; height: 100%; }
+    .presentation-mode .stage .stage-footer {
+      grid-row: 2; width: 100%; margin: 0; background: transparent;
+      padding: 0; /* no separator gap; flush to slides */
+      padding-left: var(--slide-pad-x, var(--slide-padding, clamp(12px, 35%, 256px))); /* align with slide content */
+      font-size: 0.7rem; /* compact footer */
+      text-align: left; z-index: 60;
+    }
+    /* Normalize cloned footer content: no borders/extra spacing, left aligned */
+    .presentation-mode .stage .stage-footer .presentation-footer,
+    .presentation-mode .stage .stage-footer .ts-global-footer {
+      border: 0 !important; border-top: 0 !important; background: transparent !important;
+      margin: 0 !important; padding: 0 !important; text-align: left !important;
+    }
+    .presentation-mode .stage .stage-footer > * { margin-left: 0 !important; margin-right: 0 !important; }
+    .presentation-mode .slide {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; margin: 0; padding: var(--slide-padding, clamp(12px, 35%, 256px));
+      opacity: 0; transition: opacity .25s ease; overflow: hidden;
+      display: grid; grid-template-rows: 1fr auto; align-items: stretch; justify-items: stretch;
+      align-content: stretch; justify-content: stretch; row-gap: 0; column-gap: 0;
+      box-sizing: border-box;
+    }
+    .presentation-mode .slide.active { opacity: 1; }
+    /* Ensure only the active slide is interactive and on top */
+    .presentation-mode .slide { pointer-events: none; z-index: 0; }
+    .presentation-mode .slide.active { pointer-events: auto; z-index: 10; }
+
+    .scroll-mode .presentation { padding: 2rem 1rem; gap: 2rem; }
+    .scroll-mode .stage { width: 100%; height: auto; transform: none; position: static; }
+    .scroll-mode .slide { position: relative; opacity: 1; transform: none; width: 100%; margin: 0 auto; display:flex; justify-content:center; align-items:center; }
+    /* Remove max constraints from slides in both modes */
+    .presentation-mode .slide, .scroll-mode .slide { max-width: none !important; max-height: none !important; }
+
+
+    /* Present-mode: slides are absolutely stacked and clip content; a dedicated viewport scrolls above footer */
+    .presentation-mode .slide { overflow: hidden; }
+    .presentation-mode .slide .slide-viewport {
+      position: relative;
+      grid-row: 1 / 2;
+      width: 100%;
+      min-height: 0; min-width: 0; /* allow 1fr track to shrink for footer */
+      overflow: auto;
+      box-sizing: border-box;
+    }
+    .presentation-mode .slide .slide-viewport::-webkit-scrollbar { width: 0; height: 0; }
+
+    /* Arrows: permanent when overflow; JS toggles display none/flex. No hover/opacity transitions. */
+    .presentation-mode .slide .slide-arrows {
+      position: absolute;
+      top: var(--slide-padding, clamp(12px, 35%, 256px));
+      bottom: var(--slide-padding, clamp(12px, 35%, 256px));
+      right: 8px;
+      width: 24px;
+      pointer-events: none;
+      display: none; /* shown as flex by JS when overflow exists */
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 70;
+    }
+    .presentation-mode .slide .slide-arrows .arrow {
+      width: 22px; height: 22px; border-radius: 999px;
+      background: rgba(0,0,0,.35); color: #fff;
+      font-size: 12px; line-height: 22px; text-align: center;
+      pointer-events: auto; cursor: pointer; user-select: none;
+      box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    }
+    .presentation-mode .slide .slide-arrows .arrow:active { transform: scale(.95); }
+
+    .presentation-mode .slide .ts-global-footer,
+    .presentation-mode .slide .presentation-footer { display: none !important; }
+
+    /* Controls */
+    .export-controls {
+      position: fixed; bottom: 8px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,255,255,.95); backdrop-filter: blur(10px);
+      border: 1px solid #e5e7eb; border-radius: 6px; padding: 4px 8px;
+      display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px -2px rgba(0,0,0,.1); z-index: 1000;
+      font-family: Inter, system-ui, sans-serif; font-size: 11px;
+    }
+    .export-controls button { background: #3b82f6; color: #fff; border: 0; border-radius: 4px; padding: 3px 6px; font-size: 10px; font-weight: 600; cursor: pointer; }
+    .export-controls button:hover { background: #2563eb; }
+    .export-controls .view-mode-btn { background: #6b7280; }
+    .export-controls .view-mode-btn:hover { background: #4b5563; }
+    .slide-counter { min-width: 44px; text-align: center; color: #374151; font-weight: 600; }
+
+    /* Print */
+    @media print {
+      .export-controls { display: none !important; }
+      .presentation { padding: 0 !important; gap: 0 !important; }
+      .slide { page-break-after: always; position: relative !important; transform: none !important; opacity: 1 !important; width: 100% !important; height: 100vh !important; }
+    }
+  </style>
+</head>
+<body class="presentation-mode">
+  <div class="presentation"><section class="slide" data-slide-index="0"><h1>Week 4: Animation Systems</h1>
+<div class="info-box"><h3><strong>Session Objectives</strong></h3>
+<ul>
+<li>Understand skeletal mesh fundamentals, rigging, skinning, FK vs IK</li>
+<li>Understand how to implement animation retargeting for character reuse</li>
+<li>Build complete Animation Blueprints for game characters</li>
+<li>Understand how to create practical game systems: aiming, leaning, combat etc.</li>
+<li>Understand how to use additive animations for dynamic gameplay</li>
+<li>Understand how to manipulate animations at runtime with bone transforms</li>
+</ul>
+</div>
+<h2>Table of Contents</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<p><strong>1.</strong> Skeletal Mesh Fundamentals</p>
+<p><strong>2.</strong> Rigging &amp; Skinning Basics</p>
+<p><strong>3.</strong> FK vs IK Concepts</p>
+<p><strong>4.</strong> IK Rig &amp; Retargeting</p>
+<p><strong>5.</strong> Animation Blueprints</p>
+        </div>
+      </div>
+<div class="col">
+<p><strong>6.</strong> State Machines &amp; Blend Spaces</p>
+<p><strong>7.</strong> Montages, Slots &amp; Layering</p>
+<p><strong>8.</strong> Additive Animations &amp; Aim Offsets</p>
+<p><strong>9.</strong> Runtime Animation Manipulation</p>
+</div>
+</div><div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="1"><h1>Skeletal Mesh Fundamentals</h1>
+<h2>What is a Skeletal Mesh?</h2>
+<p><strong>The Foundation of Character Animation</strong></p>
+<p>A skeletal mesh is a 3D model with an internal bone structure (skeleton) that allows it to deform and animate.</p>
+<h3>Key Components:</h3>
+<ul>
+<li><strong>Mesh (Geometry)</strong> - The visible 3D surface</li>
+<li><strong>Skeleton (Bones)</strong> - Internal hierarchical bone structure</li>
+<li><strong>Skin Weights</strong> - How mesh vertices follow bones</li>
+<li><strong>Materials</strong> - Visual appearance and textures</li>
+</ul>
+<h2>Skeleton Hierarchy</h2>
+<p><strong>Understanding Bone Structure</strong></p>
+<p>Skeletons are organized in a parent-child hierarchy, where child bones inherit transformations from their parents.</p>
+<h3>Typical Character Skeleton:</h3>
+<pre><code>Root
+└── Pelvis (Hips)
+    ├── Spine_01
+    │   ├── Spine_02
+    │   │   ├── Spine_03
+    │   │   │   ├── Neck
+    │   │   │   │   └── Head
+    │   │   │   ├── LeftShoulder
+    │   │   │   │   └── LeftUpperArm
+    │   │   │   │       └── LeftForearm
+    │   │   │   │           └── LeftHand
+    │   │   │   └── RightShoulder
+    │   │   │       └── RightUpperArm
+    │   │   │           └── RightForearm
+    │   │   │               └── RightHand
+    ├── LeftThigh
+    │   └── LeftCalf
+    │       └── LeftFoot
+    └── RightThigh
+        └── RightCalf
+            └── RightFoot
+</code></pre>
+<h3>Hierarchy Rules:</h3>
+<ul>
+<li><strong>Parent transforms affect children</strong> - Moving shoulder moves entire arm</li>
+<li><strong>Root bone</strong> - Base of hierarchy, controls overall position</li>
+<li><strong>End effectors</strong> - Terminal bones (hands, feet, head)</li>
+</ul>
+<h2>Bone Transforms</h2>
+<p><strong>How Bones Control Animation</strong></p>
+<p>Each bone has three transformation properties that control its position and orientation:</p>
+<h3>Transform Components:</h3>
+<ol>
+<li><strong>Location (Translation)</strong> - Position in 3D space</li>
+<li><strong>Rotation</strong> - Orientation (pitch, yaw, roll)</li>
+<li><strong>Scale</strong> - Size (rarely animated for bones)</li>
+</ol>
+<h3>Transform Spaces:</h3>
+<ul>
+<li><strong>Local Space</strong> - Relative to parent bone</li>
+<li><strong>Component Space</strong> - Relative to skeletal mesh root</li>
+<li><strong>World Space</strong> - Absolute position in game world</li>
+</ul>
+<h2>Rigging &amp; Skinning Basics</h2>
+<h3>What is Rigging?</h3>
+<p><strong>Creating the Control Structure</strong></p>
+<p>Rigging is the process of creating a skeleton and defining how it controls the mesh for animation.</p>
+<figure>
+  <img src="https://chezman88.wordpress.com/wp-content/uploads/2012/11/skeleton.jpg"
+       alt="Skeleton rig example"
+       style="max-width:100%;height:auto;display:block;margin:0 auto;">
+  <figcaption style="font-size:0.9em;margin-top:0.5em;text-align:center;">
+    Chezman88 (2012) 'Character rigging in Maya', Chezman88, 19 November. Available at: https://chezman88.wordpress.com/2012/11/19/character-rigging-in-maya/ (Accessed: 20 October 2025).
+  </figcaption>
+</figure>
+<h3>Rigging Process:</h3>
+<ol>
+<li><strong>Skeleton Creation</strong> - Place bones inside the mesh</li>
+<li><strong>Bone Naming</strong> - Consistent naming conventions</li>
+<li><strong>Hierarchy Setup</strong> - Parent-child relationships</li>
+<li><strong>Orientation</strong> - Align bone axes properly</li>
+<li><strong>Constraints</strong> - Define movement limitations</li>
+</ol>
+<h2>Skinning (Weight Painting)</h2>
+<figure>
+  <img src="https://forums.autodesk.com/t5/image/serverpage/image-id/400123iD43FAD1115D8AF1A?v=v2"
+       alt="Maya skin weight painting example"
+       style="max-width:100%;height:auto;display:block;margin:0 auto;">
+  <figcaption style="font-size:0.9em;margin-top:0.5em;text-align:center;">
+    Autodesk Forums user (2017) ‘Painting skin weight tips’, Autodesk Forums, [online] available at: https://forums.autodesk.com/t5/maya-animation-and-rigging-forum/painting-skin-weight-tips/td-p/7370689 (Accessed: 20 October 2025).
+  </figcaption>
+</figure>
+<p><strong>Binding Mesh to Skeleton</strong></p>
+<p>Skinning defines how mesh vertices follow bone movements through weight values (0.0 to 1.0).</p>
+<h3>How Skinning Works:</h3>
+<ul>
+<li>Each vertex can be influenced by multiple bones</li>
+<li><strong>Weight values</strong> determine influence strength</li>
+<li>Sum of all weights per vertex must equal 1.0</li>
+<li>More influences = smoother deformation but higher cost</li>
+</ul>
+<h2>Forward Kinematics (FK) vs Inverse Kinematics (IK)</h2>
+<h3>Forward Kinematics (FK)</h3>
+<figure>
+  <img src="https://courses.cs.washington.edu/courses/cse459/19au/tutorials/productionrig/images/fk_arm.png"
+       alt="FK arm rig example"
+       style="max-width:100%;height:auto;display:block;margin:0 auto;">
+  <figcaption style="font-size:0.9em;margin-top:0.5em;text-align:center;">
+University of Washington CSE459 (2019) ‘Production rig tutorial’, University of Washington, [online] available at: https://courses.cs.washington.edu/courses/cse459/19au/tutorials/productionrig/ (Accessed: 20 October 2025).
+  </figcaption>
+</figure>
+<p><strong>Parent-to-Child Animation</strong></p>
+<p>FK is the traditional animation method where you rotate each bone individually, and child bones follow their parents.</p>
+<h3>How FK Works:</h3>
+<pre><code>Rotate Shoulder → UpperArm moves
+Rotate UpperArm → Forearm moves
+Rotate Forearm → Hand moves
+</code></pre>
+<h2>Inverse Kinematics (IK)</h2>
+<p><strong>Goal-Driven Animation</strong></p>
+<p>IK works backwards: you position the end effector (hand/foot), and the system calculates required bone rotations automatically.</p>
+<figure>
+  <img src="https://learn.foundry.com/modo/17.0/content/resources/images/animation/ik_fk_planar_ik.gif"
+       alt="IK/FK planar IK switching in Modo"
+       style="max-width:100%;height:auto;display:block;margin:0 auto;">
+  <figcaption style="font-size:0.9em;margin-top:0.5em;text-align:center;">
+    Animation: Modo (The Foundry Visionmongers Ltd) (n.d.) ‘Planar IK / IK-FK switch’, The Foundry Learn. Available at: https://learn.foundry.com/modo/17.0/content/help/pages/animation/modifiers/planar_ik.html (Accessed: 20 October 2025).  
+  </figcaption>
+</figure>
+<h3>How IK Works:</h3>
+<pre><code>Position Hand at target → System calculates:
+- Forearm rotation
+- UpperArm rotation
+- Shoulder rotation
+</code></pre>
+<h3>Best Use Cases:</h3>
+<ul>
+<li>Foot placement on terrain</li>
+<li>Hand reaching for objects</li>
+<li>Holding Weapons</li>
+<li>Procedural adaptation</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="2"><h1>IK Rig &amp; Retargeter Setup</h1>
+<h2>What is IK Rig?</h2>
+<p><strong>Unreal Engine’s IK System for Animation Retargeting</strong></p>
+<p>IK Rig is Unreal Engine’s system that combines IK solving with animation retargeting, enabling animation sharing between different skeletal meshes.</p>
+<figure>
+  <img src="https://miica37.github.io/images/common/retargeting/ik-retargeter-window.jpg"
+       alt="IK-Retargeter window screenshot"
+       style="max-width:100%; height:auto; display:block; margin:0 auto;">
+  <figcaption style="font-size:0.9em; margin-top:0.5em; text-align:center;">
+    Image: Miica37 (n.d.). Harvard reference: Miica37 (n.d.) ‘Animations & Retargeting’, Miica37, [online] available at: https://miica37.github.io/docs/unreal-characters/animations-retargeting (Accessed: 20 October 2025).
+  </figcaption>
+</figure>
+<div class="info-box"><h3>Key Components:</h3>
+<ul>
+<li><strong>IK Rig Asset</strong> = Defines bones, chains, and goals for a character</li>
+<li><strong>IK Retargeter Asset</strong> = Maps animations between source and target rigs</li>
+<li><strong>Bone Chains</strong> = Logical groupings (spine, legs, arms) for IK solving</li>
+<li><strong>IK Goals</strong> = Target positions for chain endpoints (hands, feet)</li>
+</ul>
+</div>
+<h2>IK Rig Setup Process</h2>
+<p><strong>Step-by-Step Character Setup</strong></p>
+<h3>1. Create IK Rig Asset</h3>
+<ol>
+<li>Right-click in Content Browser → Animation → IK Rig</li>
+<li>Select your Skeletal Mesh</li>
+<li>Name appropriately (e.g., <code>IKRig_MyCharacter</code>)</li>
+</ol>
+<h3>2. Define Bone Chains</h3>
+<ul>
+<li><strong>Spine Chain:</strong> Pelvis → Spine → Chest → Neck → Head</li>
+<li><strong>Left Leg:</strong> LeftThigh → LeftShin → LeftFoot</li>
+<li><strong>Right Leg:</strong> RightThigh → RightShin → RightFoot</li>
+<li><strong>Left Arm:</strong> LeftShoulder → LeftUpperArm → LeftForearm → LeftHand</li>
+<li><strong>Right Arm:</strong> RightShoulder → RightUpperArm → RightForearm → RightHand</li>
+</ul>
+<h3>3. Set IK Goals</h3>
+<ul>
+<li>Foot IK Goals for ground contact</li>
+<li>Hand IK Goals for object interaction</li>
+</ul>
+<p><strong>Sharing Animations Between Different Skeletons</strong></p>
+<p>Animation retargeting transfers animations from one skeleton to another, automatically adapting for different proportions and bone structures.</p>
+<h3>The Problem Retargeting Solves:</h3>
+<p>Without retargeting, you would need to:</p>
+<ul>
+<li>❌ Manually recreate every animation for each character</li>
+<li>❌ Maintain separate animation libraries per character</li>
+<li>❌ Spend enormous time on repetitive animation work</li>
+</ul>
+<p>With retargeting, you can:</p>
+<ul>
+<li>✅ Create animations once, use on multiple characters</li>
+<li>✅ Share animation libraries across projects</li>
+<li>✅ Quickly prototype with existing animations</li>
+<li>✅ Purchase animation packs and use on custom characters</li>
+</ul>
+<h2>IK Retargeter Setup</h2>
+<p><strong>Connecting Source and Target Characters</strong></p>
+<h3>Creating the Retargeter:</h3>
+<ol>
+<li><strong>Right-click</strong> in Content Browser → Animation → <strong>IK Retargeter</strong></li>
+<li>Set <strong>Source IK Rig</strong> (e.g., Manny’s IK Rig)</li>
+<li>Set <strong>Target IK Rig</strong> (your character’s IK Rig)</li>
+<li>Configure <strong>Chain Mapping</strong> (match source chains to target chains)</li>
+<li>Set <strong>Retarget Pose</strong> for both characters (critical!)</li>
+</ol>
+<h3>Chain Mapping:</h3>
+<p>The retargeter needs to know which chains correspond between characters:</p>
+<pre><code>Source Chain    →    Target Chain
+Spine           →    Spine
+LeftLeg         →    LeftLeg
+RightLeg        →    RightLeg
+LeftArm         →    LeftArm
+RightArm        →    RightArm
+Head            →    Head
+</code></pre>
+<div class="info-box"><p>Chain mapping tells the system “this character’s left leg corresponds to that character’s left leg”</p>
+</div><div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="3"><h1>Animation Blueprint (ABP) Overview</h1>
+<figure>
+  <img src="https://docs.unamedia.com/_media/ue5-mixamo/third-person-abp-cr.jpg?w=800&tok=1875fa"
+       alt="UE5 Mixamo Third Person Template screenshot"
+       style="max-width:100%;height:auto;display:block;margin:0 auto;">
+  <figcaption style="font-size:0.9em;margin-top:0.5em;text-align:center;">
+    UNAmedia (2022) ‘Working with the Third Person Template’, UNAmedia Knowledge Base. Available at: https://docs.unamedia.com/_export/xhtml/ue5-mixamo/third-person-template (Accessed: 20 October 2025).  
+  </figcaption>
+</figure>
+<h2>What is an Animation Blueprint?</h2>
+<p><strong>The “Brain” of Character Animation</strong></p>
+<p>Animation Blueprints control how animations play, blend, and transition based on game logic and character state.</p>
+<h3>Two Main Components:</h3>
+<ol>
+<li><strong>Event Graph</strong> - Logic layer (variables, calculations, events)</li>
+<li><strong>Anim Graph</strong> - Visual animation flow (blend spaces, states, montages)</li>
+</ol>
+<div class="info-box"><p>ABP receives data from gameplay code and translates it into animation decisions</p>
+</div>
+<h2>Animation Blueprint Architecture</h2>
+<p><strong>Understanding the Flow</strong></p>
+<h3>Data Flow:</h3>
+<pre><code>Game Logic → Character Movement → ABP Variables → Anim Graph → Final Pose
+</code></pre>
+<h3>Common Variables:</h3>
+<ul>
+<li><strong>Speed</strong> - Character movement velocity</li>
+<li><strong>IsInAir</strong> - Jumping/falling state</li>
+<li><strong>Direction</strong> - Movement direction relative to character</li>
+<li><strong>IsCrouching</strong> - Crouch state</li>
+<li><strong>IsAiming</strong> - Weapon aiming state</li>
+</ul>
+<h3>Event Graph Functions:</h3>
+<ul>
+<li>Update movement variables every frame</li>
+<li>Handle animation events and notifies</li>
+<li>Communicate with gameplay systems</li>
+<li>Manage animation state changes</li>
+</ul>
+<h2>ABP Event Graph Essentials</h2>
+<p><strong>Core Logic Implementation</strong></p>
+<h3>Essential Nodes:</h3>
+<ul>
+<li><strong>Event Blueprint Update Animation</strong> - Called every frame</li>
+<li><strong>Try Get Pawn Owner</strong> - Get reference to character</li>
+<li><strong>Get Velocity</strong> - Character movement speed</li>
+<li><strong>Vector Length</strong> - Convert velocity to speed value</li>
+<li><strong>Is Falling</strong> - Check if character is airborne</li>
+</ul>
+<h3>Example Setup:</h3>
+<pre><code class="language-cpp">Event Blueprint Update Animation
+→ Try Get Pawn Owner
+→ Get Character Movement Component
+→ Get Velocity → Vector Length → Set Speed
+→ Is Falling → Set IsInAir
+</code></pre>
+<h2>State Machines &amp; Transitions</h2>
+<h3>What are State Machines?</h3>
+<figure>
+  <img src="https://static.packt-cdn.com/products/9781803239866/graphics/image/Figure_2.41_B18531.jpg"
+       alt="Figure 2.41 from Elevating Game Experiences with Unreal Engine 5"
+       style="max-width:100%;height:auto;display:block;margin:0 auto;">
+  <figcaption style="font-size:0.9em;margin-top:0.5em;text-align:center;">
+    Marques, G., Sherry, D., Pereira, D. & Fozi, H. (2022) *Elevating Game Experiences with Unreal Engine 5: Bring your game ideas to life using the new Unreal Engine 5 and C++*, 2nd edn., Packt Publishing. Available at: https://www.packtpub.com/en-us/product/elevating-game-experiences-with-unreal-engine-5-9781803239866 (Accessed: 20 October 2025).
+  </figcaption>
+</figure>
+<p><strong>Organized Animation State Management</strong></p>
+<p>State Machines organize animations into logical states (Idle, Walk, Jump) and define rules for transitioning between them.</p>
+<h3>Key Components:</h3>
+<ul>
+<li><strong>States</strong> - Individual animation states (Idle, Walk, Run, Jump)</li>
+<li><strong>Transitions</strong> - Rules for moving between states</li>
+<li><strong>Entry State</strong> - Default starting animation</li>
+<li><strong>Conduits</strong> - Complex transition logic hubs</li>
+</ul>
+<h2>Basic Locomotion State Machine</h2>
+<p><strong>Essential Movement States</strong></p>
+<h3>Core States:</h3>
+<ol>
+<li><strong>Idle</strong> - Character standing still</li>
+<li><strong>Walk</strong> - Slow movement</li>
+<li><strong>Run</strong> - Fast movement</li>
+<li><strong>Jump Start</strong> - Beginning of jump</li>
+<li><strong>Jump Loop</strong> - Airborne state</li>
+<li><strong>Jump End</strong> - Landing</li>
+</ol>
+<h3>Transition Rules:</h3>
+<pre><code>Idle → Walk: Speed > 0.1
+Walk → Run: Speed > 300
+Run → Walk: Speed < 250
+Any → Jump Start: IsInAir && !WasInAir
+Jump Start → Jump Loop: Time > 0.2
+Jump Loop → Jump End: !IsInAir
+Jump End → Idle: Time > 0.3 && Speed < 0.1
+</code></pre>
+<h1>Blend Spaces (1D &amp; 2D)</h1>
+<figure>
+  <img src="https://www.versluis.com/wp-content/uploads/2023/02/image-53.png"
+       alt="Blend Space setup screenshot in Unreal Engine 5.1"
+       style="max-width:100%; height:auto; display:block; margin:0 auto;">
+  <figcaption style="font-size:0.9em; margin-top:0.5em; text-align:center;">
+    Versluis, J. (2023) ‘Setting up a Blend Space in Unreal Engine 5.1’, Versluis, 20 February. Available at: https://www.versluis.com/2023/02/setting-up-a-blend-space-in-unreal-engine-5-1/ (Accessed: 20 October 2025).
+  </figcaption>
+</figure>
+<h2>What are Blend Spaces?</h2>
+<p><strong>Smooth Animation Blending Based on Variables</strong></p>
+<p>Blend Spaces smoothly interpolate between multiple animations based on input parameters, creating natural movement variations.</p>
+<h3>Types:</h3>
+<ul>
+<li><strong>1D Blend Space</strong> - Single input axis (e.g., Speed)</li>
+<li><strong>2D Blend Space</strong> - Two input axes (e.g., Speed + Direction)</li>
+</ul>
+<h2>1D Blend Space Example</h2>
+<p><strong>Speed-Based Locomotion</strong></p>
+<h3>Setup:</h3>
+<ul>
+<li><strong>Horizontal Axis:</strong> Speed (0 to 600)</li>
+<li><strong>Sample Points:</strong>
+<ul>
+<li>0: Idle animation</li>
+<li>150: Walk animation</li>
+<li>400: Jog animation</li>
+<li>600: Sprint animation</li>
+</ul>
+</li>
+</ul>
+<h3>Result:</h3>
+<p>Character smoothly transitions from idle → walk → jog → sprint based on movement speed.</p>
+<h3>Implementation:</h3>
+<ol>
+<li>Create Blend Space 1D asset</li>
+<li>Set axis range and name</li>
+<li>Add animation samples at key points</li>
+<li>Use in State Machine or directly in Anim Graph</li>
+</ol>
+<h2>2D Blend Space Example</h2>
+<p><strong>Speed + Direction Locomotion</strong></p>
+<h3>Setup:</h3>
+<ul>
+<li><strong>Horizontal Axis:</strong> Speed (0 to 600)</li>
+<li><strong>Vertical Axis:</strong> Direction (-180 to 180 degrees)</li>
+</ul>
+<h3>result:</h3>
+<ul>
+<li>Natural directional movement</li>
+<li>Smooth transitions between directions</li>
+<li>Eliminates need for separate directional states</li>
+</ul>
+<h2>Animation Notifies &amp; Sync Groups</h2>
+<h3>Animation Notifies</h3>
+<figure>
+  <img src="https://img.edc-cdn.net/imgproxy/vOUu4Tli_gjM_35U-31qCxNVDFAq6j9zhBrT0txqREQ/filename:bannerimage.png/resizing_type:fill/width:1920/height:335/aHR0cHM6Ly9kMWl2N2RiNDR5aGd4bi5jbG91ZGZyb250Lm5ldC9kb2N1bWVudGF0aW9uL2ltYWdlcy82NDI2ZjMzOC1mY2YyLTRlYTktOGFlNi0zZDM1NDY5ZGEyOTYvYmFubmVyaW1hZ2UucG5n"
+       alt="Animation Notifies in Unreal Engine banner"
+       style="max-width:100%; height:auto; display:block; margin:0 auto;">
+  <figcaption style="font-size:0.9em; margin-top:0.5em; text-align:center;">
+    Epic Games (n.d.) ‘Animation Notifies in Unreal Engine’, Epic Games Developer Documentation. Available at: https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-notifies-in-unreal-engine (Accessed: 20 October 2025).
+  </figcaption>
+</figure>
+<p><strong>Timed Events Within Animations</strong></p>
+<p>Animation Notifies trigger events at specific points in animations, enabling synchronized audio, effects, and gameplay logic.</p>
+<h3>Common Use Cases:</h3>
+<ul>
+<li><strong>Footstep sounds</strong> - Audio cues for walking/running</li>
+<li><strong>Particle effects</strong> - Dust clouds, sparks, magic effects</li>
+<li><strong>Gameplay events</strong> - Weapon fire, damage dealing</li>
+<li><strong>Camera shakes</strong> - Impact feedback</li>
+<li><strong>Material changes</strong> - Footprint decals, surface interactions</li>
+</ul>
+<h2>Notify Types</h2>
+<p><strong>Different Event Categories</strong></p>
+<h3>Animation Notify:</h3>
+<ul>
+<li><strong>Single point in time</strong> - Instant event</li>
+<li><strong>Examples:</strong> Footstep sound, muzzle flash</li>
+<li><strong>Implementation:</strong> Custom Blueprint or C++ class</li>
+</ul>
+<h3>Animation Notify State:</h3>
+<ul>
+<li><strong>Duration-based</strong> - Start and end events</li>
+<li><strong>Examples:</strong> Weapon trail, invincibility frames</li>
+<li><strong>Methods:</strong> NotifyBegin, NotifyTick, NotifyEnd</li>
+</ul>
+<h3>Built-in Notifies:</h3>
+<ul>
+<li><strong>Play Sound</strong> - Audio playback</li>
+<li><strong>Play Particle Effect</strong> - VFX spawning</li>
+<li><strong>Camera Shake</strong> - Screen shake effects</li>
+</ul>
+<h2>Sync Groups</h2>
+<figure>
+  <img src="https://tse1.mm.bing.net/th/id/OIP.LHd_4TTqtm6ZZDF44s1PcgHaDl?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+       alt="Sync Group markers screenshot – Unreal Engine"
+       style="max-width:100%;height:auto;display:block;margin:0 auto;">
+  <figcaption style="font-size:0.9em;margin-top:0.5em;text-align:center;">
+    Epic Games (n.d.) ‘Sync Groups’, Unreal Engine Documentation. Available at: https://www.bing.com/images/search?view=detailV2&ccid=LHd%2F4TTq&id=D571C6DB5C18199D8A404F9C440CE3459B9A4A4D&thid=OIP.LHd_4TTqtm6ZZDF44s1PcgHaDl&mediaurl=https%3A%2F%2Fd1iv7db44yhgxn.cloudfront.net%2Fdocumentation%2Fimages%2Fc4775162-b760-4d05-a192-5ecf9eb4ca64%2Fmarkers2.png&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.2c777fe134eab66e99643178e2cd4f72%3Frik%3DTUqam0XjDEScTw%26pid%3DImgRaw%26r%3D0&exph=379&expw=783&q=ue5+sync+group&FORM=IRPRST&ck=0E5138E50001CD8255CD17722A3451F4&selectedIndex=13&itb=0&cw=1721&ch=866&mode=overlay (Accessed: 20 October 2025).
+  </figcaption>
+</figure>
+<p><strong>Keeping Animations in Sync</strong></p>
+<p>Sync Groups ensure multiple animations stay synchronized, essential for layered animation systems.</p>
+<h3>How They Work:</h3>
+<ul>
+<li>Animations in same sync group share timing</li>
+<li>Leader animation drives the timing</li>
+<li>Followers adjust to match leader’s playback rate</li>
+<li>Maintains synchronization across blends</li>
+</ul>
+<h3>Use Cases:</h3>
+<ul>
+<li><strong>Upper/Lower body splits</strong> - Running while reloading</li>
+<li><strong>Additive animations</strong> - Breathing overlay on locomotion</li>
+<li><strong>Weapon animations</strong> - Weapon sway matching walk cycle</li>
+<li><strong>Facial animations</strong> - Lip sync with body animation</li>
+</ul>
+<h2>Sync Group Implementation</h2>
+<p><strong>Setting Up Synchronized Animation</strong></p>
+<h3>In Animation Assets:</h3>
+<ol>
+<li>Open animation sequence</li>
+<li>Set <strong>Sync Group Name</strong> (e.g., “Locomotion”)</li>
+<li>Choose <strong>Sync Group Role:</strong>
+<ul>
+<li><strong>Can Be Leader</strong> - Can drive timing</li>
+<li><strong>Always Follower</strong> - Always follows others</li>
+<li><strong>Transition Leader</strong> - Leads during transitions</li>
+</ul>
+</li>
+</ol>
+<h3>In Blend Spaces:</h3>
+<ul>
+<li>Set sync group for entire blend space</li>
+<li>All samples inherit the sync group</li>
+<li>Maintains sync across speed changes</li>
+</ul>
+<h3>In State Machines:</h3>
+<ul>
+<li>States can have different sync groups</li>
+<li>Transitions can change sync leadership</li>
+<li>Use for complex layered systems</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="4"><h1>Montages &amp; Layering</h1>
+<h2>What are Animation Montages?</h2>
+<figure>
+  <img src="https://img.edc-cdn.net/imgproxy/TAzxPpe0AReavmK8GTzcyaZiepUBykokN5rh0b7dr0s/filename:bannerimage.png/resizing_type:fill/width:1920/height:335/aHR0cHM6Ly9kMWl2N2RiNDR5aGd4bi5jbG91ZGZyb250Lm5ldC9kb2N1bWVudGF0aW9uL2ltYWdlcy8xMTA5MDAwMC00MjljLTQwYjYtODYxYS00MmRhZjlkZjM5NWYvYmFubmVyaW1hZ2UucG5n"
+       alt="Animation Montage Editor in Unreal Engine banner"
+       style="max-width:100%; height:auto; display:block; margin:0 auto;">
+  <figcaption style="font-size:0.9em; margin-top:0.5em; text-align:center;">
+    Epic Games (n.d.) ‘Animation Montage Editor in Unreal Engine’, Epic Games Developer Documentation. Available at: https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-montage-editor-in-unreal-engine (Accessed: 20 October 2025).
+  </figcaption>
+</figure>
+<p><strong>Sequenced Animations with Advanced Control</strong></p>
+<p>Montages are animation assets that provide advanced playback control, allowing for complex animation sequences independent of state machines.</p>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Sections</strong> - Named segments within the montage</li>
+<li><strong>Slots</strong> - Body region targeting (FullBody, UpperBody, etc.)</li>
+<li><strong>Branching</strong> - Conditional section jumping</li>
+<li><strong>Looping</strong> - Repeating sections</li>
+<li><strong>Blending</strong> - Smooth in/out transitions</li>
+</ul>
+<h2>Montage Slots System</h2>
+<p><strong>Body Region Animation Targeting for Gameplay</strong></p>
+<p>Slots allow montages to play on specific body parts while other animations continue on other parts.</p>
+<h3>Default Slots:</h3>
+<ul>
+<li><strong>DefaultSlot</strong> - Full body override (stops all other animations)</li>
+<li><strong>UpperBody</strong> - Arms, torso, head only</li>
+<li><strong>LowerBody</strong> - Legs, pelvis only</li>
+<li><strong>FacialAnimation</strong> - Face and head only</li>
+</ul>
+<h3>Practical Slot Usage:</h3>
+<h4>Reload While Moving</h4>
+<pre><code>Animation Blueprint Setup:
+1. Locomotion State Machine → DefaultSlot
+2. Slot 'UpperBody' → Plays reload montage
+3. Result: Legs run (locomotion), arms reload (montage)
+
+In Code/Blueprint:
+PlayAnimMontage(ReloadMontage) // Uses UpperBody slot
+</code></pre>
+<h4>Interaction System</h4>
+<pre><code>1. Locomotion → DefaultSlot
+2. Slot 'RightHandSlot' → Open door animation
+3. Result: Character walks, right hand opens door
+</code></pre>
+<h2>Layered Blend Per Bone</h2>
+<p><strong>Combining Multiple Animations on Different Body Parts</strong></p>
+<p>Layered Blend Per Bone lets you play different animations on different body parts simultaneously. (used in conjuction with slots and animation montages)</p>
+<h3>Setup Process:</h3>
+<ol>
+<li><strong>Base Layer</strong> - Primary animation (e.g., running)</li>
+<li><strong>Overlay Layer</strong> - Secondary animation (e.g., reloading)</li>
+<li><strong>Bone Mask</strong> - Defines which bones are affected</li>
+<li><strong>Blend Weight</strong> - Controls overlay strength (0.0 to 1.0)</li>
+</ol>
+<h3>Multiple Layers Example:</h3>
+<pre><code>Complex Character Setup:
+1. Base: Locomotion (full body)
+2. Layer 1: Aim Offset (upper body, always active)
+3. Layer 2: Reload (upper body, when reloading)
+4. Layer 3: Injured Arm (left arm only, when damaged)
+5. Layer 4: Breathing (chest only, subtle)
+</code></pre>
+<div class="info-box"><p>Most AAA games use 3-5 animation layers for complex character behavior</p>
+</div>
+<h2>Montage Sections &amp; Branching - Game Systems</h2>
+<p><strong>Advanced Sequence Control for Gameplay</strong></p>
+<p>Sections and branching enable complex gameplay systems like combo attacks, contextual actions, and interactive sequences.</p>
+<h3>What are Sections?</h3>
+<ul>
+<li><strong>Named segments</strong> within a montage</li>
+<li><strong>Jump between sections</strong> based on game logic</li>
+<li><strong>Loop specific sections</strong> for sustained actions</li>
+<li><strong>Blend between sections</strong> smoothly</li>
+</ul>
+<h3>Practical Example 1: Attack Combo System</h3>
+<h4>Montage Setup:</h4>
+<pre><code>Sections in AttackMontage:
+- Combo1 (0.0s - 0.5s) - First attack
+- Combo2 (0.5s - 1.0s) - Second attack
+- Combo3 (1.0s - 1.5s) - Third attack
+- ComboFinisher (1.5s - 2.5s) - Final powerful attack
+- Recovery (2.5s - 3.0s) - Return to idle
+</code></pre>
+<h4>Blueprint Logic:</h4>
+<pre><code class="language-cpp">// Player presses attack button
+PlayAnimMontage(AttackMontage, 1.0, "Combo1")
+
+// During Combo1, if player presses attack again:
+OnNotify_ComboWindow:
+    if (InputReceived && CurrentSection == "Combo1")
+        Montage_JumpToSection("Combo2", AttackMontage)
+    else if (CurrentSection == "Combo2")
+        Montage_JumpToSection("Combo3", AttackMontage)
+    else if (CurrentSection == "Combo3")
+        Montage_JumpToSection("ComboFinisher", AttackMontage)
+
+// If no input, return to idle
+OnNotify_ComboTimeout:
+    Montage_JumpToSection("Recovery", AttackMontage)
+</code></pre>
+<h2>Additive Animations</h2>
+<p><strong>Layering Motion for Dynamic Gameplay</strong></p>
+<p>Additive animations add motion on top of base animations without replacing them - essential for responsive game characters.</p>
+<h3>What Makes Animations Additive?</h3>
+<ul>
+<li><strong>Stores differences</strong> from a reference pose, not absolute transforms</li>
+<li><strong>Layered on top</strong> of base animations</li>
+<li><strong>Stackable</strong> - multiple additives can combine</li>
+</ul>
+<h2>Practical Additive Animation Examples</h2>
+<p><strong>Real Game Development Use Cases</strong></p>
+<ul>
+<li>Character Leaning Into Movement</li>
+<li>Aiming Offset (Upper Body Aim)</li>
+<li>Injury</li>
+<li>Heavy breathing when running out of stamina</li>
+<li>Hit Reaction</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="5"><h1>Runtime Animation Manipulation</h1>
+<h2>Animation Blueprint Nodes for Game Development</h2>
+<p><strong>Modifying Animations Procedurally</strong></p>
+<p>Beyond playing animations, you can manipulate bones directly in the Animation Blueprint for dynamic gameplay.</p>
+<h3>Animation Nodes:</h3>
+<h4>1. <strong>Two Bone IK</strong></h4>
+<ul>
+<li><strong>Use Case:</strong> Foot placement, hand reaching</li>
+<li><strong>Inputs:</strong> Effector location (where hand/foot should be)</li>
+<li><strong>Example:</strong> Feet adjusting to stairs</li>
+</ul>
+<h4>2. <strong>Transform (Modify) Bone</strong></h4>
+<ul>
+<li><strong>Use Case:</strong> Direct bone manipulation</li>
+<li><strong>Inputs:</strong> Rotation, Translation, Scale</li>
+<li><strong>Example:</strong> Head look-at, procedural recoil</li>
+</ul>
+<h4>3. <strong>Look At</strong></h4>
+<ul>
+<li><strong>Use Case:</strong> Head/eye tracking</li>
+<li><strong>Inputs:</strong> Target location</li>
+<li><strong>Example:</strong> Character looking at player</li>
+</ul>
+<h4>4. <strong>FABRIK (Full Body IK)</strong></h4>
+<ul>
+<li><strong>Use Case:</strong> Complex IK chains</li>
+<li><strong>Inputs:</strong> Multiple effector targets</li>
+<li><strong>Example:</strong> Character grabbing ledge with both hands</li>
+</ul>
+<h4>5. <strong>Layered Blend Per Bone</strong></h4>
+<ul>
+<li><strong>Use Case:</strong> Combining different animations on different body parts</li>
+<li><strong>Inputs:</strong> Base pose, Blend pose, Bone mask</li>
+<li><strong>Example:</strong> Running legs + aiming upper body</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="6"><h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+<h1>Any questions?</h1>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section></div>
+
+  <div class="export-controls">
+    <button id="prevBtn" title="Previous (←/↑)">← Prev</button>
+    <span class="slide-counter" id="slideCounter">1 / 7</span>
+    <button id="nextBtn" title="Next (→/↓)">Next →</button>
+    <button id="viewModeBtn" class="view-mode-btn" title="Toggle Scroll/Present (Space)">🎯 Present</button>
+    <button id="fullscreenBtn" class="view-mode-btn" title="Toggle Fullscreen (F)">⛶ Fullscreen</button>
+  </div>
+
+  <script>
+    (function(){
+      const slides = Array.from(document.querySelectorAll('.slide'))
+      let current = 0
+      const total = slides.length
+      const counter = document.getElementById('slideCounter')
+      const body = document.body
+
+      const viewModeBtn = document.getElementById('viewModeBtn')
+      function isMobileDevice(){
+        return window.matchMedia('(max-width: 900px)').matches || (('ontouchstart' in window || navigator.maxTouchPoints>0))
+      }
+      function updateViewModeButton(){
+        if (isMobileDevice()){
+          viewModeBtn.textContent = '📱 Scroll only'
+          viewModeBtn.disabled = true
+          return
+        }
+        const isPresent = body.classList.contains('presentation-mode')
+        viewModeBtn.textContent = isPresent ? '🧭 Scroll' : '🎯 Present'
+        viewModeBtn.disabled = false
+      }
+
+      // Build a dedicated scroll viewport above the footer and add arrows if missing
+      slides.forEach(slide => {
+        // Create .slide-viewport and move non-footer/arrows children into it
+        let viewport = slide.querySelector('.slide-viewport')
+        if (!viewport){
+          viewport = document.createElement('div')
+          viewport.className = 'slide-viewport'
+          const children = Array.from(slide.children)
+          children.forEach(child => {
+            const cls = (child.className && child.className.toString()) || ''
+            if (/(presentation-footer|ts-global-footer|slide-arrows)/.test(cls)) return
+            viewport.appendChild(child)
+          })
+          slide.insertBefore(viewport, slide.firstChild)
+        }
+        // Add arrows if missing
+        if (!slide.querySelector('.slide-arrows')){
+          const ui = document.createElement('div')
+          ui.className = 'slide-arrows'
+          ui.innerHTML = '<div class="arrow up">▲</div><div class="arrow down">▼</div>'
+          slide.appendChild(ui)
+        }
+      })
+      // Stage wrapper for presentation scaling (1280x720 like Marp)
+      const bodyEl = document.body
+      let pres = document.querySelector('.presentation')
+      if (!pres) {
+        pres = document.createElement('div')
+        pres.className = 'presentation'
+        // Move slides into presentation container
+        slides.forEach(s => pres.appendChild(s))
+        const controls = document.querySelector('.export-controls')
+        bodyEl.insertBefore(pres, controls)
+      }
+      let stage = pres.querySelector('.stage')
+      if (!stage) {
+        stage = document.createElement('div')
+        stage.className = 'stage'
+        pres.appendChild(stage)
+      }
+      // Ensure stage has slide wrap and footer containers
+      let stageWrap = stage.querySelector('.stage-slide-wrap')
+      if (!stageWrap) {
+        stageWrap = document.createElement('div')
+        stageWrap.className = 'stage-slide-wrap'
+        stage.appendChild(stageWrap)
+        const currentSlides = Array.from(pres.querySelectorAll('.slide'))
+        currentSlides.forEach(s => stageWrap.appendChild(s))
+      }
+      let stageFooter = stage.querySelector('.stage-footer')
+      if (!stageFooter) {
+        stageFooter = document.createElement('div')
+        stageFooter.className = 'stage-footer'
+        stage.appendChild(stageFooter)
+      }
+
+      function fitStage(){
+        const BASE_W = 1280, BASE_H = 720
+        if (body.classList.contains('presentation-mode')){
+          const fit = Math.min(window.innerWidth/BASE_W, window.innerHeight/BASE_H)
+          stage.style.transform = 'scale(' + fit + ')'
+          // After fitting, update footer heights (in unscaled CSS px) and scroll UI
+          requestAnimationFrame(() => { updateFooterHeights(); updateAllScrollUI(); })
+        } else {
+          stage.style.transform = 'none'
+          requestAnimationFrame(() => { updateFooterHeights(); })
+        }
+      }
+
+      function getStageScale(){
+        if (!body.classList.contains('presentation-mode')) return 1
+        const r = stage.getBoundingClientRect()
+        return r.height / 720
+      }
+
+      function updateFooterHeights(){
+        const scale = getStageScale() || 1
+        const stageFooter = stage.querySelector('.stage-footer')
+        const fh = stageFooter ? stageFooter.getBoundingClientRect().height : 0
+        const unscaled = (fh/scale)
+        // Set on stage and slides for convenience
+        stage.style.setProperty('--footer-height', unscaled + 'px')
+        slides.forEach(slide => slide.style.setProperty('--footer-height', unscaled + 'px'))
+      }
+
+
+      function setActive(i){
+        slides.forEach((s, idx) => s.classList.toggle('active', idx===i))
+        counter.textContent = (i+1) + ' / ' + total
+        // Update stage footer to match active slide footer
+        const stageFooter = stage.querySelector('.stage-footer')
+        if (stageFooter){
+          stageFooter.innerHTML = ''
+          const footer = slides[i].querySelector('.presentation-footer, .ts-global-footer')
+          if (footer) stageFooter.appendChild(footer.cloneNode(true))
+        }
+        requestAnimationFrame(() => { updateFooterHeights(); updateScrollUIForSlide(slides[i]) })
+      }
+
+      function updateAllScrollUI(){
+        slides.forEach(updateScrollUIForSlide)
+      }
+
+      function detectOverflow(slide){
+        const viewport = slide.querySelector('.slide-viewport') || slide
+        // Basic check first
+        if (viewport.scrollHeight > viewport.clientHeight + 1) return true
+        // Fallback for absolutely-positioned content: compute visual bottom of non-footer elements
+        const excluded = new Set(['presentation-footer','ts-global-footer','slide-arrows'])
+        const rect = viewport.getBoundingClientRect()
+        let maxBottom = 0
+        viewport.querySelectorAll(':scope > *').forEach(el => {
+          const cls = (el.className && el.className.toString()) || ''
+          if ([...excluded].some(c => cls.includes(c))) return
+          const r = el.getBoundingClientRect()
+          const bottom = (r.bottom - rect.top) + viewport.scrollTop
+          if (bottom > maxBottom) maxBottom = bottom
+        })
+        return maxBottom > viewport.clientHeight + 1
+      }
+
+      function updateScrollUIForSlide(slide){
+        if (!slide || !body.classList.contains('presentation-mode')) return
+        const viewport = slide.querySelector('.slide-viewport') || slide
+        const ui = slide.querySelector('.slide-arrows')
+        if (!viewport || !ui) return
+        const up = ui.querySelector('.arrow.up')
+        const down = ui.querySelector('.arrow.down')
+
+        // Show UI only if overflow exists (permanently visible when shown)
+        const overflow = detectOverflow(slide)
+        ui.style.display = overflow ? 'flex' : 'none'
+        if (!overflow) return
+
+        // Update arrow enablement (only show if content above/below)
+        const atTop = viewport.scrollTop <= 0
+        const atBottom = (viewport.scrollTop + viewport.clientHeight) >= (viewport.scrollHeight - 1)
+        if (up) up.style.display = atTop ? 'none' : 'block'
+        if (down) down.style.display = atBottom ? 'none' : 'block'
+
+        // Bind interactions once
+        if (!ui._bound){
+          ui._bound = true
+          // Prevent clicks from affecting slide navigation
+          ui.addEventListener('pointerdown', e => e.stopPropagation())
+          up && up.addEventListener('click', e => { e.stopPropagation(); viewport.scrollTo({ top: 0, behavior: 'smooth' }) })
+          down && down.addEventListener('click', e => { e.stopPropagation(); viewport.scrollTo({ top: viewport.scrollHeight, behavior: 'smooth' }) })
+          viewport.addEventListener('scroll', () => { requestAnimationFrame(() => updateScrollUIForSlide(slide)) })
+        }
+      }
+
+
+      /* computeGlobalScale removed: we now rely solely on stage scaling for present-mode and no global scaling in scroll-mode */
+function computeGlobalScale_REMOVED(){
+        // Measure natural content size at scale(1)
+        const BASE_W = 1920, BASE_H = 1080
+        let minS = 1
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content');
+          if (!c) return;
+          c.style.transform = 'scale(1)';
+          c.getBoundingClientRect();
+          const cr = c.getBoundingClientRect();
+          const cs = getComputedStyle(slide);
+          const maxW = BASE_W - (parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight) || 0)
+          const maxH = BASE_H - (parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom) || 0)
+          const sW = cr.width>0 && maxW>0 ? Math.min(1, maxW/cr.width) : 1
+          const sH = cr.height>0 && maxH>0 ? Math.min(1, maxH/cr.height) : 1
+          const need = Math.min(sW, sH)
+          if (need < minS) minS = need
+        })
+        return Math.max(0.5, Math.min(1, isFinite(minS) ? minS : 1))
+      }
+
+      /* applyGlobalScale removed: no per-slide or global scaling, stage-only */
+function applyGlobalScale_REMOVED(){
+        // Do NOT scale inner content in presentation-mode; stage scaling handles fit.
+        if (body.classList.contains('presentation-mode')){
+          // Presentation-mode: per-slide smart shrink instead of global scaling
+          applySmartShrinkPresentation()
+          return
+        }
+        const s = computeGlobalScale()
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content')
+          if (!c) return
+          c.style.transform = 'scale(' + s + ')'
+          c.style.marginLeft = '0'
+          c.style.marginRight = '0'
+        })
+      }
+
+      /* applySmartShrinkPresentation removed: uniform stage scaling ensures proportionality */
+function applySmartShrinkPresentation_REMOVED(){
+        if (!body.classList.contains('presentation-mode')) return
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content')
+          if (!c) return
+          // Reset to natural size
+          c.style.transform = 'scale(1)'
+          c.style.width = '100%'
+          // Measure
+          const cs = getComputedStyle(slide)
+          const availW = slide.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)
+          const availH = slide.clientHeight - (parseFloat(cs.paddingTop)||0) - (parseFloat(cs.paddingBottom)||0)
+          const rect = c.getBoundingClientRect()
+          const needH = rect.height > 0 ? (availH / rect.height) : 1
+          let s = Math.min(1, needH)
+          if (!isFinite(s) || s <= 0) s = 1
+          if (s < 1) {
+            // Keep full visual width while shrinking proportionally:
+            // set logical width to 100%/s so after scale(s) visual width == 100%
+            c.style.width = (100 / s) + '%'
+            c.style.transform = 'scale(' + s + ')'
+          }
+        })
+      }
+
+
+      function prev(){ if (current>0){ current--; setActive(current) } }
+      function next(){ if (current<total-1){ current++; setActive(current) } }
+      function go(i){ if (i>=0 && i<total){ current = i; setActive(current) } }
+
+      function toggleMode(){
+        if (isMobileDevice()){
+          // Force scroll-only on mobile
+          body.classList.remove('presentation-mode')
+          body.classList.add('scroll-mode')
+          setActive(current)
+          updateViewModeButton()
+          fitStage()
+          return
+        }
+        const present = body.classList.contains('presentation-mode')
+        body.classList.toggle('presentation-mode', !present)
+        body.classList.toggle('scroll-mode', present)
+        setActive(current)
+        updateViewModeButton()
+        fitStage()
+      }
+
+      // Event wiring
+      document.getElementById('prevBtn').addEventListener('click', prev)
+      document.getElementById('nextBtn').addEventListener('click', next)
+      document.getElementById('viewModeBtn').addEventListener('click', toggleMode)
+      document.getElementById('fullscreenBtn').addEventListener('click', () => {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      })
+
+      document.addEventListener('keydown', (e) => {
+        switch(e.key){
+          case 'ArrowLeft': case 'ArrowUp': e.preventDefault(); prev(); break;
+          case 'ArrowRight': case 'ArrowDown': e.preventDefault(); next(); break;
+          case ' ': e.preventDefault(); toggleMode(); break;
+          case 'Home': e.preventDefault(); go(0); break;
+          case 'End': e.preventDefault(); go(total-1); break;
+          case 'f': case 'F': e.preventDefault();
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+            break;
+        }
+      })
+
+      // Initialize
+      // Mobile: force scroll-mode and disable present
+      if (isMobileDevice()){
+        body.classList.remove('presentation-mode')
+        body.classList.add('scroll-mode')
+      }
+      updateFooterHeights()
+      setActive(0)
+      updateViewModeButton()
+
+      fitStage()
+      window.addEventListener('resize', () => { fitStage() })
+    })();
+  </script>
+
+</body>
+</html>
