@@ -90,7 +90,7 @@ Visual affects, UI and audio cues are different ways that a combo window can be 
 
 #### Final result
 
-
+[Combat Showcase](https://youtu.be/qrDXDM9JHss)
 
 ### 3. Animation Layering & Slot System
 
