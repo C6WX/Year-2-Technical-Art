@@ -14,7 +14,7 @@ You must create a **complete playable character** that incorporates **all three*
 
 ---
 
-### 1. Animation Blueprint with Locomotion System
+### 1. Animation Blueprint with Locomotion System x
 **Technical Requirements:**
 - Create a **complete Animation Blueprint** with Event Graph and Anim Graph
 - Implement a **locomotion state machine** with at least **5 states**:

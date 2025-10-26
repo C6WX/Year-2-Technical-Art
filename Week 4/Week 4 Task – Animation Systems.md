@@ -17,27 +17,27 @@ When the combat state is in use, it takes over the whole body and stops the walk
 #### Blueprints
 
 ##### Event Graph
-
+What does it do? Gets the velocity, speed and direction as well as checking if the player is falling so that these variables can be used in the locomotion animation state machine.
 ![Event Graph](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Event%20Graph.png)
 
 ##### Animation Graph
-
+What does it do? Allows the output pose to control the whole body of the character.
 ![Anim Graph 1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Anim%20Graph%201.png)
 
 ##### Locomotion Animation State Machine
-
+What does it do? This shows the transition between different movement animations and stores the requirements to change animations.
 ![LASM](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Locomotion%20Animation%20State%20Machine.png)
 
 ##### Idle To Run
-
+What does it do? This changes the character from an idle pose to a walking pose to a running pose based on the speed and direction they are moving.
 ![Idle To Run](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Idle%20To%20Run.png)
 
 ##### ABS Omni Direction
-
+What is it? This is the graph that controls the transitioning between different movement animations.
 ![ABS Omni Direction](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/ABS%20Omni%20Direction.png)
 
 ##### Idle To Run to Jump Start
-
+What does it do? This checks if the players Z velocity is greater then 100 and that they are falling to make sure that the player has jumped so that the animation can transition to the jump start animation.
 ![Idle To Run to Jump Start](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Idle%20To%20Run%20To%20Jump%20Start.png)
 
 ##### Jump Start
@@ -45,11 +45,11 @@ When the combat state is in use, it takes over the whole body and stops the walk
 ![Jump Start](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Start.png)
 
 ##### Jump Start to Jump Loop
-
+What does it do? This blueprint checks how long is left of the jump start animation and then at the last second of it, transitions to the jump loop animation.
 ![Jump Start to Jump Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Start%20To%20Jump%20Loop.png)
 
 ##### Idle To Run to Jump Loop 
-
+What does it do? This checks if the player's Z velocity is less then 100 and that they are falling to prove that they have fallen so that they can then transition to the jump loop animation.
 ![Idle To Run to Jump Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Idle%20To%20Run%20To%20Jump%20Loop.png)
 
 ##### Jump Loop
@@ -57,11 +57,11 @@ When the combat state is in use, it takes over the whole body and stops the walk
 ![Jump Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Loop.png)
 
 ##### Jump Loop to Jump Land
-
+What does it do? This checks if the player has stopped falling so that it can transition the player to the jump land animation.
 ![Jump Loop to Jump Land](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Loop%20To%20Jump%20Land.png)
 
 ##### Jump Land to Idle To Run
-
+What does it do? When the jump land animation is nearly finished, the animation is blended into the idle or moving animation based on the player's speed.
 ![Jump Land to Idle To Run](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Land%20To%20Idle%20To%20Run.png)
 
 #### Final result
@@ -87,11 +87,11 @@ Visual affects, UI and audio cues are different ways that a combo window can be 
 #### Blueprints
 
 ##### Attack Combo
-
+What does it do? When the left mouse button is pressed, the upper body variable is enabled meaning that the upper body animations will be blended with the lower body animations, then the perform combo function is activated. After that the next animation in the montage is played and then after it has played, upper body is deactivated to as the upper body is no longer being used by an animation. Based on the output of the perform combo function, the attack combo will be set back to 0, or the attack combo will increase and the next combo will play if the left mouse button is pressed in time, otherwise the attack combo will be set back to 0.
 ![Attack Combo](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Attack%20Combo.png)
 
 ##### Perform Combo Function
-
+What does it do? This function checks if the combo has been finished. If it has finished, then attack combo will be reset, otherwise the next attack will be able to be activated.
 ![Perform Combo Function](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Perform%20Combo%20Function.png)
 
 ##### Boxing Notifies 
@@ -123,11 +123,11 @@ Visual affects, UI and audio cues are different ways that a combo window can be 
 ![Deal Damage Notify](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Deal%20Damage%20Notify.png)
 
 ##### Reset Combo Notify
-
+What does it do? Activates the reset combo event on the player through BPI Notifiers
 ![Reset Combo Notify](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Reset%20Combo%20Notify.png)
 
 ##### Hit Trace Notifies
-
+What does it do? Activates the Hit Trace event on the player through BPI Notifiers
 ![Hit Trace Start](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Hit%20Trace%20Start%20Notify.png)
 <br>
 <br>
@@ -135,15 +135,15 @@ Visual affects, UI and audio cues are different ways that a combo window can be 
 ![Hit Trace End](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Hit%20Trace%20End%20Notify.png)
 
 ##### Hit Trace
-
+What does it do? Activates a visible trace of where the player is hitting, by getting a specific bone in the skeleton, before removing the traces after a certain amount of time.
 ![Hit Trace](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Hit%20Trace.png)
 
 ##### Particle Spawner Notify
-
+What does it do? Activates the Particle spawner event on the player through BPI Notifiers
 ![Particle Spawner Notify](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Particle%20Spawner%20Notify.png)
 
 ##### Particle Spawning
-
+What does it do? Spawns particles at the player's right hand whenever they damage something.
 ![Particle Spawning](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Particle%20Spawning.png)
 
 
@@ -167,7 +167,7 @@ The blend weight that feels most natural for my character is 1. This is due to t
 #### Blueprints
 
 ##### Animation Graph With Layer Blend Per Bone Node
-
+What does it do? Blends the base pose with upper body animations to allow the character to move while also attacking.
 ![Anim Graph 2](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%203/Anim%20Graph%202.png)
 
 #### Final result
