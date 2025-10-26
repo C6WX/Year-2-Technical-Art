@@ -86,6 +86,65 @@ Visual affects, UI and audio cues are different ways that a combo window can be 
 
 #### Blueprints
 
+##### Attack Combo
+
+![Attack Combo](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Attack%20Combo.png)
+
+##### Perform Combo Function
+
+![Perform Combo Function](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Perform%20Combo%20Function.png)
+
+##### Boxing Notifies 
+
+![Boxing Notifies](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Boxing%20Notifies.png)
+
+##### Hook Notifies
+
+![Hook Notifies](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Hook%20Notifies.png)
+
+##### Punch Notifies
+
+![Punch Notifies](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Punch%20Notifies.png)
+
+##### Kick Notifies 
+
+![Kick Notifies](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Kick%20Notifies.png)
+
+##### Combo Window Notifies
+
+![Combo Window Begin](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Combo%20Window%20Begin%20Notify.png)
+<br>
+<br>
+
+![Combo Window End](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Combo%20Window%20End%20Notify.png)
+
+##### Deal Damage Notify
+
+![Deal Damage Notify](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Deal%20Damage%20Notify.png)
+
+##### Reset Combo Notify
+
+![Reset Combo Notify](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Reset%20Combo%20Notify.png)
+
+##### Hit Trace Notifies
+
+![Hit Trace Start](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Hit%20Trace%20Start%20Notify.png)
+<br>
+<br>
+
+![Hit Trace End](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Hit%20Trace%20End%20Notify.png)
+
+##### Hit Trace
+
+![Hit Trace](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Hit%20Trace.png)
+
+##### Particle Spawner Notify
+
+![Particle Spawner Notify](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Particle%20Spawner%20Notify.png)
+
+##### Particle Spawning
+
+![Particle Spawning](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%202/Particle%20Spawning.png)
 
 
 #### Final result
