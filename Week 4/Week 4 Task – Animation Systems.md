@@ -16,9 +16,58 @@ When the combat state is in use, it takes over the whole body and stops the walk
 
 #### Blueprints
 
+##### Event Graph
 
+![Event Graph](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Event%20Graph.png)
+
+##### Animation Graph
+
+![Anim Graph 1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Anim%20Graph%201.png)
+
+##### Locomotion Animation State Machine
+
+![LASM](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Locomotion%20Animation%20State%20Machine.png)
+
+##### Idle To Run
+
+![Idle To Run](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Idle%20To%20Run.png)
+
+##### ABS Omni Direction
+
+![ABS Omni Direction](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/ABS%20Omni%20Direction.png)
+
+##### Idle To Run to Jump Start
+
+![Idle To Run to Jump Start](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Idle%20To%20Run%20To%20Jump%20Start.png)
+
+##### Jump Start
+
+![Jump Start](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Start.png)
+
+##### Jump Start to Jump Loop
+
+![Jump Start to Jump Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Start%20To%20Jump%20Loop.png)
+
+##### Idle To Run to Jump Loop 
+
+![Idle To Run to Jump Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Idle%20To%20Run%20To%20Jump%20Loop.png)
+
+##### Jump Loop
+
+![Jump Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Loop.png)
+
+##### Jump Loop to Jump Land
+
+![Jump Loop to Jump Land](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Loop%20To%20Jump%20Land.png)
+
+##### Jump Land to Idle To Run
+
+![Jump Land to Idle To Run](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%201/Jump%20Land%20To%20Idle%20To%20Run.png)
 
 #### Final result
+
+[Omni movement Showcase](https://youtu.be/zA2m0oiNtqQ)
+
 
 
 
@@ -58,10 +107,12 @@ The blend weight that feels most natural for my character is 1. This is due to t
 
 #### Blueprints
 
+##### Animation Graph With Layer Blend Per Bone Node
 
+![Anim Graph 2](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%204/Pictures/Task%203/Anim%20Graph%202.png)
 
 #### Final result
 
-
+[Layer Blend Showcase](https://youtu.be/kNPXKp7luqA)
 
 
