@@ -22,7 +22,7 @@ You must create all six (6) of the following Niagara effects in a single UE5 pro
 
 ---
 
-### 1. Fire (stylized / realistic or both)
+### 1. Fire (stylized / realistic or both) x
 **Technical Requirements:**
 - Believable looping fire effect with upward motion and turbulence
 - Use at least one curve driven by Normalized Age (e.g., size, alpha, or color)
@@ -32,7 +32,7 @@ You must create all six (6) of the following Niagara effects in a single UE5 pro
 
 ---
 
-### 2. Fireball Projectile
+### 2. Fireball Projectile x
 **Technical Requirements:**
 - A projectile-style fireball with a readable core and trail
 - Use at least one curve (e.g., width, alpha, brightness) to shape timing and readability
@@ -44,11 +44,11 @@ You must create all six (6) of the following Niagara effects in a single UE5 pro
 
 ### 3. Lightning Strike
 **Technical Requirements:**
-- Short-lived strike between a start and end point with a bright flash and quick decay
+- Short-lived strike between a start and end point with a bright flash and quick decay x
 - Accept Start and End positions from Blueprint or world context
-- Use at least one curve for quick on/off and color/alpha decay
-- Expose at least two user parameters (e.g., Start, End, Color, Width)
-- Implementation approach is up to you; justify choices in documentation
+- Use at least one curve for quick on/off and color/alpha decay x
+- Expose at least two user parameters (e.g., Start, End, Color, Width) x
+- Implementation approach is up to you; justify choices in documentation x
 
 ---
 
