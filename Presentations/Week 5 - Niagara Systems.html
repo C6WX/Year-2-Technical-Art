@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TextSlideV2 – Modern Minimal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    
+/* Theme: Modern Minimal */
+:root {
+  --color-primary: #3b82f6;
+  --color-secondary: #8b5cf6;
+  --color-background: #fafafa;
+  --color-background-secondary: #f3f4f6;
+  --color-foreground: #1f2937;
+  --color-accent: #10b981;
+  --color-muted: #64748b;
+  --font-family-primary: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-family-secondary: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 2rem;
+  --font-size-h4: 1.5rem;
+  --font-size-body: 1.125rem;
+  --font-size-quote: 1rem;
+  --font-size-footer: 0.875rem;
+  --font-size-small: 1rem;
+  --color-bold: #111827;
+  --color-italic: #334155;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --spacing-section: 3rem;
+  --spacing-element: 1.5rem;
+  --slide-padding: 3rem;
+  --border-radius: 0.5rem;
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --ts-border-color: rgba(226, 232, 240, 0.8);
+  --ts-divider-color: #e5e7eb;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-secondary, 'Inter', sans-serif);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Presentation container */
+.presentation {
+  width: 100%;
+  min-height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+/* Slide styles */
+.slide {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  padding: var(--slide-padding, 3rem);
+  background: linear-gradient(135deg, #fafafa, #f3f4f6);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: var(--shadow-card, 0 10px 25px -5px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Typography */
+.slide h1 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h1, 3.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #3b82f6;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0 0 var(--spacing-element, 1.5rem) 0;
+}
+
+.slide h2 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h2, 2.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #3b82f6;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--ts-divider-color, #e5e7eb);
+  margin: var(--spacing-element, 1.5rem) 0 var(--spacing-element, 1.5rem) 0;
+}
+
+.slide h3 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h3, 2rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: var(--spacing-element, 1.5rem) 0 1rem 0;
+}
+
+.slide h4 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h4, 1.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: 1rem 0 0.75rem 0;
+}
+
+.slide h5, .slide h6 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h4, 1.25rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.slide p {
+  font-size: var(--font-size-body, 1.125rem);
+  font-weight: var(--font-weight-body, 400);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.slide ul, .slide ol {
+  font-size: var(--font-size-body, 1.125rem);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.slide li {
+  margin-bottom: 0.5rem;
+}
+
+/* Improved list marker contrast and spacing */
+.slide ul li::marker, .slide ol li::marker {
+  color: var(--color-accent, #3b82f6);
+  font-weight: 600;
+}
+
+/* Text styling */
+.slide strong, .slide b {
+  color: var(--color-bold, #1f2937);
+  font-weight: 700;
+}
+
+.slide em, .slide i {
+  color: var(--color-italic, #1f2937);
+  font-style: italic;
+}
+
+.slide code {
+  font-family: var(--font-family-mono, 'JetBrains Mono', monospace);
+  font-size: 0.9em;
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.slide pre {
+  font-family: var(--font-family-mono, 'JetBrains Mono', monospace);
+  background: #f8fafc;
+  color: #1e293b;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+}
+
+.slide pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Layout containers */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container styles */
+.info, .warning, .error, .success {
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  margin: 1rem 0;
+  border-left: 4px solid;
+}
+
+.info {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.warning {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.error {
+  background: #fee2e2;
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+.success {
+  background: #d1fae5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+/* Links */
+.slide a {
+  color: #3b82f6;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.slide a:hover {
+  border-bottom-color: #3b82f6;
+}
+
+/* Images */
+.slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+.slide table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.slide th,
+.slide td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.slide th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Blockquotes */
+.slide blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  font-size: var(--font-size-quote, 1rem);
+  color: #64748b;
+}
+
+/* Enhanced custom containers */
+.info-box {
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+  border-radius: var(--border-radius, 0.5rem);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #3b82f6;
+}
+
+.info-box h1, .info-box h2, .info-box h3, .info-box h4, .info-box h5, .info-box h6 {
+  color: #3b82f6;
+  margin-top: 0;
+}
+
+.presentation-header, .presentation-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: var(--font-size-footer, 0.875rem);
+  color: #64748b;
+  border-top: 1px solid #e2e8f0;
+  margin: 2rem 0 1rem 0;
+}
+
+.presentation-header {
+  border-top: none;
+  border-bottom: 1px solid #e2e8f0;
+  margin: 1rem 0 2rem 0;
+}
+
+/* Enhanced multi-column layouts */
+.three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.two-columns .col, .three-columns .col {
+  min-width: 0;
+}
+
+/* Widget containers */
+.widget-container {
+  margin: 2rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.widget-container iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.widget-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Citations */
+.ts-citation {
+  font-size: var(--font-size-quote, 0.875rem);
+  color: #64748b;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .two-columns, .three-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .widget-container {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .widget-container iframe {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+
+    body { margin: 0; padding: 0; }
+    html { font-size: 80%; }
+
+    /* Deck modes */
+    body.presentation-mode { background: #000; overflow: hidden; }
+    .presentation-mode .presentation {
+      position: fixed; inset: 0; padding: 0; gap: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .presentation-mode .stage {
+      width: 1280px; height: 720px; position: relative;
+      transform-origin: center center;
+      display: grid; grid-template-rows: 1fr auto; align-items: stretch; justify-items: stretch;
+    }
+    .presentation-mode .stage .stage-slide-wrap { position: relative; grid-row: 1; width: 100%; height: 100%; }
+    .presentation-mode .stage .stage-footer {
+      grid-row: 2; width: 100%; margin: 0; background: transparent;
+      padding: 0; /* no separator gap; flush to slides */
+      padding-left: var(--slide-pad-x, var(--slide-padding, clamp(12px, 35%, 256px))); /* align with slide content */
+      font-size: 0.7rem; /* compact footer */
+      text-align: left; z-index: 60;
+    }
+    /* Normalize cloned footer content: no borders/extra spacing, left aligned */
+    .presentation-mode .stage .stage-footer .presentation-footer,
+    .presentation-mode .stage .stage-footer .ts-global-footer {
+      border: 0 !important; border-top: 0 !important; background: transparent !important;
+      margin: 0 !important; padding: 0 !important; text-align: left !important;
+    }
+    .presentation-mode .stage .stage-footer > * { margin-left: 0 !important; margin-right: 0 !important; }
+    .presentation-mode .slide {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; margin: 0; padding: var(--slide-padding, clamp(12px, 35%, 256px));
+      opacity: 0; transition: opacity .25s ease; overflow: hidden;
+      display: grid; grid-template-rows: 1fr auto; align-items: stretch; justify-items: stretch;
+      align-content: stretch; justify-content: stretch; row-gap: 0; column-gap: 0;
+      box-sizing: border-box;
+    }
+    .presentation-mode .slide.active { opacity: 1; }
+    /* Ensure only the active slide is interactive and on top */
+    .presentation-mode .slide { pointer-events: none; z-index: 0; }
+    .presentation-mode .slide.active { pointer-events: auto; z-index: 10; }
+
+    .scroll-mode .presentation { padding: 2rem 1rem; gap: 2rem; }
+    .scroll-mode .stage { width: 100%; height: auto; transform: none; position: static; }
+    .scroll-mode .slide { position: relative; opacity: 1; transform: none; width: 100%; margin: 0 auto; display:flex; justify-content:center; align-items:center; }
+    /* Remove max constraints from slides in both modes */
+    .presentation-mode .slide, .scroll-mode .slide { max-width: none !important; max-height: none !important; }
+
+
+    /* Present-mode: slides are absolutely stacked and clip content; a dedicated viewport scrolls above footer */
+    .presentation-mode .slide { overflow: hidden; }
+    .presentation-mode .slide .slide-viewport {
+      position: relative;
+      grid-row: 1 / 2;
+      width: 100%;
+      min-height: 0; min-width: 0; /* allow 1fr track to shrink for footer */
+      overflow: auto;
+      box-sizing: border-box;
+    }
+    .presentation-mode .slide .slide-viewport::-webkit-scrollbar { width: 0; height: 0; }
+
+    /* Arrows: permanent when overflow; JS toggles display none/flex. No hover/opacity transitions. */
+    .presentation-mode .slide .slide-arrows {
+      position: absolute;
+      top: var(--slide-padding, clamp(12px, 35%, 256px));
+      bottom: var(--slide-padding, clamp(12px, 35%, 256px));
+      right: 8px;
+      width: 24px;
+      pointer-events: none;
+      display: none; /* shown as flex by JS when overflow exists */
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 70;
+    }
+    .presentation-mode .slide .slide-arrows .arrow {
+      width: 22px; height: 22px; border-radius: 999px;
+      background: rgba(0,0,0,.35); color: #fff;
+      font-size: 12px; line-height: 22px; text-align: center;
+      pointer-events: auto; cursor: pointer; user-select: none;
+      box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    }
+    .presentation-mode .slide .slide-arrows .arrow:active { transform: scale(.95); }
+
+    .presentation-mode .slide .ts-global-footer,
+    .presentation-mode .slide .presentation-footer { display: none !important; }
+
+    /* Controls */
+    .export-controls {
+      position: fixed; bottom: 8px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,255,255,.95); backdrop-filter: blur(10px);
+      border: 1px solid #e5e7eb; border-radius: 6px; padding: 4px 8px;
+      display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px -2px rgba(0,0,0,.1); z-index: 1000;
+      font-family: Inter, system-ui, sans-serif; font-size: 11px;
+    }
+    .export-controls button { background: #3b82f6; color: #fff; border: 0; border-radius: 4px; padding: 3px 6px; font-size: 10px; font-weight: 600; cursor: pointer; }
+    .export-controls button:hover { background: #2563eb; }
+    .export-controls .view-mode-btn { background: #6b7280; }
+    .export-controls .view-mode-btn:hover { background: #4b5563; }
+    .slide-counter { min-width: 44px; text-align: center; color: #374151; font-weight: 600; }
+
+    /* Print */
+    @media print {
+      .export-controls { display: none !important; }
+      .presentation { padding: 0 !important; gap: 0 !important; }
+      .slide { page-break-after: always; position: relative !important; transform: none !important; opacity: 1 !important; width: 100% !important; height: 100vh !important; }
+    }
+  </style>
+</head>
+<body class="presentation-mode">
+  <div class="presentation"><section class="slide" data-slide-index="0"><h1>Week 5: Niagara VFX Systems</h1>
+<h2>Introduction to Particle Systems</h2>
+<div class="info-box"><h3><strong>Session Objectives</strong></h3>
+<ul>
+<li>Understand what particle systems are and why we use them</li>
+<li>Learn the basic concepts of particles and visual effects</li>
+<li>Explore Niagara’s tools and interface</li>
+<li>Create your first simple particle effect</li>
+<li>Build practical game effects step-by-step</li>
+<li>Understand how to optimize effects for games</li>
+</ul>
+</div>
+<h2>Table of Contents</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<p><strong>1.</strong> What Are Particle Systems?</p>
+<p><strong>2.</strong> Introduction to Niagara</p>
+<p><strong>3.</strong> Understanding Particles</p>
+<p><strong>4.</strong> Building Blocks: Emitters &amp; Systems</p>
+        </div>
+      </div>
+<div class="col">
+<p><strong>5.</strong> Modules: Spawn, Update, Render</p>
+<p><strong>6.</strong> Curves &amp; Normalized Age</p>
+<p><strong>7.</strong> Exposing Parameters</p>
+<p><strong>8.</strong> CPU vs GPU Simulation</p>
+<p><strong>9.</strong> Renderer Types Overview</p>
+<p><strong>10.</strong> Blueprint Integration</p>
+</div>
+</div><div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="1"><h1>What Are Particle Systems?</h1>
+<h2>The Basics: What is a Particle?</h2>
+<p><strong>Particle systems are an efficient way to instantiate and manage large numbers of simple objects (called particles) or effects in a scene</strong></p>
+<p>Instead of manually spawning hundred or thousands of small objects, a particle system <strong>automates their creation and behavior</strong> using rules like:</p>
+<ul>
+<li><strong>Spawn Rate</strong>: How often new particles are created</li>
+<li><strong>Lifetime</strong>: How long each particle exists</li>
+<li><strong>Movement</strong>: How particles move (velocity, acceleration)</li>
+<li><strong>Appearance</strong>: How particles look (color, size, texture)</li>
+</ul>
+<div class="info-box"><ul>
+<li>Particle systems are optimized to handle thousands of particle efficiently</li>
+<li>They provide a high level of control and customization</li>
+<li>We use them for effects like fire, smoke, rain, snow, explosions, magic spells, and more</li>
+</ul>
+</div>
+<p><img src="https://indiegamesjp.dev/wp-content/uploads/2023/04/0428_Niagara.png" alt="Niagara effects in UE5"></p>
+<p>IndieGamesJp (2023) ‘UE5のビジュアルエフェクト解説書が登場、「Niagara」の使い方から魚群、流体シミュレーションまで’, <em>IndieGamesJp.dev</em>, 1 May. Available at: <a href="https://indiegamesjp.dev/?p=7601">https://indiegamesjp.dev/?p=7601</a> (Accessed: 26 October 2025).</p>
+<h2>What is Niagara?</h2>
+<p><strong>Niagara is Unreal Engine 5’s tool for creating particle systems</strong></p>
+<p>Using Niagara we have two classes we can create, a <strong>Niagara System</strong> and a <strong>Niagara Emitter</strong></p>
+<ul>
+<li>Niagara is named after Niagara Falls in North America.</li>
+</ul>
+<h3>What is a Niagara Emitter?</h3>
+<p>A <strong>Niagara Emitter</strong> is a blueprint that defines the behavior of a single type of particle. It controls how particles are spawned, move, and die.</p>
+<p>We can think of it as the <em>blueprint</em> for one type of particle system (e.g., sparks, smoke, embers)</p>
+<p>Each <strong>Niagara Emitter</strong> controls:</p>
+<ul>
+<li>Spawn rate and timing</li>
+<li>Particle properties (Size, color, lifetime, velocity, etc).</li>
+<li>Forces and behaviors (gravity, drag, collisions, attraction. etc)</li>
+<li><strong>Render type (sprite, mesh, ribbon, etc.)</strong></li>
+</ul>
+<h3>What is a Niagara System?</h3>
+<p>A <strong>Niagara System</strong> is the container that holds one or more <strong>Niagara Emitters</strong>. It defines how those emitters interact and how the effect behaves as a whole.</p>
+<div class="info-box"><p><strong>Niagara systems</strong> are what we drag into the world and spawn in runtime. You can’t drag Niagara emitters directly into the world.</p>
+</div>
+<p><strong>Niagara systems</strong> allow you to:</p>
+<ul>
+<li>Combine multiple emitters to create complex effects</li>
+<li>Control how emitters interact with each other</li>
+<li>Define global properties and behaviors for the entire effect</li>
+<li>Expose parameters for easy tuning in the editor or during gameplay</li>
+</ul>
+<p>We can think of <strong>Niagara systems</strong> as the final effect, and the emitters as the <strong>building blocks</strong> that make up the effect.</p>
+<p><a href='https://postimg.cc/BjDLkH1R' target='_blank'><img src='https://i.postimg.cc/8zXRFbkk/Screenshot-2025-10-26-193611.png' border='0' alt='Screenshot-2025-10-26-193611'></a></p>
+<h2>How Particles work in Niagara Emitters</h2>
+<p>Every particle goes through these stages:</p>
+<h3>1. Spawn</h3>
+<ul>
+<li>The particle is created</li>
+<li>It gets initial properties: position, color, size, direction</li>
+<li>Example: A spark appears at the campfire</li>
+</ul>
+<h3>2. Life (Update)</h3>
+<ul>
+<li>The particle moves and changes</li>
+<li>It follows rules: gravity pulls it down, wind pushes it sideways</li>
+<li>Its appearance changes: it might get bigger, change color, or fade</li>
+<li>Example: The spark rises up, glows orange, then dims</li>
+</ul>
+<h3>3. Death (Destroy)</h3>
+<ul>
+<li>The particle reaches the end of its lifetime</li>
+<li>It disappears from the game</li>
+<li>Memory is freed for new particles</li>
+<li>Example: The spark fades to black and vanishes</li>
+</ul>
+<h2>Niagara Emitter Categories</h2>
+<p>Each <strong>Niagara Emitter</strong> is made up of a series of <strong>modules</strong>, grouped into <strong>categories</strong> that control different aspects of how the particle behaves.</p>
+<h3>Category: Emitter Properties</h3>
+<p>Controls <strong>Properties</strong> that are handled by the emitter.</p>
+<ul>
+<li>Whether the particles spawned by the emitter are relative to the emitter origin (local space) or world space</li>
+<li>Set randomness to be deterministic or not</li>
+<li>Whether the particle simulation is handled by the CPU or GPU</li>
+<li>Whether each particle spawned requires Persistent IDs</li>
+</ul>
+<p>We can think of <strong>emitter properties</strong> as the class defaults for the emitter.</p>
+<p><a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/J4fySdhT/Capture.png' border='0' alt='Capture'></a></p>
+<h3>Category: Particle Spawn</h3>
+<p>Defines what happens <strong>when each particle is created</strong></p>
+<p>We can think of <strong>Particle Spawn</strong> as the Begin Play event of each particle.</p>
+<ul>
+<li>Initial velocity and direction</li>
+<li>Lifetime and initial size</li>
+<li>Randomization and variation setup</li>
+</ul>
+<p><a href='https://postimg.cc/z38fX4R5' target='_blank'><img src='https://i.postimg.cc/MZjftS6c/Capture2.png' border='0' alt='Capture2'></a></p>
+<h3>Category: Particle Update</h3>
+<p>Defines what happens <strong>every frame</strong> for <strong>every living particle</strong></p>
+<p>We can think of <strong>Particle Update</strong> as the Tick event of each particle.</p>
+<ul>
+<li>Movement and acceleration</li>
+<li>Color and size over lifetime</li>
+<li>Rotation, drag and forces</li>
+<li>Collisions and custom behavior logic</li>
+</ul>
+<p><a href='https://postimg.cc/s1T3fxry' target='_blank'><img src='https://i.postimg.cc/8PScHfXF/Capture3.png' border='0' alt='Capture3'></a></p>
+<h3>Category: Render</h3>
+<p>Controls <strong>how particles are drawn</strong> in the scene.</p>
+<ul>
+<li>Type of renderer (Sprite, mesh, ribbon, etc.)</li>
+<li>Material and texture settings</li>
+<li>Alignment, facing mode, and translucency</li>
+</ul>
+<p><a href='https://postimg.cc/kRG3RNmK' target='_blank'><img src='https://i.postimg.cc/C5HFtJrP/Capture4.png' border='0' alt='Capture4'></a></p>
+<h3>Category: Events</h3>
+<p>Controls <strong>how particles interact with each other</strong> and <strong>respond to events</strong>.</p>
+<ul>
+<li>Sending and receiving events</li>
+<li>Triggering actions based on conditions</li>
+<li>Custom logic and behavior</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="2"><h2>Modules: Quick Essentials</h2>
+<p>Niagara effects are built by stacking modules. Combining and manipulating these modules allows you to create interesting effects. We can add modules to each category, but you will commonly add modules on</p>
+<ul>
+<li>
+<p><strong>Particle spawn</strong> which will trigger whatever instruction is in the added modules when the particle spawns.</p>
+</li>
+<li>
+<p><strong>Particle update</strong> which will trigger whatever instruction is in the added modules each frame the particle is alive for.</p>
+</li>
+</ul>
+<h3>Essential modules you’ll use a lot:</h3>
+<p><strong>1) Initialize Particle (in particle Spawn)</strong></p>
+<ul>
+<li>Sets initial Lifetime, Color, Size, Sprite Rotation, etc.</li>
+<li>Use when: You need starting values and variation (ranges)</li>
+</ul>
+<p><strong>2) Spawn Rate / Spawn Burst (in Emitter Update)</strong></p>
+<ul>
+<li>What: Rate = continuous; Burst = instant one-shot</li>
+<li>Use when: Fire (Rate), Explosion (Burst)</li>
+<li>Tip: Lower lifetime reduces total particles at the same rate</li>
+</ul>
+<p><strong>3) Add Velocity (in Particle spawn)</strong></p>
+<ul>
+<li>What: Gives particles direction and speed</li>
+<li>Use when: Upward fire, sparks radiating outward</li>
+</ul>
+<p><strong>4) Gravity Force (in Particle update)</strong></p>
+<ul>
+<li>What: Pulls particles downward (or upward with negative)</li>
+<li>Use when: Sparks falling, smoke slowly rising (-)</li>
+</ul>
+<p><strong>5) Drag (in Particle Update)</strong></p>
+<ul>
+<li>What: Slows particles over time (air resistance)</li>
+<li>Use when: Smoothly damping fast motion (sparks, debris)</li>
+</ul>
+<p><strong>6) Curl Noise Force (in Particle Update)</strong></p>
+<ul>
+<li>What: Adds natural, turbulent motion</li>
+<li>Use when: Fire flicker, smoke swirl, magic energy</li>
+</ul>
+<p><strong>7) Scale Color (in Particle Update)</strong></p>
+<ul>
+<li>What: Changes color and alpha over life</li>
+<li>Use when: Fade to transparent, color shifts over time</li>
+</ul>
+<p><strong>8) Scale Sprite Size (in Particle Update)</strong></p>
+<ul>
+<li>What: Grow/shrink over life</li>
+<li>Use when: Smoke expands, fire licks stretch then shrink</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="3"><h2>Curves &amp; Normalized Age</h2>
+<p>Curves let you control a value over time using a small graph.</p>
+<ul>
+<li>X-axis = time (we usually use Normalized Age: 0 at birth → 1 at death)</li>
+<li>Y-axis = the value you want to change (size, alpha, color channel, etc.)</li>
+</ul>
+<p><a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/4NRCHzLj/Capture5.png' border='0' alt='Capture5'></a></p>
+<p>Why Normalized Age?</p>
+<ul>
+<li>Independent of actual lifetime (works for 0.5s or 3s particles)</li>
+<li>Reusable: You can change lifetime and the curve still fits perfectly</li>
+</ul>
+<h3>Fade Out with a Curve (Alpha)</h3>
+<ol>
+<li>Add “Scale Color” in Particle Update</li>
+<li>Click the input to switch to a Curve (use the curve icon / dropdown)</li>
+<li>Set X-axis to Normalized Age (0 → 1)</li>
+<li>Add keys: at 0 → 1.0 (fully visible), at 1 → 0.0 (invisible)<br>
+Result: All particles fade out at the end of life</li>
+</ol>
+<h3>Size Over Life with a Curve</h3>
+<ol>
+<li>Add “Scale Sprite Size” in Particle Update</li>
+<li>Switch its input to a Curve</li>
+<li>Keys: 0 → 0.6, 0.3 → 1.2, 1.0 → 0.0 (grow then shrink)<br>
+Result: Natural growth and shrink behavior</li>
+</ol>
+<h3>Color Over Life with a Color Curve</h3>
+<ol>
+<li>In “Scale Color”, switch to a color curve</li>
+<li>Keys: at 0 → orange, 0.5 → red, 1 → dark red/black<br>
+Result: Fire shifts from bright to dark naturally</li>
+</ol>
+<h3>Attributes You’ll Use</h3>
+<ul>
+<li>Age (seconds): how long a particle has lived</li>
+<li>Lifetime (seconds): how long it will live total</li>
+<li>Normalized Age (0→1): Age / Lifetime</li>
+<li>Position, Velocity, Color, Sprite Size, Sprite Rotation, Mass, Drag, etc.</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="4"><h2>Exposing Parameters (User Parameters)</h2>
+<p>User Parameters let designers and Blueprints control your effect without opening Niagara.</p>
+<h3>Create a User Parameter</h3>
+<ol>
+<li>Open your Niagara System</li>
+<li>In the Parameters panel, click + to add a parameter</li>
+<li>Choose a type: Float, Integer, Bool, Vector, Linear Color, etc.</li>
+<li>Name clearly, e.g., Fire_Intensity (Float), Fire_Color (Linear Color)</li>
+</ol>
+<h3>Bind a User Parameter to a Module Input</h3>
+<ol>
+<li>Find an input you want to control (e.g., Spawn Rate, Color)</li>
+<li>Click the input’s dropdown and choose Bind to Parameter → User → Fire_Intensity (or “Make → User Parameter”)</li>
+<li>The module now reads from your User parameter</li>
+</ol>
+<h3>Example: Control Spawn Rate from a Parameter</h3>
+<ul>
+<li>Add Float parameter: Fire_Intensity (default 1.0)</li>
+<li>Bind Spawn Rate = 50 * Fire_Intensity</li>
+<li>Result: Setting Fire_Intensity to 2.0 doubles particle count</li>
+</ul>
+<h3>Example: Control Color from a Parameter</h3>
+<ul>
+<li>Add Linear Color parameter: Fire_Color</li>
+<li>Bind Initialize Particle → Color = Fire_Color</li>
+<li>Result: You can recolor the effect at runtime</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="5"><h2>CPU vs GPU Simulation</h2>
+<p>Two ways to simulate particles:</p>
+<h3>CPU (CPUSim)</h3>
+<ul>
+<li>Great for: Complex logic, events, collisions, small/medium counts</li>
+<li>Typical counts: up to a few thousand</li>
+<li>Pros: Most modules supported; easy events/collision</li>
+<li>Cons: Slower for huge counts</li>
+</ul>
+<h3>GPU (GPUComputeSim)</h3>
+<ul>
+<li>Great for: Massive counts (rain, snow, sand, sparks)</li>
+<li>Typical counts: tens/hundreds of thousands</li>
+<li>Pros: Very fast for simple behaviors</li>
+<li>Cons: Many CPU-only features aren’t supported (some collisions, event handlers)</li>
+</ul>
+<h3>How to Switch</h3>
+<ol>
+<li>Select an emitter → Emitter Properties (top of stack)</li>
+<li>Find Sim Target</li>
+<li>Choose CPUSim or GPUComputeSim</li>
+</ol>
+<div class="info-box"><p>If you switch to GPU and see warnings, some modules aren’t supported on GPU. Replace them with GPU-compatible alternatives or simplify behavior.</p>
+</div>
+<h3>When to Use Which</h3>
+<ul>
+<li>Use CPU for: gameplay-critical effects, collisions, events, complex logic</li>
+<li>Use GPU for: background/ambient effects and very high particle counts</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="6"><h2>Blueprint Integration (Controlling Niagara from Gameplay)</h2>
+<h3>Option A: Add a Niagara Component to an Actor</h3>
+<ol>
+<li>In your Blueprint Actor, add a Niagara System component</li>
+<li>Set the Niagara System asset</li>
+<li>Toggle Auto Activate if you want it to play on BeginPlay</li>
+</ol>
+<h3>Option B: Spawn at Runtime</h3>
+<ul>
+<li>Use node: Spawn System at Location (Niagara)</li>
+<li>Or: Spawn System Attached (Niagara) to follow a socket/bone</li>
+<li>Set Auto Destroy to clean up automatically after finish</li>
+</ul>
+<h3>Setting User Parameters from Blueprints</h3>
+<ul>
+<li>Get Niagara Component → Set Niagara Variable (Float)
+<ul>
+<li>Variable Name: User.Fire_Intensity</li>
+<li>Value: 1.5</li>
+</ul>
+</li>
+<li>Get Niagara Component → Set Niagara Variable (Linear Color)
+<ul>
+<li>Variable Name: User.Fire_Color</li>
+<li>Value: color from gameplay</li>
+</ul>
+</li>
+</ul>
+<div class="info-box"><p>Parameter names in Blueprint should include the User. prefix, e.g., User.Fire_Color</p>
+</div>
+<h3>Simple Example Flow</h3>
+<ol>
+<li>Player presses “Fire” → Spawn System at Location (NS_Fireball)</li>
+<li>Immediately Set Niagara Variable (Float) User.Speed = ProjectileSpeed</li>
+<li>While charging, update User.Intensity over time</li>
+<li>On impact, spawn a different Niagara System for the explosion</li>
+</ol>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="7"><h1></h1>
+<h1></h1>
+<h1></h1>
+<h1>Any questions?</h1>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Liam Lacey | 25/26</strong></p>
+</div></div></section></div>
+
+  <div class="export-controls">
+    <button id="prevBtn" title="Previous (←/↑)">← Prev</button>
+    <span class="slide-counter" id="slideCounter">1 / 8</span>
+    <button id="nextBtn" title="Next (→/↓)">Next →</button>
+    <button id="viewModeBtn" class="view-mode-btn" title="Toggle Scroll/Present (Space)">🎯 Present</button>
+    <button id="fullscreenBtn" class="view-mode-btn" title="Toggle Fullscreen (F)">⛶ Fullscreen</button>
+  </div>
+
+  <script>
+    (function(){
+      const slides = Array.from(document.querySelectorAll('.slide'))
+      let current = 0
+      const total = slides.length
+      const counter = document.getElementById('slideCounter')
+      const body = document.body
+
+      const viewModeBtn = document.getElementById('viewModeBtn')
+      function isMobileDevice(){
+        return window.matchMedia('(max-width: 900px)').matches || (('ontouchstart' in window || navigator.maxTouchPoints>0))
+      }
+      function updateViewModeButton(){
+        if (isMobileDevice()){
+          viewModeBtn.textContent = '📱 Scroll only'
+          viewModeBtn.disabled = true
+          return
+        }
+        const isPresent = body.classList.contains('presentation-mode')
+        viewModeBtn.textContent = isPresent ? '🧭 Scroll' : '🎯 Present'
+        viewModeBtn.disabled = false
+      }
+
+      // Build a dedicated scroll viewport above the footer and add arrows if missing
+      slides.forEach(slide => {
+        // Create .slide-viewport and move non-footer/arrows children into it
+        let viewport = slide.querySelector('.slide-viewport')
+        if (!viewport){
+          viewport = document.createElement('div')
+          viewport.className = 'slide-viewport'
+          const children = Array.from(slide.children)
+          children.forEach(child => {
+            const cls = (child.className && child.className.toString()) || ''
+            if (/(presentation-footer|ts-global-footer|slide-arrows)/.test(cls)) return
+            viewport.appendChild(child)
+          })
+          slide.insertBefore(viewport, slide.firstChild)
+        }
+        // Add arrows if missing
+        if (!slide.querySelector('.slide-arrows')){
+          const ui = document.createElement('div')
+          ui.className = 'slide-arrows'
+          ui.innerHTML = '<div class="arrow up">▲</div><div class="arrow down">▼</div>'
+          slide.appendChild(ui)
+        }
+      })
+      // Stage wrapper for presentation scaling (1280x720 like Marp)
+      const bodyEl = document.body
+      let pres = document.querySelector('.presentation')
+      if (!pres) {
+        pres = document.createElement('div')
+        pres.className = 'presentation'
+        // Move slides into presentation container
+        slides.forEach(s => pres.appendChild(s))
+        const controls = document.querySelector('.export-controls')
+        bodyEl.insertBefore(pres, controls)
+      }
+      let stage = pres.querySelector('.stage')
+      if (!stage) {
+        stage = document.createElement('div')
+        stage.className = 'stage'
+        pres.appendChild(stage)
+      }
+      // Ensure stage has slide wrap and footer containers
+      let stageWrap = stage.querySelector('.stage-slide-wrap')
+      if (!stageWrap) {
+        stageWrap = document.createElement('div')
+        stageWrap.className = 'stage-slide-wrap'
+        stage.appendChild(stageWrap)
+        const currentSlides = Array.from(pres.querySelectorAll('.slide'))
+        currentSlides.forEach(s => stageWrap.appendChild(s))
+      }
+      let stageFooter = stage.querySelector('.stage-footer')
+      if (!stageFooter) {
+        stageFooter = document.createElement('div')
+        stageFooter.className = 'stage-footer'
+        stage.appendChild(stageFooter)
+      }
+
+      function fitStage(){
+        const BASE_W = 1280, BASE_H = 720
+        if (body.classList.contains('presentation-mode')){
+          const fit = Math.min(window.innerWidth/BASE_W, window.innerHeight/BASE_H)
+          stage.style.transform = 'scale(' + fit + ')'
+          // After fitting, update footer heights (in unscaled CSS px) and scroll UI
+          requestAnimationFrame(() => { updateFooterHeights(); updateAllScrollUI(); })
+        } else {
+          stage.style.transform = 'none'
+          requestAnimationFrame(() => { updateFooterHeights(); })
+        }
+      }
+
+      function getStageScale(){
+        if (!body.classList.contains('presentation-mode')) return 1
+        const r = stage.getBoundingClientRect()
+        return r.height / 720
+      }
+
+      function updateFooterHeights(){
+        const scale = getStageScale() || 1
+        const stageFooter = stage.querySelector('.stage-footer')
+        const fh = stageFooter ? stageFooter.getBoundingClientRect().height : 0
+        const unscaled = (fh/scale)
+        // Set on stage and slides for convenience
+        stage.style.setProperty('--footer-height', unscaled + 'px')
+        slides.forEach(slide => slide.style.setProperty('--footer-height', unscaled + 'px'))
+      }
+
+
+      function setActive(i){
+        slides.forEach((s, idx) => s.classList.toggle('active', idx===i))
+        counter.textContent = (i+1) + ' / ' + total
+        // Update stage footer to match active slide footer
+        const stageFooter = stage.querySelector('.stage-footer')
+        if (stageFooter){
+          stageFooter.innerHTML = ''
+          const footer = slides[i].querySelector('.presentation-footer, .ts-global-footer')
+          if (footer) stageFooter.appendChild(footer.cloneNode(true))
+        }
+        requestAnimationFrame(() => { updateFooterHeights(); updateScrollUIForSlide(slides[i]) })
+      }
+
+      function updateAllScrollUI(){
+        slides.forEach(updateScrollUIForSlide)
+      }
+
+      function detectOverflow(slide){
+        const viewport = slide.querySelector('.slide-viewport') || slide
+        // Basic check first
+        if (viewport.scrollHeight > viewport.clientHeight + 1) return true
+        // Fallback for absolutely-positioned content: compute visual bottom of non-footer elements
+        const excluded = new Set(['presentation-footer','ts-global-footer','slide-arrows'])
+        const rect = viewport.getBoundingClientRect()
+        let maxBottom = 0
+        viewport.querySelectorAll(':scope > *').forEach(el => {
+          const cls = (el.className && el.className.toString()) || ''
+          if ([...excluded].some(c => cls.includes(c))) return
+          const r = el.getBoundingClientRect()
+          const bottom = (r.bottom - rect.top) + viewport.scrollTop
+          if (bottom > maxBottom) maxBottom = bottom
+        })
+        return maxBottom > viewport.clientHeight + 1
+      }
+
+      function updateScrollUIForSlide(slide){
+        if (!slide || !body.classList.contains('presentation-mode')) return
+        const viewport = slide.querySelector('.slide-viewport') || slide
+        const ui = slide.querySelector('.slide-arrows')
+        if (!viewport || !ui) return
+        const up = ui.querySelector('.arrow.up')
+        const down = ui.querySelector('.arrow.down')
+
+        // Show UI only if overflow exists (permanently visible when shown)
+        const overflow = detectOverflow(slide)
+        ui.style.display = overflow ? 'flex' : 'none'
+        if (!overflow) return
+
+        // Update arrow enablement (only show if content above/below)
+        const atTop = viewport.scrollTop <= 0
+        const atBottom = (viewport.scrollTop + viewport.clientHeight) >= (viewport.scrollHeight - 1)
+        if (up) up.style.display = atTop ? 'none' : 'block'
+        if (down) down.style.display = atBottom ? 'none' : 'block'
+
+        // Bind interactions once
+        if (!ui._bound){
+          ui._bound = true
+          // Prevent clicks from affecting slide navigation
+          ui.addEventListener('pointerdown', e => e.stopPropagation())
+          up && up.addEventListener('click', e => { e.stopPropagation(); viewport.scrollTo({ top: 0, behavior: 'smooth' }) })
+          down && down.addEventListener('click', e => { e.stopPropagation(); viewport.scrollTo({ top: viewport.scrollHeight, behavior: 'smooth' }) })
+          viewport.addEventListener('scroll', () => { requestAnimationFrame(() => updateScrollUIForSlide(slide)) })
+        }
+      }
+
+
+      /* computeGlobalScale removed: we now rely solely on stage scaling for present-mode and no global scaling in scroll-mode */
+function computeGlobalScale_REMOVED(){
+        // Measure natural content size at scale(1)
+        const BASE_W = 1920, BASE_H = 1080
+        let minS = 1
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content');
+          if (!c) return;
+          c.style.transform = 'scale(1)';
+          c.getBoundingClientRect();
+          const cr = c.getBoundingClientRect();
+          const cs = getComputedStyle(slide);
+          const maxW = BASE_W - (parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight) || 0)
+          const maxH = BASE_H - (parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom) || 0)
+          const sW = cr.width>0 && maxW>0 ? Math.min(1, maxW/cr.width) : 1
+          const sH = cr.height>0 && maxH>0 ? Math.min(1, maxH/cr.height) : 1
+          const need = Math.min(sW, sH)
+          if (need < minS) minS = need
+        })
+        return Math.max(0.5, Math.min(1, isFinite(minS) ? minS : 1))
+      }
+
+      /* applyGlobalScale removed: no per-slide or global scaling, stage-only */
+function applyGlobalScale_REMOVED(){
+        // Do NOT scale inner content in presentation-mode; stage scaling handles fit.
+        if (body.classList.contains('presentation-mode')){
+          // Presentation-mode: per-slide smart shrink instead of global scaling
+          applySmartShrinkPresentation()
+          return
+        }
+        const s = computeGlobalScale()
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content')
+          if (!c) return
+          c.style.transform = 'scale(' + s + ')'
+          c.style.marginLeft = '0'
+          c.style.marginRight = '0'
+        })
+      }
+
+      /* applySmartShrinkPresentation removed: uniform stage scaling ensures proportionality */
+function applySmartShrinkPresentation_REMOVED(){
+        if (!body.classList.contains('presentation-mode')) return
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content')
+          if (!c) return
+          // Reset to natural size
+          c.style.transform = 'scale(1)'
+          c.style.width = '100%'
+          // Measure
+          const cs = getComputedStyle(slide)
+          const availW = slide.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)
+          const availH = slide.clientHeight - (parseFloat(cs.paddingTop)||0) - (parseFloat(cs.paddingBottom)||0)
+          const rect = c.getBoundingClientRect()
+          const needH = rect.height > 0 ? (availH / rect.height) : 1
+          let s = Math.min(1, needH)
+          if (!isFinite(s) || s <= 0) s = 1
+          if (s < 1) {
+            // Keep full visual width while shrinking proportionally:
+            // set logical width to 100%/s so after scale(s) visual width == 100%
+            c.style.width = (100 / s) + '%'
+            c.style.transform = 'scale(' + s + ')'
+          }
+        })
+      }
+
+
+      function prev(){ if (current>0){ current--; setActive(current) } }
+      function next(){ if (current<total-1){ current++; setActive(current) } }
+      function go(i){ if (i>=0 && i<total){ current = i; setActive(current) } }
+
+      function toggleMode(){
+        if (isMobileDevice()){
+          // Force scroll-only on mobile
+          body.classList.remove('presentation-mode')
+          body.classList.add('scroll-mode')
+          setActive(current)
+          updateViewModeButton()
+          fitStage()
+          return
+        }
+        const present = body.classList.contains('presentation-mode')
+        body.classList.toggle('presentation-mode', !present)
+        body.classList.toggle('scroll-mode', present)
+        setActive(current)
+        updateViewModeButton()
+        fitStage()
+      }
+
+      // Event wiring
+      document.getElementById('prevBtn').addEventListener('click', prev)
+      document.getElementById('nextBtn').addEventListener('click', next)
+      document.getElementById('viewModeBtn').addEventListener('click', toggleMode)
+      document.getElementById('fullscreenBtn').addEventListener('click', () => {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      })
+
+      document.addEventListener('keydown', (e) => {
+        switch(e.key){
+          case 'ArrowLeft': case 'ArrowUp': e.preventDefault(); prev(); break;
+          case 'ArrowRight': case 'ArrowDown': e.preventDefault(); next(); break;
+          case ' ': e.preventDefault(); toggleMode(); break;
+          case 'Home': e.preventDefault(); go(0); break;
+          case 'End': e.preventDefault(); go(total-1); break;
+          case 'f': case 'F': e.preventDefault();
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+            break;
+        }
+      })
+
+      // Initialize
+      // Mobile: force scroll-mode and disable present
+      if (isMobileDevice()){
+        body.classList.remove('presentation-mode')
+        body.classList.add('scroll-mode')
+      }
+      updateFooterHeights()
+      setActive(0)
+      updateViewModeButton()
+
+      fitStage()
+      window.addEventListener('resize', () => { fitStage() })
+    })();
+  </script>
+
+</body>
+</html>
