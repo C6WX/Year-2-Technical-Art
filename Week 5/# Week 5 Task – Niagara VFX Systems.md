@@ -32,7 +32,6 @@
 [Fire Showcase](https://youtu.be/Llidm2EqRFQ)
 
 
-
 ### 2. Fireball Projectile
 
 #### Development Process
@@ -179,14 +178,17 @@
 
 ##### NS Decal
 
-![]
+![NS Decal](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%205/NS%20Decal.png)
+
+##### Niagara System Parameters
+
+[NS Decal Parameters](https://youtu.be/VcQ4uGWIQZk)
 
 #### Final Result
 
-
+[Decal Showcase](https://youtu.be/IL0VAf74tTQ)
 
 ### 6. SubUV Flipbook Implementation (Fire)
-
 
 #### Development Process
 
