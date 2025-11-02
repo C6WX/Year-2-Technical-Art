@@ -171,3 +171,8 @@ To balance visual richness with performance, optimising foliage placement using 
 <br>
 
 ![Rocks](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%203/Images/Extras/Rocks.png)
+
+
+
+### Bibliography 
+- UE5.4 Step-by-Step Landscape Material | Course Introduction (2024) Directed by UnrealityBites. At: https://www.youtube.com/watch?v=lSxDpDyAh2k (Accessed  28/10/2025).

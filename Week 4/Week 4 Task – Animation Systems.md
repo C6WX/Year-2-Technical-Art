@@ -175,3 +175,5 @@ What does it do? Blends the base pose with upper body animations to allow the ch
 [Layer Blend Showcase](https://youtu.be/kNPXKp7luqA)
 
 
+### Bibliography
+- How To Make An Attack Combo System In Unreal Engine 5 (2024) Directed by Unreal University. At: https://www.youtube.com/watch?v=Q5xk5PYlQ1k (Accessed  28/10/2025).

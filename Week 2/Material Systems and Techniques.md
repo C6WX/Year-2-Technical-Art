@@ -256,3 +256,14 @@ A post process material is a type of material that applies visual effects to the
 <br>
 
 ![Emissive Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Emissive%20Material.png)
+
+
+
+### Bibliography  
+- Stylized Water Material Tutorial in UE (2024) Directed by Viktoriia Zavhorodnia (akbutea). At: https://www.youtube.com/watch?v=bIEB85ITmEo (Accessed  28/10/2025).
+
+- Dynamic Material Instances - Change Values on Materials Using Blueprint: UE5 Beginner Tutorial - YouTube (s.d.) At: https://www.youtube.com/watch?v=7S8FdUPpxUw (Accessed  28/10/2025).
+
+- Parallax Occlusion Mapping In Unreal Engine 5 | UE5 Beginner Tutorial (2023) Directed by pinkpocketTV. At: https://www.youtube.com/watch?v=WNXPaAnxlQQ (Accessed  28/10/2025).
+
+- How To Create The Ultimate Post Process Cel Shader - Unreal Engine 5 Material Tutorial (2025) Directed by Pitchfork Academy. At: https://www.youtube.com/watch?v=AvWx85Y9LRs (Accessed  28/10/2025).
