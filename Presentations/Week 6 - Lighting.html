@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TextSlideV2 – Modern Minimal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    
+/* Theme: Modern Minimal */
+:root {
+  --color-primary: #3b82f6;
+  --color-secondary: #8b5cf6;
+  --color-background: #fafafa;
+  --color-background-secondary: #f3f4f6;
+  --color-foreground: #1f2937;
+  --color-accent: #10b981;
+  --color-muted: #64748b;
+  --font-family-primary: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-family-secondary: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 2rem;
+  --font-size-h4: 1.5rem;
+  --font-size-body: 1.125rem;
+  --font-size-quote: 1rem;
+  --font-size-footer: 0.875rem;
+  --font-size-small: 1rem;
+  --color-bold: #111827;
+  --color-italic: #334155;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --spacing-section: 3rem;
+  --spacing-element: 1.5rem;
+  --slide-padding: 3rem;
+  --border-radius: 0.5rem;
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --ts-border-color: rgba(226, 232, 240, 0.8);
+  --ts-divider-color: #e5e7eb;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-secondary, 'Inter', sans-serif);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Presentation container */
+.presentation {
+  width: 100%;
+  min-height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+/* Slide styles */
+.slide {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  padding: var(--slide-padding, 3rem);
+  background: linear-gradient(135deg, #fafafa, #f3f4f6);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: var(--shadow-card, 0 10px 25px -5px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Typography */
+.slide h1 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h1, 3.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #3b82f6;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0 0 var(--spacing-element, 1.5rem) 0;
+}
+
+.slide h2 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h2, 2.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #3b82f6;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--ts-divider-color, #e5e7eb);
+  margin: var(--spacing-element, 1.5rem) 0 var(--spacing-element, 1.5rem) 0;
+}
+
+.slide h3 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h3, 2rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: var(--spacing-element, 1.5rem) 0 1rem 0;
+}
+
+.slide h4 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h4, 1.5rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: 1rem 0 0.75rem 0;
+}
+
+.slide h5, .slide h6 {
+  font-family: var(--font-family-primary, 'Inter', sans-serif);
+  font-size: var(--font-size-h4, 1.25rem);
+  font-weight: var(--font-weight-heading, 600);
+  line-height: var(--line-height-heading, 1.2);
+  color: #1f2937;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.slide p {
+  font-size: var(--font-size-body, 1.125rem);
+  font-weight: var(--font-weight-body, 400);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.slide ul, .slide ol {
+  font-size: var(--font-size-body, 1.125rem);
+  line-height: var(--line-height-body, 1.6);
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.slide li {
+  margin-bottom: 0.5rem;
+}
+
+/* Improved list marker contrast and spacing */
+.slide ul li::marker, .slide ol li::marker {
+  color: var(--color-accent, #3b82f6);
+  font-weight: 600;
+}
+
+/* Text styling */
+.slide strong, .slide b {
+  color: var(--color-bold, #1f2937);
+  font-weight: 700;
+}
+
+.slide em, .slide i {
+  color: var(--color-italic, #1f2937);
+  font-style: italic;
+}
+
+.slide code {
+  font-family: var(--font-family-mono, 'JetBrains Mono', monospace);
+  font-size: 0.9em;
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.slide pre {
+  font-family: var(--font-family-mono, 'JetBrains Mono', monospace);
+  background: #f8fafc;
+  color: #1e293b;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid #e2e8f0;
+}
+
+.slide pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Layout containers */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container styles */
+.info, .warning, .error, .success {
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  margin: 1rem 0;
+  border-left: 4px solid;
+}
+
+.info {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.warning {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.error {
+  background: #fee2e2;
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+.success {
+  background: #d1fae5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+/* Links */
+.slide a {
+  color: #3b82f6;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.slide a:hover {
+  border-bottom-color: #3b82f6;
+}
+
+/* Images */
+.slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+.slide table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.slide th,
+.slide td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.slide th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Blockquotes */
+.slide blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  font-size: var(--font-size-quote, 1rem);
+  color: #64748b;
+}
+
+/* Enhanced custom containers */
+.info-box {
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+  border-radius: var(--border-radius, 0.5rem);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #3b82f6;
+}
+
+.info-box h1, .info-box h2, .info-box h3, .info-box h4, .info-box h5, .info-box h6 {
+  color: #3b82f6;
+  margin-top: 0;
+}
+
+.presentation-header, .presentation-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: var(--font-size-footer, 0.875rem);
+  color: #64748b;
+  border-top: 1px solid #e2e8f0;
+  margin: 2rem 0 1rem 0;
+}
+
+.presentation-header {
+  border-top: none;
+  border-bottom: 1px solid #e2e8f0;
+  margin: 1rem 0 2rem 0;
+}
+
+/* Enhanced multi-column layouts */
+.three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.two-columns .col, .three-columns .col {
+  min-width: 0;
+}
+
+/* Widget containers */
+.widget-container {
+  margin: 2rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.widget-container iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.widget-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.5rem);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Citations */
+.ts-citation {
+  font-size: var(--font-size-quote, 0.875rem);
+  color: #64748b;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .two-columns, .three-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .widget-container {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .widget-container iframe {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+
+    body { margin: 0; padding: 0; }
+    html { font-size: 80%; }
+
+    /* Deck modes */
+    body.presentation-mode { background: #000; overflow: hidden; }
+    .presentation-mode .presentation {
+      position: fixed; inset: 0; padding: 0; gap: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .presentation-mode .stage {
+      width: 1280px; height: 720px; position: relative;
+      transform-origin: center center;
+      display: grid; grid-template-rows: 1fr auto; align-items: stretch; justify-items: stretch;
+    }
+    .presentation-mode .stage .stage-slide-wrap { position: relative; grid-row: 1; width: 100%; height: 100%; }
+    .presentation-mode .stage .stage-footer {
+      grid-row: 2; width: 100%; margin: 0; background: transparent;
+      padding: 0; /* no separator gap; flush to slides */
+      padding-left: var(--slide-pad-x, var(--slide-padding, clamp(12px, 35%, 256px))); /* align with slide content */
+      font-size: 0.7rem; /* compact footer */
+      text-align: left; z-index: 60;
+    }
+    /* Normalize cloned footer content: no borders/extra spacing, left aligned */
+    .presentation-mode .stage .stage-footer .presentation-footer,
+    .presentation-mode .stage .stage-footer .ts-global-footer {
+      border: 0 !important; border-top: 0 !important; background: transparent !important;
+      margin: 0 !important; padding: 0 !important; text-align: left !important;
+    }
+    .presentation-mode .stage .stage-footer > * { margin-left: 0 !important; margin-right: 0 !important; }
+    .presentation-mode .slide {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; margin: 0; padding: var(--slide-padding, clamp(12px, 35%, 256px));
+      opacity: 0; transition: opacity .25s ease; overflow: hidden;
+      display: grid; grid-template-rows: 1fr auto; align-items: stretch; justify-items: stretch;
+      align-content: stretch; justify-content: stretch; row-gap: 0; column-gap: 0;
+      box-sizing: border-box;
+    }
+    .presentation-mode .slide.active { opacity: 1; }
+    /* Ensure only the active slide is interactive and on top */
+    .presentation-mode .slide { pointer-events: none; z-index: 0; }
+    .presentation-mode .slide.active { pointer-events: auto; z-index: 10; }
+
+    .scroll-mode .presentation { padding: 2rem 1rem; gap: 2rem; }
+    .scroll-mode .stage { width: 100%; height: auto; transform: none; position: static; }
+    .scroll-mode .slide { position: relative; opacity: 1; transform: none; width: 100%; margin: 0 auto; display:flex; justify-content:center; align-items:center; }
+    /* Remove max constraints from slides in both modes */
+    .presentation-mode .slide, .scroll-mode .slide { max-width: none !important; max-height: none !important; }
+
+
+    /* Present-mode: slides are absolutely stacked and clip content; a dedicated viewport scrolls above footer */
+    .presentation-mode .slide { overflow: hidden; }
+    .presentation-mode .slide .slide-viewport {
+      position: relative;
+      grid-row: 1 / 2;
+      width: 100%;
+      min-height: 0; min-width: 0; /* allow 1fr track to shrink for footer */
+      overflow: auto;
+      box-sizing: border-box;
+    }
+    .presentation-mode .slide .slide-viewport::-webkit-scrollbar { width: 0; height: 0; }
+
+    /* Arrows: permanent when overflow; JS toggles display none/flex. No hover/opacity transitions. */
+    .presentation-mode .slide .slide-arrows {
+      position: absolute;
+      top: var(--slide-padding, clamp(12px, 35%, 256px));
+      bottom: var(--slide-padding, clamp(12px, 35%, 256px));
+      right: 8px;
+      width: 24px;
+      pointer-events: none;
+      display: none; /* shown as flex by JS when overflow exists */
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 70;
+    }
+    .presentation-mode .slide .slide-arrows .arrow {
+      width: 22px; height: 22px; border-radius: 999px;
+      background: rgba(0,0,0,.35); color: #fff;
+      font-size: 12px; line-height: 22px; text-align: center;
+      pointer-events: auto; cursor: pointer; user-select: none;
+      box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    }
+    .presentation-mode .slide .slide-arrows .arrow:active { transform: scale(.95); }
+
+    .presentation-mode .slide .ts-global-footer,
+    .presentation-mode .slide .presentation-footer { display: none !important; }
+
+    /* Controls */
+    .export-controls {
+      position: fixed; bottom: 8px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,255,255,.95); backdrop-filter: blur(10px);
+      border: 1px solid #e5e7eb; border-radius: 6px; padding: 4px 8px;
+      display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px -2px rgba(0,0,0,.1); z-index: 1000;
+      font-family: Inter, system-ui, sans-serif; font-size: 11px;
+    }
+    .export-controls button { background: #3b82f6; color: #fff; border: 0; border-radius: 4px; padding: 3px 6px; font-size: 10px; font-weight: 600; cursor: pointer; }
+    .export-controls button:hover { background: #2563eb; }
+    .export-controls .view-mode-btn { background: #6b7280; }
+    .export-controls .view-mode-btn:hover { background: #4b5563; }
+    .slide-counter { min-width: 44px; text-align: center; color: #374151; font-weight: 600; }
+
+    /* Print */
+    @media print {
+      .export-controls { display: none !important; }
+      .presentation { padding: 0 !important; gap: 0 !important; }
+      .slide { page-break-after: always; position: relative !important; transform: none !important; opacity: 1 !important; width: 100% !important; height: 100vh !important; }
+    }
+  </style>
+</head>
+<body class="presentation-mode">
+  <div class="presentation"><section class="slide" data-slide-index="0"><h1>Week 6 – Lighting and Nanite</h1>
+<h2>Session Objectives</h2>
+<div class="info-box"><h3>Learning Goals:</h3>
+<ul>
+<li>Understand <strong>Physically Based Lighting (PBL)</strong> principles and how UE5 implements them</li>
+<li>Understand <strong>baked vs dynamic lighting</strong> workflows and when to use each</li>
+<li>Understand <strong>lightmaps</strong> (UVs, resolution, troubleshooting)</li>
+<li>Understand <strong>Global Illumination (GI)</strong> concepts and techniques</li>
+<li>Learn <strong>Lumen</strong>: what it is, how it works, settings, and performance trade-offs</li>
+<li>Understand <strong>Nanite</strong>: virtualized geometry, when to use it, limitations, and profiling</li>
+<li>Make informed decisions about <strong>lighting and rendering</strong> for indie vs AAA projects</li>
+</ul>
+</div><div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="1"><h1>Lighting Foundations</h1>
+<h2>Why Lighting Matters</h2>
+<p><strong>Lighting is the foundation of visual communication in games.</strong> It shapes how players perceive, navigate, and emotionally respond to your world.</p>
+<div class="info-box"><h3>Core Functions of Lighting:</h3>
+<ul>
+<li><strong>Readability:</strong> Guides player attention and highlights important gameplay elements</li>
+<li><strong>Mood &amp; Atmosphere:</strong> Establishes emotional tone (horror, warmth, mystery)</li>
+<li><strong>Depth &amp; Form:</strong> Reveals 3D shape and spatial relationships</li>
+<li><strong>Material Perception:</strong> Shows how surfaces respond to light (PBR workflow)</li>
+<li><strong>Performance Budget:</strong> One of the most expensive rendering operations</li>
+</ul>
+</div>
+<p><img src="https://cdna.artstation.com/p/assets/images/images/069/407/482/large/attar-sagoo-electricdreams-relight2k.jpg?1700058294" alt="Electric Dreams – relight2k by Attar Sagoo"></p>
+<p><em>Sagoo, A., 2023. UE5 Lighting Test 03 (Relight) [digital image]. Available at: <a href="https://www.artstation.com/artwork/QXZk0d">https://www.artstation.com/artwork/QXZk0d</a> [Accessed 3 November 2025].</em></p>
+<h2>Direct vs Indirect Light</h2>
+<p>Understanding the difference between direct and indirect lighting is fundamental to all lighting workflows.</p>
+<h3>Direct Light:</h3>
+<p>Light that travels <strong>directly from a light source to a surface</strong> without bouncing off anything else first.</p>
+<ul>
+<li><strong>Example:</strong> Sunlight hitting the ground, a flashlight beam on a wall</li>
+<li><strong>Characteristics:</strong> Sharp, defined shadows with clear edges</li>
+<li><strong>Visual impact:</strong> High contrast between lit and shadowed areas</li>
+<li><strong>Performance:</strong> Computationally cheaper to calculate</li>
+</ul>
+<h3>Indirect Light (Bounce Light):</h3>
+<p>Light that <strong>bounces off one or more surfaces</strong> before reaching the camera or another surface.</p>
+<p><img src="https://vionixstudio.com/wp-content/uploads/Direct-and-Indirect-Light.png" alt="Direct &amp; Indirect Light diagram by Vionix Studio"></p>
+<p>*Vionix Studio, 2023. Unity Lighting Tutorial for Beginners: Direct and Indirect Lighting [image]. Available at: <a href="https://vionixstudio.com/2023/03/23/unity-light/">https://vionixstudio.com/2023/03/23/unity-light/</a> [Accessed 3/11]</p>
+<p><strong>Direct light</strong> provides definition and drama. <strong>Indirect light</strong> provides realism and fills in shadows. Most scenes need both for convincing results.</p>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="2"><h2>Physically Based Lighting (PBL)</h2>
+<p><strong>Physically Based Lighting (PBL)</strong> is a rendering approach that simulates how light behaves in the real world, following the laws of physics.</p>
+<h3>What Does “Physically Based” Mean?</h3>
+<p>In traditional game lighting, artists could set arbitrary values that didn’t correspond to reality. A light could be “brightness 5” with no real-world meaning. PBL changes this by using <strong>real-world measurements and physical rules</strong>.</p>
+<div class="info-box"><h3>Core Principles of PBL:</h3>
+<ol>
+<li><strong>Energy Conservation:</strong> Light reflected from a surface cannot be brighter than the light hitting it (you can’t create energy from nothing)</li>
+<li><strong>Real-World Units:</strong> Light intensity measured in actual photometric units (lux, candelas, lumens, nits)</li>
+<li><strong>Linear Color Space:</strong> Lighting calculations happen in linear space (not gamma-corrected sRGB) for physically accurate math</li>
+<li><strong>Material Response:</strong> Surfaces respond to light based on physical properties (roughness, metallic values)</li>
+</ol>
+</div>
+<p><strong>Why PBL matters:</strong> When you use real-world units and physical rules, your lighting will look correct in any lighting condition. Materials will respond predictably, and you can reference real-world values (like “sunlight is 100,000 lux”) instead of guessing.</p>
+<p><strong>It gives us a starting framework to set up our lighting conditions.</strong></p>
+<h2>Understanding Light Intensity Units</h2>
+<p>UE5 uses <strong>real-world photometric units</strong> to measure light intensity. This can be confusing at first, so let’s break down each unit from first principles.</p>
+<h3>What Are We Measuring?</h3>
+<p>Light can be measured in different ways depending on what aspect we care about:</p>
+<ul>
+<li>How much light is <strong>emitted</strong> by a source?</li>
+<li>How much light <strong>hits</strong> a surface?</li>
+<li>How bright does a surface <strong>appear</strong> to our eyes?</li>
+</ul>
+<p><img src="https://optography.org/wp-content/uploads/2021/10/WhatsApp-Image-2021-10-11-at-16.31.23.jpeg" alt="Image from Optography"></p>
+<p><em>Optography, 2021. WhatsApp Image 2021-10-11 at 16.31.23 [image]. Available at: <a href="https://optography.org/">https://optography.org/</a> [Accessed 3 November 2025].</em></p>
+<h2>Lumens (lm): Total Light Output</h2>
+<p><strong>Lumens measure the total amount of light energy emitted by a source in all directions.</strong></p>
+<h3>Think of it like this:</h3>
+<p>Imagine a light bulb. Lumens tell you the <strong>total amount of light</strong> the bulb produces, regardless of where that light goes.</p>
+<div class="info-box"><h3>Lumens Explained:</h3>
+<ul>
+<li><strong>What it measures:</strong> Total light output (power)</li>
+<li><strong>Symbol:</strong> lm</li>
+<li><strong>Used for:</strong> Describing the “strength” of a light source</li>
+<li><strong>Real-world example:</strong> A 60-watt incandescent bulb produces about 800 lumens</li>
+</ul>
+</div>
+<p><strong>Real-World References:</strong></p>
+<ul>
+<li>Small candle: ~12 lumens</li>
+<li>60W incandescent bulb: ~800 lumens</li>
+<li>100W incandescent bulb: ~1,600 lumens</li>
+<li>Car headlight: ~1,000-2,000 lumens per bulb</li>
+</ul>
+<p><strong>In UE5:</strong> Lumens are used for <strong>Rect Lights</strong> (area lights) because they emit light from a surface area.</p>
+<h2>Candelas (cd): Light Intensity in a Direction</h2>
+<p><strong>Candelas measure how much light is emitted in a specific direction.</strong></p>
+<h3>Think of it like this:</h3>
+<p>Imagine a flashlight. It doesn’t emit light equally in all directions, it focuses light in one direction. Candelas measure the <strong>intensity of light in that specific direction</strong>.</p>
+<div class="info-box"><h3>Candelas Explained:</h3>
+<ul>
+<li><strong>What it measures:</strong> Luminous intensity (light in a specific direction)</li>
+<li><strong>Symbol:</strong> cd</li>
+<li><strong>Used for:</strong> Point lights and spot lights (directional emission)</li>
+<li><strong>Real-world example:</strong> A standard candle emits about 1 candela (that’s where the name comes from!)</li>
+</ul>
+</div>
+<p><strong>Real-World References:</strong></p>
+<ul>
+<li>Standard candle: ~1 candela</li>
+<li>Flashlight: ~10-100 candelas</li>
+<li>Car headlight: ~10,000-30,000 candelas</li>
+<li>Lighthouse: ~500,000+ candelas</li>
+</ul>
+<p><strong>In UE5:</strong> Candelas are used for <strong>Point Lights</strong> and <strong>Spot Lights</strong> because they emit from a point in specific directions.</p>
+<h2>Lux (lx): Light Hitting a Surface</h2>
+<p><strong>Lux measures how much light hits a surface (illuminance).</strong></p>
+<h3>Think of it like this:</h3>
+<p>Imagine standing outside. Lux tells you <strong>how much light is hitting your skin</strong> from the sun. It’s not about how bright the sun is, it’s about how much of that light reaches you.</p>
+<div class="info-box"><h3>Lux Explained:</h3>
+<ul>
+<li><strong>What it measures:</strong> Illuminance (light arriving at a surface)</li>
+<li><strong>Symbol:</strong> lx</li>
+<li><strong>Formula:</strong> 1 lux = 1 lumen per square meter (lm/m²)</li>
+<li><strong>Used for:</strong> Measuring how well-lit a space is</li>
+<li><strong>Real-world example:</strong> A well-lit office has about 300-500 lux</li>
+</ul>
+</div>
+<p><strong>Real-World References:</strong></p>
+<ul>
+<li>Direct sunlight: ~100,000 lux</li>
+<li>Overcast day: ~10,000 lux</li>
+<li>Office lighting: ~300-500 lux</li>
+<li>Living room: ~50-150 lux</li>
+<li>Full moon: ~0.1 lux</li>
+<li>Starlight: ~0.001 lux</li>
+</ul>
+<p><strong>In UE5:</strong> Lux is used for <strong>Directional Lights</strong> (sun/moon) because they simulate distant light sources that illuminate surfaces uniformly.</p>
+<h2>Nits (cd/m²): Surface Brightness</h2>
+<p><strong>Nits measure how bright a surface appears (luminance).</strong></p>
+<h3>Think of it like this:</h3>
+<p>Imagine looking at a TV screen or a glowing sign. Nits tell you <strong>how bright that surface looks to your eyes</strong>. It’s the light <strong>coming from</strong> the surface, not hitting it.</p>
+<div class="info-box"><h3>Nits Explained:</h3>
+<ul>
+<li><strong>What it measures:</strong> Luminance (brightness of a surface)</li>
+<li><strong>Symbol:</strong> cd/m² (candelas per square meter)</li>
+<li><strong>Also called:</strong> “Nits” is the common name; technically it’s cd/m²</li>
+<li><strong>Used for:</strong> Emissive surfaces (screens, glowing materials)</li>
+<li><strong>Real-world example:</strong> A typical computer monitor is 200-300 nits</li>
+</ul>
+</div>
+<p><strong>Real-World References:</strong></p>
+<ul>
+<li>Typical LCD monitor: ~200-300 nits</li>
+<li>Bright smartphone: ~400-600 nits</li>
+<li>HDR TV: ~1,000-2,000 nits</li>
+<li>Direct sunlight (reflected off white paper): ~30,000 nits</li>
+</ul>
+<p><strong>In UE5:</strong> Nits are used for <strong>emissive materials</strong> (glowing surfaces like screens, neon signs, magical effects).</p>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="3"><h2>Quick Reference: Which Unit When?</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Light Sources:</h3>
+<ul>
+<li><strong>Directional Light (sun/moon):</strong> Lux</li>
+<li><strong>Point Light (bulb, torch):</strong> Candelas or Lumens</li>
+<li><strong>Spot Light (flashlight):</strong> Candelas or Lumens</li>
+<li><strong>Rect Light (panel, window):</strong> Lumens or Nits</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Surfaces:</h3>
+<ul>
+<li><strong>Emissive Material (glowing):</strong> Nits</li>
+<li><strong>Illuminated Surface (receiving light):</strong> Lux</li>
+</ul>
+</div>
+</div>
+<p><strong>Pro Tip:</strong> When in doubt, look up real-world reference values for the type of light you’re creating. “Office lighting” = 300-500 lux. “Candle” = 1 candela. This makes your lighting instantly more believable.</p>
+<h2>Exposure: The Camera’s Eye</h2>
+<p><img src="https://static.bhphotovideo.com/explora/sites/default/files/01-the-exposure-triangle-aperture-iso-shutter.png" alt="The Exposure Triangle – diagram from B&amp;H eXplora"></p>
+<p><em>B&amp;H Photo (n.d.). Understanding Exposure, Part 1: The Exposure Triangle [digital image]. Available at: <a href="https://www.bhphotovideo.com/explora/photography/tips-and-solutions/understanding-exposure-part-1-the-exposure-triangle">https://www.bhphotovideo.com/explora/photography/tips-and-solutions/understanding-exposure-part-1-the-exposure-triangle</a> [Accessed 3 November 2025].</em></p>
+<p><strong>Exposure controls how bright or dark the final rendered image appears.</strong> Just like a real camera or your eyes, the “camera” in UE5 needs to adapt to different lighting conditions.</p>
+<h3>What is Exposure?</h3>
+<p>When you walk from a bright outdoor area into a dark room, your eyes take a moment to adjust. This is <strong>exposure adaptation</strong>. In photography, exposure is controlled by aperture, shutter speed, and ISO. In UE5, exposure simulates this process.</p>
+<div class="info-box"><h3>Why Exposure Matters:</h3>
+<ul>
+<li><strong>Same scene, different brightness:</strong> A scene lit with 100,000 lux (sunlight) will look blown-out white if exposure is set for indoor lighting (500 lux)</li>
+<li><strong>Hides or reveals detail:</strong> Incorrect exposure can make well-lit scenes look wrong or hide lighting problems</li>
+<li><strong>Artistic control:</strong> Exposure is a creative tool for mood (dark and moody vs bright and airy)</li>
+</ul>
+</div>
+<p><img src="https://th.bing.com/th/id/R.032365d4f2cb1f8ce15f26ce52a84f97?rik=%2b0aNj5Xq%2bzYBVA&amp;riu=http%3a%2f%2f1.bp.blogspot.com%2f_qKMRJhbtd54%2fTQkSbrMDhqI%2fAAAAAAAAAyY%2foPfUvUVgODg%2fw1200-h630-p-nu%2fExposure%252BCompensation.jpg&amp;ehk=%2bRS5uVN4A%2fGQNUYw9v0OL%2bwz0c4pjTOonUTheQd5yT0%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="Exposure Compensation diagram"></p>
+<p><em>Digital-Photography-Hub, 2010. How to Use Exposure Compensation [image]. Available at: <a href="https://digital-photography-hub.blogspot.com/2010/12/how-to-use-exposure-compensation.html">https://digital-photography-hub.blogspot.com/2010/12/how-to-use-exposure-compensation.html</a> [Accessed 3 November 2025].</em></p>
+<!-- HTML table embed for Markdown -->
+<p>In a real world camera, Exposure is controlled by the ISO, Shutter Speed, and <strong>Aperture</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Controls</th>
+      <th>Also Affects</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ISO</td>
+      <td>Light sensitivity</td>
+      <td>Image noise</td>
+    </tr>
+    <tr>
+      <td>Shutter Speed</td>
+      <td>Motion blur</td>
+      <td>Brightness</td>
+    </tr>
+    <tr>
+      <td>Aperture</td>
+      <td>Light intake</td>
+      <td>Depth of field</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Exposure Modes in UE5</h3>
+<p>UE5 offers different exposure modes to control how the camera adapts to light:</p>
+<p><strong>1. Auto Exposure (Default):</strong><br>
+The camera automatically adjusts exposure based on the average brightness of the scene.</p>
+<ul>
+<li><strong>How it works:</strong> Engine measures scene brightness and adjusts exposure to keep the image in a comfortable range</li>
+<li><strong>Pros:</strong> Simulates human eye adaptation; works well for most scenes</li>
+<li><strong>Cons:</strong> Can cause unwanted brightness shifts when camera moves; may not match artistic intent</li>
+<li><strong>Use when:</strong> You want realistic eye adaptation (entering/exiting buildings, day/night transitions)</li>
+</ul>
+<p><strong>2. Manual Exposure:</strong><br>
+You set a fixed exposure value that never changes.</p>
+<ul>
+<li><strong>How it works:</strong> You specify an exact EV (Exposure Value) or exposure compensation value</li>
+<li><strong>Pros:</strong> Complete artistic control; consistent brightness; no unexpected changes</li>
+<li><strong>Cons:</strong> May look wrong in varied lighting conditions (too dark in shadows, too bright in sun)</li>
+<li><strong>Use when:</strong> You want precise control for cinematics, screenshots, or consistent lighting</li>
+</ul>
+<p><strong>3. Exposure Compensation:</strong><br>
+Auto exposure with an artistic bias applied.</p>
+<ul>
+<li><strong>How it works:</strong> Auto exposure runs, but you add a positive or negative offset</li>
+<li><strong>Pros:</strong> Combines automatic adaptation with artistic control</li>
+<li><strong>Cons:</strong> Still has some automatic variation</li>
+<li><strong>Use when:</strong> You want mostly automatic exposure but slightly brighter or darker overall</li>
+</ul>
+<p><img src="https://cdna.artstation.com/p/media_assets/images/images/001/088/110/large/ev_chart_01.jpg?1682720195" alt="EV Chart 01"></p>
+<p><em>Sang, S., (n.d.). Lighting: Exposure and Contrast [digital image]. Available at: <a href="https://www.artstation.com/blogs/shinsoj/p0Vv/lighting-exposure-and-contrast">https://www.artstation.com/blogs/shinsoj/p0Vv/lighting-exposure-and-contrast</a> [Accessed 3 November 2025].</em></p>
+<h3>Setting Exposure in UE5</h3>
+<p><strong>Post Process Volume:</strong></p>
+<ol>
+<li>Place a <strong>Post Process Volume</strong> in your level (or use the camera’s post process settings)</li>
+<li>Enable <strong>Infinite Extent (Unbound)</strong> to affect the whole level</li>
+<li>Under <strong>Exposure</strong> settings:
+<ul>
+<li><strong>Metering Mode:</strong> How brightness is measured (Auto Exposure Histogram, Manual, etc.)</li>
+<li><strong>Exposure Compensation:</strong> Offset applied to auto exposure (positive = brighter, negative = darker)</li>
+<li><strong>Min/Max Brightness:</strong> Limits for auto exposure range</li>
+</ul>
+</li>
+</ol>
+<p>When setting up lighting, use <strong>Manual Exposure</strong> with a fixed value so you can see exactly what your lights are doing without the camera compensating automatically.</p>
+<h2>Color Temperature (Kelvin)</h2>
+<p><strong>Color temperature</strong> describes the color of light sources, measured in Kelvin (K). This might seem confusing at first—why is “temperature” used to describe color?</p>
+<p><img src="https://cdn.shopify.com/s/files/1/0015/0811/4547/files/White_light_effect_Scale_K__EN_1024x1024.png?v=1698067193" alt="White light effect Scale K – diagram"></p>
+<p><em>Luke Roberts Lighting, 2023. Your Guide for the Right Colour Temperature [image]. Available at: <a href="https://www.luke-roberts.com/blogs/news/your-guide-for-the-right-colour-temperature">https://www.luke-roberts.com/blogs/news/your-guide-for-the-right-colour-temperature</a> [Accessed 3 November 2025].</em></p>
+<h3>What is Color Temperature?</h3>
+<p>The concept comes from physics: when you heat a metal object, it glows. First it glows red (low temperature), then orange, then yellow, then white, then blue-white (very high temperature). We use this same scale to describe the color of light.</p>
+<h3>Common Color Temperatures (Real-World Reference)</h3>
+<div class="info-box"><h3>Light Source Color Temperatures:</h3>
+<ul>
+<li><strong>1,800K:</strong> Candlelight (warm orange glow)</li>
+<li><strong>2,700K:</strong> Incandescent light bulb (warm white, like old-fashioned bulbs)</li>
+<li><strong>3,200K:</strong> Tungsten studio light (professional film lighting)</li>
+<li><strong>4,000K:</strong> Fluorescent office light (neutral white)</li>
+<li><strong>5,500K:</strong> Midday sunlight (neutral white, “true” white)</li>
+<li><strong>6,500K:</strong> Overcast sky (cool white, slightly blue)</li>
+<li><strong>10,000K:</strong> Clear blue sky (very cool, blue-white)</li>
+</ul>
+</div><div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="4"><h2>Light Types in UE5</h2>
+<p>UE5 provides <strong>five main light types</strong>, each with specific use cases and performance characteristics.</p>
+<p><img src="https://i.ytimg.com/vi/B8aimyv9HV0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLA64GXe61fPfAUBZTE_bt4bbUIo-w" alt="The 5 Types of Lights in Unreal Engine 5"></p>
+<p><em>The 5 Types of Lights in Unreal Engine 5 [video]. Available at: <a href="https://www.youtube.com/watch?v=EHqYY3vM69g">https://www.youtube.com/watch?v=EHqYY3vM69g</a> [Accessed 3 November 2025].</em></p>
+<h2>Directional Light</h2>
+<p><strong>Directional Light simulates distant light sources</strong> like the sun or moon. The key characteristic is that all light rays are <strong>parallel</strong> to each other, as if the light source is infinitely far away.</p>
+<h3>Why Parallel Rays?</h3>
+<p>The sun is so far away (93 million miles) that by the time sunlight reaches Earth, the rays are essentially parallel. This is different from a nearby light bulb, where rays spread out in all directions.</p>
+<p><strong>Visual result:</strong> Shadows from a directional light are parallel and consistent across the entire scene. A tree casts the same shadow whether it’s near or far from the camera.</p>
+<div class="info-box"><h3>Key Properties:</h3>
+<ul>
+<li><strong>Intensity Unit:</strong> Lux (illuminance - light hitting a surface)</li>
+<li><strong>Typical Value:</strong> 100,000 lux for direct sunlight, 0.1 lux for moonlight</li>
+<li><strong>Shadows:</strong> Cascaded Shadow Maps (CSM) or Virtual Shadow Maps (VSM)</li>
+<li><strong>Use Case:</strong> Primary outdoor lighting (sun/moon), any distant light source</li>
+<li><strong>Performance:</strong> The light itself is very cheap; shadows can be expensive depending on settings</li>
+</ul>
+</div>
+<h3>Mobility Options (What Can Move?)</h3>
+<p>Every light in UE5 has a <strong>Mobility</strong> setting that determines whether it can move or change at runtime:</p>
+<ul>
+<li><strong>Static:</strong> Light is completely baked into lightmaps. Cannot move or change. Cheapest at runtime but requires baking.</li>
+<li><strong>Stationary:</strong> Hybrid approach—indirect lighting is baked, but direct lighting and shadows are dynamic. Can change color/intensity but not position.</li>
+<li><strong>Movable:</strong> Fully dynamic. Can move, rotate, change color, change intensity. Most expensive but most flexible.</li>
+</ul>
+<h2>Sky Light</h2>
+<p><img src="https://www.worldofleveldesign.com/categories/ue5/images/19-hdri-lighting-guide-01.jpg" alt="HDRI Lighting Guide – diagram"></p>
+<p><em>World of Level Design (2025). “UE5: Quick Start Guide to Lighting with HDRIs in UE5” [digital image]. Available at: <a href="https://www.worldofleveldesign.com/categories/ue5/hdri-lighting-guide.php">https://www.worldofleveldesign.com/categories/ue5/hdri-lighting-guide.php</a> [Accessed 3 November 2025].</em></p>
+<p><strong>Sky Light captures the surrounding environment</strong> (like your skybox or a cubemap texture) and uses it to provide ambient lighting from all directions.</p>
+<h3>What Does “Capture the Environment” Mean?</h3>
+<p>Think of the Sky Light as taking a 360-degree photo of your sky and then using that photo to light your scene. If your sky is blue, the Sky Light will cast blue ambient light. If your sky has an orange sunset, the Sky Light will cast warm orange light.</p>
+<p><strong>Why this matters:</strong> Without a Sky Light, areas not directly hit by the sun would be completely black (no ambient light). The Sky Light fills in these shadows with realistic ambient lighting based on the sky color.</p>
+<div class="info-box"><h3>Key Properties:</h3>
+<ul>
+<li><strong>Source Type:</strong> Can capture the actual skybox in your scene, or use a specified cubemap texture</li>
+<li><strong>Intensity:</strong> Multiplier on the captured light (default 1.0, increase for brighter ambient light)</li>
+<li><strong>Use Case:</strong> Essential for outdoor scenes; provides ambient fill light</li>
+<li><strong>Performance:</strong> Very cheap (single ambient lighting term, no shadows)</li>
+</ul>
+</div>
+<h3>Important: Recapturing the Sky Light</h3>
+<p><strong>The Sky Light is not automatic</strong> When you change your skybox or environment, you must tell the Sky Light to <strong>recapture</strong> the new environment.</p>
+<p><strong>How to recapture:</strong></p>
+<ol>
+<li>Select the Sky Light actor in your level</li>
+<li>In the Details panel, click <strong>“Recapture Scene”</strong> button</li>
+<li>The Sky Light will update to match the current environment</li>
+</ol>
+<p><strong>Alternative:</strong> Set <strong>“Real Time Capture”</strong> to true for automatic updates, but this is expensive (recaptures every frame). Only use for dynamic skies that change constantly.</p>
+<h2>Point Light</h2>
+<p><strong>Point Light emits light equally in all directions</strong> from a single point in space. Think of a light bulb hanging in a room.</p>
+<p><img src="https://help.autodesk.com/cloudhelp/ENU/AR-Core/images/ac-point-light-pointLight-light-bulb-radius-4-3.jpg" alt="Point Light radius visualization – Autodesk Arnold documentation"></p>
+<p><em>Autodesk Inc., n.d. Arnold Renderer – Point Light documentation [digital image]. Available at: <a href="https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_core_ac_point_light_html">https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_core_ac_point_light_html</a> [Accessed 3 November 2025].</em></p>
+<p>Point lights are moderately expensive, and you will typically find AAA lighting artist utilize 2 spotlights (opposing eachother and slightly overlapping) to mimic the effect of a pointlight to save performance on shadow maps. 2 shadowmaps instead of the cubic 6 sided shadow map of the point light.</p>
+<div class="info-box"><h3>Key Properties:</h3>
+<ul>
+<li><strong>Intensity Unit:</strong> Candelas (cd) or Lumens (lm) - measures light emitted in directions</li>
+<li><strong>Attenuation Radius:</strong> The distance at which the light’s influence reaches zero (light fades to black)</li>
+<li><strong>Source Radius:</strong> The physical size of the light source (larger = softer shadows)</li>
+<li><strong>Use Case:</strong> Light bulbs, lamps, torches, candles, explosions, magical glowing effects</li>
+<li><strong>Performance:</strong> Moderate cost; shadows are the expensive part</li>
+</ul>
+</div>
+<h3>Understanding Attenuation Radius</h3>
+<p><strong>Attenuation Radius</strong> is the maximum distance the light can reach. Beyond this radius, the light has no effect.</p>
+<ul>
+<li><strong>Small radius (100-500 units):</strong> Small lamp, candle, localized light</li>
+<li><strong>Medium radius (500-2000 units):</strong> Room light, torch</li>
+<li><strong>Large radius (2000+ units):</strong> Large area light, explosion</li>
+</ul>
+<h3>Inverse Square Falloff</h3>
+<p>By default, Point Lights use <strong>Inverse Square Falloff</strong>, which is physically accurate. This means light intensity decreases with the <strong>square</strong> of the distance.</p>
+<ul>
+<li><strong>At 1 meter:</strong> 100% intensity</li>
+<li><strong>At 2 meters:</strong> 25% intensity (1/2² = 1/4)</li>
+<li><strong>At 4 meters:</strong> 6.25% intensity (1/4² = 1/16)</li>
+</ul>
+<p><strong>Why this matters:</strong> Light falls off quickly! A light that looks bright up close will be very dim just a few meters away, just like in real life.</p>
+<p>You can disable inverse square falloff for artistic control (non-realistic but sometimes useful for stylized games).</p>
+<h2>Spot Light</h2>
+<p><strong>Spot Light emits light in a cone shape</strong> from a point, like a flashlight, car headlight, or stage spotlight.</p>
+<p><img src="https://i0.wp.com/gamedev.gg/wp-content/uploads/2021/08/image-17.png?resize=640%2C256&amp;ssl=1" alt="Unreal Engine 5 Lighting Guide illustration"></p>
+<p><em>Baskin Sokolov, N., 2021. Unreal Engine 5 Lighting Guide [digital image]. Available at: <a href="https://gamedev.gg/unreal-engine-5-lighting-guide/">https://gamedev.gg/unreal-engine-5-lighting-guide/</a> [Accessed 3 November 2025].</em></p>
+<h3>How Spot Lights Work</h3>
+<p>A Spot Light is similar to a Point Light, but instead of emitting light in all directions, it emits light in a <strong>cone</strong> shape. You control the width of the cone and how the light fades at the edges.</p>
+<div class="info-box"><h3>Key Properties:</h3>
+<ul>
+<li><strong>Intensity Unit:</strong> Candelas (cd) or Lumens (lm)</li>
+<li><strong>Inner Cone Angle:</strong> The angle of the bright center cone (full intensity)</li>
+<li><strong>Outer Cone Angle:</strong> The angle where light fades to zero (creates soft edge)</li>
+<li><strong>Use Case:</strong> Flashlights, car headlights, stage lighting, accent lights, security lights</li>
+<li><strong>Performance:</strong> Similar to Point Light (moderate cost, shadows are expensive)</li>
+</ul>
+</div>
+<h3>Understanding Cone Angles</h3>
+<p>Spot Lights have <strong>two cone angles</strong> that control the light’s shape:</p>
+<p><strong>Inner Cone Angle:</strong></p>
+<ul>
+<li>The bright center of the spotlight</li>
+<li>Everything inside this angle receives full light intensity</li>
+<li>Smaller angle = tighter, more focused beam</li>
+</ul>
+<p><strong>Outer Cone Angle:</strong></p>
+<ul>
+<li>The edge of the spotlight where light fades to zero</li>
+<li>Creates a soft falloff at the edges</li>
+<li>The area between inner and outer cone is the gradient/transition zone</li>
+</ul>
+<h3>IES Light Profiles</h3>
+<p><strong>IES Profiles</strong> are real-world light distribution data files from actual light manufacturers.</p>
+<p><img src="https://help.autodesk.com/cloudhelp/ENU/AR-Core/images/ac-photometric-light-ies-lights-4.jpg" alt="Photometric Light IES example – Arnold Renderer"></p>
+<p><em>Autodesk Inc., n.d. Photometric Light – Arnold Renderer [digital image]. Available at: <a href="https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_core_ac_photometric_light_html">https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_core_ac_photometric_light_html</a> [Accessed 3 November 2025].</em></p>
+<ul>
+<li><strong>What they are:</strong> Files that describe exactly how a real-world light fixture distributes light</li>
+<li><strong>Why use them:</strong> For photorealistic lighting that matches real products (architectural visualization, film)</li>
+<li><strong>How to use:</strong> Import an IES file and assign it to the Spot Light’s “IES Texture” property</li>
+</ul>
+<p><strong>For most game projects, you won’t need IES profiles</strong> they’re mainly for architectural visualization or when you need to match specific real-world fixtures, they can also be used for artistic intent.</p>
+<h2>Rect Light</h2>
+<p><strong>Rect Light emits light from a rectangular surface area</strong>, like a window, TV screen, LED panel, or photography softbox.</p>
+<p><img src="https://www.cg.com.tw/Unreal-Lighting/pic/Lighting-RectLight-Width-Height.png" alt="矩形光源 — 寬度與高度設定（範例圖片）"></p>
+<p><em>CG Lighting 教學, 2025. Unreal Lighting 光源設定教學: 矩形光源 (Rect Light) [image]. Available at: <a href="https://www.cg.com.tw/Unreal-Lighting/">https://www.cg.com.tw/Unreal-Lighting/</a> [Accessed 3 November 2025].</em></p>
+<h3>How Rect Lights Work</h3>
+<p>Unlike Point and Spot lights which emit from a single point, Rect Lights emit from a <strong>flat rectangular surface</strong>. This creates much softer, more diffused lighting.</p>
+<div class="info-box"><h3>Key Properties:</h3>
+<ul>
+<li><strong>Intensity Unit:</strong> Lumens (lm) or Nits (cd/m²) - measures light from a surface area</li>
+<li><strong>Source Width/Height:</strong> The physical dimensions of the light-emitting rectangle</li>
+<li><strong>Barn Door Angle/Length:</strong> Optional “barn doors” that shape and control the light spread</li>
+<li><strong>Use Case:</strong> Windows, TV/computer screens, LED panels, studio softbox lighting, ceiling panels</li>
+<li><strong>Performance:</strong> More expensive than Point/Spot lights (area light requires more complex calculations)</li>
+</ul>
+</div>
+<h3>Why Use Rect Lights?</h3>
+<p><strong>Soft Shadows:</strong> The main advantage of Rect Lights is <strong>soft, realistic shadows</strong>.</p>
+<ul>
+<li><strong>Point/Spot Light:</strong> Creates hard-edged shadows (light comes from a tiny point)</li>
+<li><strong>Rect Light:</strong> Creates soft-edged shadows (light comes from a large area)</li>
+</ul>
+<p><strong>Real-world example:</strong> Compare the harsh shadow from a bare light bulb vs. the soft shadow from a large window. The window is like a Rect Light.</p>
+<p><strong>Rule of thumb:</strong> Larger source size = softer shadows. A 200x200cm Rect Light creates much softer shadows than a 50x50cm one.</p>
+<p>Rect Lights also accept a source texture to define the color of the light.</p>
+<h3>When to Use Rect Lights</h3>
+<p><strong>Use Rect Lights for:</strong></p>
+<ul>
+<li>Cinematic/beauty lighting (soft, flattering light)</li>
+<li>Simulating windows or skylights</li>
+<li>TV screens, computer monitors (emissive screens)</li>
+<li>Studio photography lighting setups</li>
+<li>Modern LED panel lighting</li>
+</ul>
+<p><strong>Avoid Rect Lights for:</strong></p>
+<ul>
+<li>Performance-critical scenes (use Point/Spot instead)</li>
+<li>Small light sources (use Point Light instead)</li>
+</ul>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="5"><h2>Light Mobility: Static vs Stationary vs Movable</h2>
+<p><strong>Light mobility</strong> determines how the light is calculated and what features it supports. This is one of the most important performance decisions.</p>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Static</h3>
+<ul>
+<li><strong>Fully baked</strong> into lightmaps</li>
+<li><strong>No runtime cost</strong> (cheapest)</li>
+<li><strong>Cannot move or change</strong></li>
+<li><strong>Requires lightmap UVs</strong></li>
+<li><strong>Best for:</strong> Fixed architectural lighting</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Stationary</h3>
+<ul>
+<li><strong>Hybrid:</strong> Baked indirect + dynamic direct/shadows</li>
+<li><strong>Moderate cost</strong></li>
+<li><strong>Can change color/intensity</strong> (not position)</li>
+<li><strong>Best for:</strong> Sun/moon in static scenes</li>
+</ul>
+</div>
+</div>
+<h2>Baked vs Dynamic Lighting</h2>
+<p><strong>One of the most critical technical art decisions</strong> is choosing between baked (pre-calculated) and dynamic (real-time) lighting.</p>
+<p><img src="https://cdn2.unrealengine.com/lumen-unreal-engine-5-image2-1609x875-43fc37c0e6fb.png?resize=1&amp;w=1920" alt="Lumen in Unreal Engine 5 – dynamic global illumination demo"></p>
+<p><em>Epic Games, 2022. Unreal Engine 5 goes all-in on dynamic global illumination with Lumen [digital image]. Available at: <a href="https://www.unrealengine.com/en-US/tech-blog/unreal-engine-5-goes-all-in-on-dynamic-global-illumination-with-lumen">https://www.unrealengine.com/en-US/tech-blog/unreal-engine-5-goes-all-in-on-dynamic-global-illumination-with-lumen</a> [Accessed 3 November 2025].</em></p>
+<div class="info-box"><h3>The Core Trade-off:</h3>
+<ul>
+<li><strong>Baked Lighting:</strong> low runtime cost, slow iteration, static scenes only</li>
+<li><strong>Dynamic Lighting:</strong> higher cost, fast iteration, supports moving lights/objects</li>
+</ul>
+</div>
+<h2>Baked Lighting (Lightmass / GPU Lightmass)</h2>
+<p><strong>Baked lighting pre-calculates all lighting and shadows</strong> before the game runs, and stores the results in texture files called <strong>lightmaps</strong>. The lighting is “frozen” at bake time and cannot change during gameplay.</p>
+<h3>How Baked Lighting Works</h3>
+<p>Think of baked lighting like taking a photograph of your lighting and “painting” it onto your 3D models as a texture.</p>
+<p><img src="https://docs.unity3d.com/es/2019.4/uploads/Main/LightingGiUvs-2.png" alt="Lightmap UVs in Unity – GI UVs example"></p>
+<p><em>Unity Technologies, n.d. Global Illumination UVs [digital image]. Available at: <a href="https://docs.unity3d.com/es/2019.4/Manual/LightingGiUvs.html">https://docs.unity3d.com/es/2019.4/Manual/LightingGiUvs.html</a> [Accessed 3 November 2025].</em></p>
+<p><strong>The Process:</strong></p>
+<ol>
+<li>You set up your lights and scene (Static - set meshes to Static aswell)</li>
+<li>You click “Build Lighting”</li>
+<li>The engine calculates how light bounces around your scene (this can take minutes to hours… or days if your PC is a toaster and the scene is complex)</li>
+<li>The results are saved as <strong>lightmap textures</strong> (images that store lighting information)</li>
+<li>At runtime (when the game is playing), the engine simply displays these pre-calculated textures—no lighting calculations needed!</li>
+</ol>
+<h3>Advantages of Baked Lighting</h3>
+<p><strong>Performance:</strong> Extremely cheap at runtime—just sampling a texture. Perfect for mobile, VR, or any performance-critical platform.</p>
+<p><strong>Quality:</strong> Can calculate many light bounces (10+ bounces) for very realistic indirect lighting. Soft, beautiful shadows with no performance cost.</p>
+<p><strong>Consistency:</strong> Lighting never changes, so you can fine-tune exactly how everything looks.</p>
+<h3>Disadvantages of Baked Lighting</h3>
+<p><strong>Static only:</strong> Lights and objects cannot move. No time-of-day, no moving lights, no destructible environments.</p>
+<p><strong>Bake time:</strong> Large scenes can take hours to bake. Every lighting change requires a rebuild.</p>
+<p><strong>Memory:</strong> Lightmaps are textures that consume memory. Large scenes with high-resolution lightmaps can use significant VRAM.</p>
+<h2>Baked Lighting: When to Use</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Perfect For:</h3>
+<ul>
+<li><strong>Mobile games</strong> (low-end hardware)</li>
+<li><strong>Static architectural</strong> interiors</li>
+<li><strong>VR experiences</strong> (need high framerate)</li>
+<li><strong>Small, controlled</strong> environments</li>
+<li><strong>Indie projects</strong> with limited scope</li>
+<li><strong>Interior scenes</strong> that need many light sources</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Not Ideal For:</h3>
+<ul>
+<li><strong>Time-of-day</strong> systems</li>
+<li><strong>Destructible</strong> environments</li>
+<li><strong>Procedurally generated</strong> levels</li>
+<li><strong>Large open worlds</strong> (memory cost)</li>
+<li><strong>Rapid iteration</strong> (bake time)</li>
+</ul>
+</div>
+</div>
+<p><strong>Bake Time Consideration:</strong> Large scenes can take hours to bake. Use GPU Lightmass for faster iteration. (Needs RTX card and DX12)</p>
+<h2>Dynamic Lighting (Movable Lights)</h2>
+<p><strong>Dynamic lighting calculates light and shadows every single frame</strong> in real-time as the game runs. Nothing is pre-calculated or baked.</p>
+<h3>How Dynamic Lighting Works</h3>
+<p>Unlike baked lighting (which is like a photograph), dynamic lighting is calculated <strong>live</strong> every frame—like a video camera recording in real-time.</p>
+<p><strong>The Process:</strong></p>
+<ol>
+<li>Every frame (60 times per second for 60 FPS), the engine calculates:
+<ul>
+<li>Where is each light?</li>
+<li>What surfaces does the light hit?</li>
+<li>What shadows are cast?</li>
+<li>How does light bounce (if using Lumen or ray tracing)?</li>
+</ul>
+</li>
+<li>All of this happens in real-time, so lights can move, change color, turn on/off, etc.</li>
+</ol>
+<p>It does not use lightmap textures.</p>
+<div class="info-box"><h3>Dynamic Lighting Workflow:</h3>
+<ol>
+<li>Set lights to <strong>Movable</strong> mobility</li>
+<li>Set meshes to <strong>Movable</strong> or <strong>Static</strong> (both work with dynamic lights)</li>
+<li>No lightmap UVs required (no baking!)</li>
+<li>Shadows are calculated every frame (this is the expensive part)</li>
+<li>Can use <strong>Lumen</strong> for dynamic Global Illumination (UE5)</li>
+<li>Can use <strong>Hardware Ray Tracing</strong> for highest quality (requires RT-capable GPU)</li>
+</ol>
+</div>
+<h3>Advantages of Dynamic Lighting</h3>
+<p><strong>Flexibility:</strong> Lights can move, rotate, change color, change intensity, turn on/off—anything you want!</p>
+<p><strong>Fast iteration:</strong> No bake time! Change a light and see results instantly.</p>
+<p><strong>Dynamic content:</strong> Supports moving objects, destructible environments, procedurally generated levels, time-of-day systems.</p>
+<h3>Disadvantages of Dynamic Lighting</h3>
+<p><strong>Performance cost:</strong> Calculating lighting every frame is expensive, especially shadows. Can limit how many lights you can have.</p>
+<p><strong>Lower quality (without Lumen/RT):</strong> Traditional dynamic lighting doesn’t have realistic indirect lighting (no light bounces) unless you use Lumen or ray tracing.</p>
+<p><strong>Platform limitations:</strong> Mobile and low-end platforms struggle with many dynamic lights.</p>
+<h2>Dynamic Lighting: When to Use</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Perfect For:</h3>
+<ul>
+<li><strong>Time-of-day</strong> systems</li>
+<li><strong>Flashlights, torches</strong> (player-controlled)</li>
+<li><strong>Explosions, muzzle flashes</strong> (temporary lights)</li>
+<li><strong>Open world</strong> games</li>
+<li><strong>Procedural/destructible</strong> environments</li>
+<li><strong>Rapid prototyping</strong></li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Watch Out For:</h3>
+<ul>
+<li><strong>Performance cost</strong> (especially shadows)</li>
+<li><strong>Light count limits</strong> (overlapping shadowed lights)</li>
+<li><strong>Lower GI quality</strong> without Lumen/RT</li>
+<li><strong>No soft shadows</strong> without expensive techniques</li>
+<li><strong>Platform limitations</strong> (mobile, low-end PC)</li>
+</ul>
+</div>
+</div>
+<p><strong>Shadow Budget:</strong> Limit overlapping shadowed dynamic lights. Use <strong>Light Channels</strong> to control which objects cast/receive shadows.</p>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="6"><h2>Lightmaps: Setup &amp; Troubleshooting</h2>
+<p><strong>Lightmaps are textures that store baked lighting information.</strong> Setting them up correctly is essential for high-quality baked lighting.</p>
+<div class="info-box"><h3>What Are Lightmaps?</h3>
+<ul>
+<li><strong>Texture maps</strong> that store pre-calculated lighting (direct + indirect)</li>
+<li><strong>Require dedicated UV channel</strong> (usually channel 1)</li>
+<li><strong>Resolution</strong> determines quality vs memory trade-off</li>
+<li><strong>Generated per static mesh</strong> instance</li>
+</ul>
+</div>
+<h2>Lightmap UVs: The Foundation</h2>
+<p><strong>Lightmap UVs are a special set of UV coordinates</strong> used specifically for baked lighting. They must follow different rules than regular texture UVs.</p>
+<p><img src="https://docs.unity3d.com/es/2019.4/uploads/Main/LightingGiUvs-0.jpg" alt="Lightmap UV layout example – UV2 channel for GI in Unity"></p>
+<p><em>Unity Technologies, n.d. “Global Illumination UVs” [digital image]. Available at: <a href="https://docs.unity3d.com/es/2019.4/Manual/LightingGiUvs.html">https://docs.unity3d.com/es/2019.4/Manual/LightingGiUvs.html</a> [Accessed 3 November 2025].</em></p>
+<h3>Why Lightmaps Need Special UVs</h3>
+<p>Regular texture UVs (channel 0) often use <strong>tricks</strong> to save space:</p>
+<ul>
+<li><strong>Mirroring/overlapping:</strong> Certain assets overlap UVs if textures are repeating.</li>
+<li><strong>Tiling:</strong> UVs can go outside 0-1 to repeat textures</li>
+</ul>
+<p><strong>These tricks break lightmaps</strong> If two faces share the same UV space, the lightmap can’t store different lighting for each face. You’d get lighting bleeding and artifacts.</p>
+<div class="info-box"><h3>Lightmap UV Requirements:</h3>
+<ul>
+<li><strong>No overlapping UVs:</strong> Every face must have unique UV space (no mirroring!)</li>
+<li><strong>Adequate padding:</strong> 2-4 pixels of space between UV islands (prevents light bleeding)</li>
+<li><strong>0-1 UV space:</strong> All UVs must fit within the 0-1 square (no tiling)</li>
+<li><strong>Consistent texel density:</strong> Similar-sized faces should use similar UV space (even lighting quality)</li>
+<li><strong>Separate UV channel:</strong> Usually channel 1 (channel 0 is for regular textures)</li>
+</ul>
+</div>
+<h2>Generating Lightmap UVs</h2>
+<p>UE5 can <strong>automatically generate lightmap UVs</strong> for you, or you can create them manually in your 3D software.</p>
+<h3>Manual Creation (Blender/Maya/3ds Max):</h3>
+<ul>
+<li>Create second UV channel with no overlaps</li>
+<li>Use automatic UV unwrap tools (Smart UV Project, etc.)</li>
+<li>Ensure adequate padding</li>
+<li>Export with both UV channels</li>
+</ul>
+<h2>Lightmap Resolution</h2>
+<p><strong>Lightmap resolution</strong> controls the quality (detail) of baked lighting. Higher resolution = more detail but more memory.</p>
+<div class="info-box"><h3>How Resolution Works:</h3>
+<ul>
+<li>Set per <strong>Static Mesh</strong> (not per instance)</li>
+<li>Measured in <strong>texels</strong> (texture pixels)</li>
+<li>Common values: 32, 64, 128, 256, 512, 1024</li>
+<li><strong>Larger meshes</strong> need higher resolution for consistent density</li>
+<li><strong>Hero assets</strong> can use higher resolution than background props</li>
+</ul>
+</div>
+<p><strong>Setting Lightmap Resolution:</strong></p>
+<ol>
+<li>Select mesh in level</li>
+<li>Details panel → <strong>Lighting → Overridden Light Map Res</strong> (checkbox)</li>
+<li>Set <strong>Light Map Resolution</strong> value (power of 2)</li>
+</ol>
+<p><img src="images/week6/lightmap-resolution-comparison.png" alt="Image: lightmap resolution comparison"></p>
+<h2>Lightmap Density Visualization</h2>
+<p><strong>Lightmap Density viewmode</strong> is a special visualization that shows how evenly lightmap resolution is distributed across your scene. It helps you identify meshes that are wasting memory or have too little detail.</p>
+<p><img src="https://cdna.artstation.com/p/assets/images/images/042/744/188/large/david-baulenas-lightmap-density.jpg?1635331600" alt="Lightmap Density by David Baulenas"></p>
+<p><em>Baulenas, D., n.d. “Lightmap Density” [digital image]. Available at: <a href="https://davidbaulenas.artstation.com/projects/q98q9n">https://davidbaulenas.artstation.com/projects/q98q9n</a> [Accessed 3 November 2025].</em></p>
+<h3>What is Lightmap Density?</h3>
+<p><strong>Density</strong> refers to how many lightmap pixels (texels) cover each square meter of surface area. Ideally, all surfaces should have similar density for consistent lighting quality.</p>
+<ul>
+<li><strong>High density:</strong> Many texels per square meter = high detail, but uses more memory</li>
+<li><strong>Low density:</strong> Few texels per square meter = low detail, but saves memory</li>
+</ul>
+<div class="info-box"><h3>Using Lightmap Density View:</h3>
+<ol>
+<li>In the viewport, click <strong>View Mode → Optimization Viewmodes → Lightmap Density</strong></li>
+<li>Your scene will display in color-coded mode:
+<ul>
+<li><strong>Blue:</strong> Low density (too few texels - increase lightmap resolution)</li>
+<li><strong>Green:</strong> Ideal density (target this for all meshes)</li>
+<li><strong>Yellow/Red:</strong> High density (too many texels - wasting memory, decrease resolution)</li>
+</ul>
+</li>
+</ol>
+</div>
+<p><strong>Goal:</strong> Aim for consistent <strong>green</strong> across all meshes in your scene. This ensures even lighting quality without wasting memory.</p>
+<h2>Lightmass Importance Volume</h2>
+<p><strong>Lightmass Importance Volume</strong> is a special volume actor that tells the lightmass solver where to focus its quality calculations. Always use this for better baked lighting results.</p>
+<h3>What is a Lightmass Importance Volume?</h3>
+<p>When baking lighting, the engine needs to calculate how light bounces around your scene. This is expensive, so the engine needs to know <strong>where to focus its effort</strong>.</p>
+<p>The Lightmass Importance Volume is a box you place in your level that says: <strong>“Player will be in this area, focus quality”</strong></p>
+<div class="info-box"><h3>How to Use:</h3>
+<ol>
+<li>In the Place Actors panel, search for <strong>“Lightmass Importance Volume”</strong> (or go to Volumes → Lightmass Importance Volume)</li>
+<li>Drag it into your level</li>
+<li>Scale the volume to <strong>encompass your playable area</strong> (where players can actually go)</li>
+<li>Don’t make it too large—only cover areas players will see (wastes computation on areas they’ll never visit)</li>
+<li>You can use multiple volumes if you have disconnected playable areas</li>
+<li>Rebuild lighting</li>
+</ol>
+</div>
+<h2>Reflection Captures</h2>
+<p><strong>Reflection Captures</strong> are used in Unreal Engine to simulate <strong>reflected light and environmnet detail</strong> on surfaces when using baked (static) lighting. Since baked lighting does not calculate dynamic reflections in real time, reflection captures capture a precomputed approximation that helps materials like metal, glass, or water appear more realistic.</p>
+<p><img src="https://i.ytimg.com/vi/KEwZD3hgX2o/maxresdefault.jpg" alt="YouTube Video Thumbnail"></p>
+<p><em>Title Unknown [video]. Available at: <a href="https://www.youtube.com/watch?v=KEwZD3hgX2o">https://www.youtube.com/watch?v=KEwZD3hgX2o</a> [Accessed 3 November 2025].</em></p>
+<h3>How they work</h3>
+<p>When you build lighting, Unreal takes a snapshot of the surrounding environment from each reflection captur actor and stores it as a <strong>cubemap</strong>. These cubemaps are then sampled by reflective materials to simulate how they would reflect the world around them.</p>
+<p>There is two types of reflection captures:</p>
+<ul>
+<li>**Sphere reflection capture</li>
+<li>**Box reflection capture</li>
+</ul>
+<p>Reflection captures are especially important on low roughness and metallic surfaces.</p>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="7"><h2>Global Illumination (GI)</h2>
+<p><strong>Global Illumination</strong> simulates how light bounces between surfaces, creating realistic indirect lighting and color bleeding.</p>
+<p><img src="https://img.edc-cdn.net/imgproxy/ak_kq5HYym_0JdSOx4IJFVHwrBQVytQqRUVzrAESMuM/filename:projectsettings_gettingstarted.png/resizing_type:fit/width:2800/height:1083/enlarge:true/aHR0cHM6Ly9kMWl2N2RiNDR5aGd4bi5jbG91ZGZyb250Lm5ldC9kb2N1bWVudGF0aW9uL2ltYWdlcy9jY2UwZDJlZC1kZDA1LTQ4NDQtODU5MS00NjUyNzg0NzQ1ZWUvcHJvamVjdHNldHRpbmdzX2dldHRpbmdzdGFydGVkLnBuZw" alt="Project Settings guide – Unreal Engine"></p>
+<p><em>Unreal Engine Documentation Team (n.d.). Project Settings – Getting Started [digital image]. Available at: <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine">https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine</a> [Accessed 3 November 2025].</em></p>
+<h2>GI Techniques Comparison</h2>
+<p>Different GI techniques have different trade-offs. UE5 offers several options, each with pros and cons.</p>
+<div class="info-box"><h3>Available GI Techniques in UE5:</h3>
+<ul>
+<li><strong>Baked GI (Lightmass) (GI set to none):</strong> Pre-calculated, high quality, static scenes only</li>
+<li><strong>SSGI (Screen Space GI):</strong> Fast approximation, screen-space only, limited range</li>
+<li><strong>Lumen:</strong> Dynamic GI, software or hardware ray traced, UE5’s default</li>
+<li><strong>Ray Traced GI:</strong> Highest quality, very expensive, requires RT-capable GPU</li>
+</ul>
+</div>
+<h2>Lumen: Dynamic GI &amp; Reflections</h2>
+<p><strong>Lumen is UE5’s dynamic Global Illumination and reflections system.</strong> It’s one of the biggest features in UE5.</p>
+<div class="info-box"><h3>What is Lumen?</h3>
+<ul>
+<li><strong>Dynamic GI:</strong> Real-time indirect lighting that responds to changes</li>
+<li><strong>Dynamic Reflections:</strong> Real-time reflections without reflection captures</li>
+<li><strong>Software or Hardware:</strong> Can use software tracing (slower) or hardware ray tracing (faster, requires RT GPU)</li>
+<li><strong>Emissive GI:</strong> Emissive materials contribute to GI</li>
+<li><strong>No baking required:</strong> Changes are instant</li>
+</ul>
+</div>
+<p><img src="https://img.edc-cdn.net/imgproxy/UYqgxPAeSUuuEQgGAqP6cJHrceK3BkvxN9s3ritQ9-k/filename:lumentechdemo_2.png/resizing_type:fit/width:1400/height:739/aHR0cHM6Ly9kMWl2N2RiNDR5aGd4bi5jbG91ZGZyb250Lm5ldC9kb2N1bWVudGF0aW9uL2ltYWdlcy8xZWQ0OWMyNi1jNjQ4LTQ2MTgtYTk5ZC0yOGFiYmQ1MmQzNTEvbHVtZW50ZWNoZGVtb18yLnBuZw" alt="Lumen tech demo — Unreal Engine 5 screenshot"></p>
+<p><em>Unreal Engine 5 Documentation Team, (n.d.). “Lumen Global Illumination and Reflections in Unreal Engine” [digital image]. Available at: <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine">https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine</a> [Accessed 3 November 2025].</em></p>
+<h2>How Lumen Works (Simplified)</h2>
+<p>Lumen uses a combination of clever techniques to achieve real-time GI efficiently. You don’t need to understand all the technical details, but here’s a simplified overview:</p>
+<p><img src="https://static.wixstatic.com/media/58ca71_458f966dd683457b8cda82aa08fc5c8d~mv2.png/v1/fill/w_980,h_362,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/58ca71_458f966dd683457b8cda82aa08fc5c8d~mv2.png" alt="Lumen Requirements, Features, Limitations – Visualization Notes"></p>
+<p><em>Chen, Y., 2022. Lumen Requirements, features, Limitations, common problems, visualization Notes [digital image]. Available at: <a href="https://www.yanchenta.com/post/lumen-requirements-features-limitations-common-problems-visualization-notes">https://www.yanchenta.com/post/lumen-requirements-features-limitations-common-problems-visualization-notes</a> [Accessed 3 November 2025].</em></p>
+<div class="info-box"><h3>Lumen’s Multi-Technique Approach:</h3>
+<ol>
+<li><strong>Surface Cache:</strong> Lumen stores lighting information for surfaces in world space (like a 3D lightmap that updates in real-time)</li>
+<li><strong>Screen Traces:</strong> For nearby geometry visible on screen, Lumen uses fast screen-space traces (similar to SSR)</li>
+<li><strong>Software Ray Tracing:</strong> For off-screen geometry, Lumen traces rays against simplified representations (distance fields, mesh cards)</li>
+<li><strong>Hardware Ray Tracing (Optional):</strong> If you have an RT-capable GPU, Lumen can trace against full geometry for highest quality</li>
+<li><strong>Radiance Cache:</strong> Lumen caches indirect lighting results to avoid recalculating everything every frame</li>
+</ol>
+</div>
+<p>Lumen doesn’t use just one technique—it combines multiple approaches and picks the best one for each situation. This is how it balances quality and performance.</p>
+<h2>Lumen: Key Settings</h2>
+<p><strong>Lumen has many settings</strong> that control quality vs performance. Here are the most important ones.</p>
+<h3>Project Settings (Edit → Project Settings → Rendering):</h3>
+<ul>
+<li><strong>Dynamic Global Illumination Method:</strong> Lumen (vs None, SSGI, Ray Traced)</li>
+<li><strong>Reflection Method:</strong> Lumen (vs SSR, Ray Traced)</li>
+<li><strong>Hardware Ray Tracing:</strong> Enable for highest quality (requires RT GPU)</li>
+</ul>
+<h3>Post Process Volume Settings:</h3>
+<ul>
+<li><strong>Lumen Scene Lighting Quality:</strong> 0.5-4.0 (higher = better quality, more cost)</li>
+<li><strong>Lumen Scene Detail:</strong> 0.5-2.0 (higher = more geometric detail captured)</li>
+<li><strong>Lumen Final Gather Quality:</strong> 0.5-4.0 (final lighting gather quality)</li>
+<li><strong>Lumen Max Trace Distance:</strong> How far rays travel (affects large scenes)</li>
+</ul>
+<h2>Lumen: When to Use</h2>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Use Lumen When:</h3>
+<ul>
+<li><strong>Mid to high-end</strong> PC/console targets</li>
+<li><strong>Dynamic lighting</strong> is required (time-of-day, moving lights)</li>
+<li><strong>Iteration speed</strong> is critical (no bake time)</li>
+<li><strong>Destructible/procedural</strong> environments</li>
+<li><strong>Emissive GI</strong> is needed (glowing materials)</li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Avoid Lumen When:</h3>
+<ul>
+<li><strong>Mobile</strong> or low-end platforms</li>
+<li><strong>VR</strong> (need very high framerate)</li>
+<li><strong>Static scenes</strong> where baked is sufficient</li>
+<li><strong>Strict performance budgets</strong></li>
+<li><strong>Stylized art</strong> that doesn’t need realistic GI</li>
+</ul>
+</div>
+</div><div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="8"><h2>Reflections: SSR (screen space reflections), and Lumen</h2>
+<p><strong>Reflections</strong> are critical for material realism, especially for smooth/metallic surfaces. UE5 offers multiple reflection techniques.</p>
+<h2>Screen Space Reflections (SSR)</h2>
+<p><strong>SSR</strong> traces reflections in screen space (using the depth buffer). Fast but limited.</p>
+<div class="two-columns-container">
+        <div class="two-columns">
+          <div class="col">
+<h3>Advantages:</h3>
+<ul>
+<li><strong>Very fast</strong> (screen-space only)</li>
+<li><strong>Accurate for on-screen</strong> geometry</li>
+<li><strong>No setup required</strong></li>
+<li><strong>Works with any material</strong></li>
+</ul>
+        </div>
+      </div>
+<div class="col">
+<h3>Limitations:</h3>
+<ul>
+<li><strong>Only reflects visible</strong> geometry (screen-space)</li>
+<li><strong>Misses off-screen</strong> objects</li>
+<li><strong>Stretching/warping</strong> at screen edges</li>
+<li><strong>Grainy</strong> at low quality settings</li>
+</ul>
+</div>
+</div>
+<p><strong>Best Use:</strong> Combine with reflection captures. SSR handles on-screen detail, captures handle off-screen fallback.</p>
+<h2>Lumen Reflections</h2>
+<p><strong>Lumen Reflections</strong> use the same tracing techniques as Lumen GI to provide dynamic, accurate reflections.</p>
+<div class="info-box"><h3>Lumen Reflections Features:</h3>
+<ul>
+<li><strong>Fully dynamic:</strong> Reflects moving objects and changing lighting</li>
+<li><strong>Off-screen geometry:</strong> Can reflect objects not visible on screen</li>
+<li><strong>Integrates with Lumen GI:</strong> Consistent lighting and reflections</li>
+<li><strong>Hardware RT support:</strong> Higher quality with RT hardware</li>
+<li><strong>Roughness support:</strong> Blurs reflections based on material roughness</li>
+</ul>
+</div>
+<p><strong>Performance:</strong> More expensive than SSR, less expensive than full ray-traced reflections. Quality is good for most use cases.</p>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section>
+<section class="slide" data-slide-index="9"><h1></h1>
+<h1></h1>
+<h1></h1>
+<h1>Any questions?</h1>
+<div class="ts-global-footer"><div class="presentation-footer"><p><strong>FGCT5016 : Technical Art | Week 6 - Lighting and Nanite | 25/26</strong></p>
+</div></div></section></div>
+
+  <div class="export-controls">
+    <button id="prevBtn" title="Previous (←/↑)">← Prev</button>
+    <span class="slide-counter" id="slideCounter">1 / 10</span>
+    <button id="nextBtn" title="Next (→/↓)">Next →</button>
+    <button id="viewModeBtn" class="view-mode-btn" title="Toggle Scroll/Present (Space)">🎯 Present</button>
+    <button id="fullscreenBtn" class="view-mode-btn" title="Toggle Fullscreen (F)">⛶ Fullscreen</button>
+  </div>
+
+  <script>
+    (function(){
+      const slides = Array.from(document.querySelectorAll('.slide'))
+      let current = 0
+      const total = slides.length
+      const counter = document.getElementById('slideCounter')
+      const body = document.body
+
+      const viewModeBtn = document.getElementById('viewModeBtn')
+      function isMobileDevice(){
+        return window.matchMedia('(max-width: 900px)').matches || (('ontouchstart' in window || navigator.maxTouchPoints>0))
+      }
+      function updateViewModeButton(){
+        if (isMobileDevice()){
+          viewModeBtn.textContent = '📱 Scroll only'
+          viewModeBtn.disabled = true
+          return
+        }
+        const isPresent = body.classList.contains('presentation-mode')
+        viewModeBtn.textContent = isPresent ? '🧭 Scroll' : '🎯 Present'
+        viewModeBtn.disabled = false
+      }
+
+      // Build a dedicated scroll viewport above the footer and add arrows if missing
+      slides.forEach(slide => {
+        // Create .slide-viewport and move non-footer/arrows children into it
+        let viewport = slide.querySelector('.slide-viewport')
+        if (!viewport){
+          viewport = document.createElement('div')
+          viewport.className = 'slide-viewport'
+          const children = Array.from(slide.children)
+          children.forEach(child => {
+            const cls = (child.className && child.className.toString()) || ''
+            if (/(presentation-footer|ts-global-footer|slide-arrows)/.test(cls)) return
+            viewport.appendChild(child)
+          })
+          slide.insertBefore(viewport, slide.firstChild)
+        }
+        // Add arrows if missing
+        if (!slide.querySelector('.slide-arrows')){
+          const ui = document.createElement('div')
+          ui.className = 'slide-arrows'
+          ui.innerHTML = '<div class="arrow up">▲</div><div class="arrow down">▼</div>'
+          slide.appendChild(ui)
+        }
+      })
+      // Stage wrapper for presentation scaling (1280x720 like Marp)
+      const bodyEl = document.body
+      let pres = document.querySelector('.presentation')
+      if (!pres) {
+        pres = document.createElement('div')
+        pres.className = 'presentation'
+        // Move slides into presentation container
+        slides.forEach(s => pres.appendChild(s))
+        const controls = document.querySelector('.export-controls')
+        bodyEl.insertBefore(pres, controls)
+      }
+      let stage = pres.querySelector('.stage')
+      if (!stage) {
+        stage = document.createElement('div')
+        stage.className = 'stage'
+        pres.appendChild(stage)
+      }
+      // Ensure stage has slide wrap and footer containers
+      let stageWrap = stage.querySelector('.stage-slide-wrap')
+      if (!stageWrap) {
+        stageWrap = document.createElement('div')
+        stageWrap.className = 'stage-slide-wrap'
+        stage.appendChild(stageWrap)
+        const currentSlides = Array.from(pres.querySelectorAll('.slide'))
+        currentSlides.forEach(s => stageWrap.appendChild(s))
+      }
+      let stageFooter = stage.querySelector('.stage-footer')
+      if (!stageFooter) {
+        stageFooter = document.createElement('div')
+        stageFooter.className = 'stage-footer'
+        stage.appendChild(stageFooter)
+      }
+
+      function fitStage(){
+        const BASE_W = 1280, BASE_H = 720
+        if (body.classList.contains('presentation-mode')){
+          const fit = Math.min(window.innerWidth/BASE_W, window.innerHeight/BASE_H)
+          stage.style.transform = 'scale(' + fit + ')'
+          // After fitting, update footer heights (in unscaled CSS px) and scroll UI
+          requestAnimationFrame(() => { updateFooterHeights(); updateAllScrollUI(); })
+        } else {
+          stage.style.transform = 'none'
+          requestAnimationFrame(() => { updateFooterHeights(); })
+        }
+      }
+
+      function getStageScale(){
+        if (!body.classList.contains('presentation-mode')) return 1
+        const r = stage.getBoundingClientRect()
+        return r.height / 720
+      }
+
+      function updateFooterHeights(){
+        const scale = getStageScale() || 1
+        const stageFooter = stage.querySelector('.stage-footer')
+        const fh = stageFooter ? stageFooter.getBoundingClientRect().height : 0
+        const unscaled = (fh/scale)
+        // Set on stage and slides for convenience
+        stage.style.setProperty('--footer-height', unscaled + 'px')
+        slides.forEach(slide => slide.style.setProperty('--footer-height', unscaled + 'px'))
+      }
+
+
+      function setActive(i){
+        slides.forEach((s, idx) => s.classList.toggle('active', idx===i))
+        counter.textContent = (i+1) + ' / ' + total
+        // Update stage footer to match active slide footer
+        const stageFooter = stage.querySelector('.stage-footer')
+        if (stageFooter){
+          stageFooter.innerHTML = ''
+          const footer = slides[i].querySelector('.presentation-footer, .ts-global-footer')
+          if (footer) stageFooter.appendChild(footer.cloneNode(true))
+        }
+        requestAnimationFrame(() => { updateFooterHeights(); updateScrollUIForSlide(slides[i]) })
+      }
+
+      function updateAllScrollUI(){
+        slides.forEach(updateScrollUIForSlide)
+      }
+
+      function detectOverflow(slide){
+        const viewport = slide.querySelector('.slide-viewport') || slide
+        // Basic check first
+        if (viewport.scrollHeight > viewport.clientHeight + 1) return true
+        // Fallback for absolutely-positioned content: compute visual bottom of non-footer elements
+        const excluded = new Set(['presentation-footer','ts-global-footer','slide-arrows'])
+        const rect = viewport.getBoundingClientRect()
+        let maxBottom = 0
+        viewport.querySelectorAll(':scope > *').forEach(el => {
+          const cls = (el.className && el.className.toString()) || ''
+          if ([...excluded].some(c => cls.includes(c))) return
+          const r = el.getBoundingClientRect()
+          const bottom = (r.bottom - rect.top) + viewport.scrollTop
+          if (bottom > maxBottom) maxBottom = bottom
+        })
+        return maxBottom > viewport.clientHeight + 1
+      }
+
+      function updateScrollUIForSlide(slide){
+        if (!slide || !body.classList.contains('presentation-mode')) return
+        const viewport = slide.querySelector('.slide-viewport') || slide
+        const ui = slide.querySelector('.slide-arrows')
+        if (!viewport || !ui) return
+        const up = ui.querySelector('.arrow.up')
+        const down = ui.querySelector('.arrow.down')
+
+        // Show UI only if overflow exists (permanently visible when shown)
+        const overflow = detectOverflow(slide)
+        ui.style.display = overflow ? 'flex' : 'none'
+        if (!overflow) return
+
+        // Update arrow enablement (only show if content above/below)
+        const atTop = viewport.scrollTop <= 0
+        const atBottom = (viewport.scrollTop + viewport.clientHeight) >= (viewport.scrollHeight - 1)
+        if (up) up.style.display = atTop ? 'none' : 'block'
+        if (down) down.style.display = atBottom ? 'none' : 'block'
+
+        // Bind interactions once
+        if (!ui._bound){
+          ui._bound = true
+          // Prevent clicks from affecting slide navigation
+          ui.addEventListener('pointerdown', e => e.stopPropagation())
+          up && up.addEventListener('click', e => { e.stopPropagation(); viewport.scrollTo({ top: 0, behavior: 'smooth' }) })
+          down && down.addEventListener('click', e => { e.stopPropagation(); viewport.scrollTo({ top: viewport.scrollHeight, behavior: 'smooth' }) })
+          viewport.addEventListener('scroll', () => { requestAnimationFrame(() => updateScrollUIForSlide(slide)) })
+        }
+      }
+
+
+      /* computeGlobalScale removed: we now rely solely on stage scaling for present-mode and no global scaling in scroll-mode */
+function computeGlobalScale_REMOVED(){
+        // Measure natural content size at scale(1)
+        const BASE_W = 1920, BASE_H = 1080
+        let minS = 1
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content');
+          if (!c) return;
+          c.style.transform = 'scale(1)';
+          c.getBoundingClientRect();
+          const cr = c.getBoundingClientRect();
+          const cs = getComputedStyle(slide);
+          const maxW = BASE_W - (parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight) || 0)
+          const maxH = BASE_H - (parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom) || 0)
+          const sW = cr.width>0 && maxW>0 ? Math.min(1, maxW/cr.width) : 1
+          const sH = cr.height>0 && maxH>0 ? Math.min(1, maxH/cr.height) : 1
+          const need = Math.min(sW, sH)
+          if (need < minS) minS = need
+        })
+        return Math.max(0.5, Math.min(1, isFinite(minS) ? minS : 1))
+      }
+
+      /* applyGlobalScale removed: no per-slide or global scaling, stage-only */
+function applyGlobalScale_REMOVED(){
+        // Do NOT scale inner content in presentation-mode; stage scaling handles fit.
+        if (body.classList.contains('presentation-mode')){
+          // Presentation-mode: per-slide smart shrink instead of global scaling
+          applySmartShrinkPresentation()
+          return
+        }
+        const s = computeGlobalScale()
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content')
+          if (!c) return
+          c.style.transform = 'scale(' + s + ')'
+          c.style.marginLeft = '0'
+          c.style.marginRight = '0'
+        })
+      }
+
+      /* applySmartShrinkPresentation removed: uniform stage scaling ensures proportionality */
+function applySmartShrinkPresentation_REMOVED(){
+        if (!body.classList.contains('presentation-mode')) return
+        slides.forEach(slide => {
+          const c = slide.querySelector('.slide-content')
+          if (!c) return
+          // Reset to natural size
+          c.style.transform = 'scale(1)'
+          c.style.width = '100%'
+          // Measure
+          const cs = getComputedStyle(slide)
+          const availW = slide.clientWidth - (parseFloat(cs.paddingLeft)||0) - (parseFloat(cs.paddingRight)||0)
+          const availH = slide.clientHeight - (parseFloat(cs.paddingTop)||0) - (parseFloat(cs.paddingBottom)||0)
+          const rect = c.getBoundingClientRect()
+          const needH = rect.height > 0 ? (availH / rect.height) : 1
+          let s = Math.min(1, needH)
+          if (!isFinite(s) || s <= 0) s = 1
+          if (s < 1) {
+            // Keep full visual width while shrinking proportionally:
+            // set logical width to 100%/s so after scale(s) visual width == 100%
+            c.style.width = (100 / s) + '%'
+            c.style.transform = 'scale(' + s + ')'
+          }
+        })
+      }
+
+
+      function prev(){ if (current>0){ current--; setActive(current) } }
+      function next(){ if (current<total-1){ current++; setActive(current) } }
+      function go(i){ if (i>=0 && i<total){ current = i; setActive(current) } }
+
+      function toggleMode(){
+        if (isMobileDevice()){
+          // Force scroll-only on mobile
+          body.classList.remove('presentation-mode')
+          body.classList.add('scroll-mode')
+          setActive(current)
+          updateViewModeButton()
+          fitStage()
+          return
+        }
+        const present = body.classList.contains('presentation-mode')
+        body.classList.toggle('presentation-mode', !present)
+        body.classList.toggle('scroll-mode', present)
+        setActive(current)
+        updateViewModeButton()
+        fitStage()
+      }
+
+      // Event wiring
+      document.getElementById('prevBtn').addEventListener('click', prev)
+      document.getElementById('nextBtn').addEventListener('click', next)
+      document.getElementById('viewModeBtn').addEventListener('click', toggleMode)
+      document.getElementById('fullscreenBtn').addEventListener('click', () => {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      })
+
+      document.addEventListener('keydown', (e) => {
+        switch(e.key){
+          case 'ArrowLeft': case 'ArrowUp': e.preventDefault(); prev(); break;
+          case 'ArrowRight': case 'ArrowDown': e.preventDefault(); next(); break;
+          case ' ': e.preventDefault(); toggleMode(); break;
+          case 'Home': e.preventDefault(); go(0); break;
+          case 'End': e.preventDefault(); go(total-1); break;
+          case 'f': case 'F': e.preventDefault();
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+            break;
+        }
+      })
+
+      // Initialize
+      // Mobile: force scroll-mode and disable present
+      if (isMobileDevice()){
+        body.classList.remove('presentation-mode')
+        body.classList.add('scroll-mode')
+      }
+      updateFooterHeights()
+      setActive(0)
+      updateViewModeButton()
+
+      fitStage()
+      window.addEventListener('resize', () => { fitStage() })
+    })();
+  </script>
+
+</body>
+</html>
