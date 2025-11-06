@@ -3,7 +3,7 @@
 **Callum Wade** **2404781** **28/10/25** 
 
 
-### 1. Fire (stylized / realistic or both)
+### 1. Fire
 
 #### Development Process
 
@@ -36,9 +36,13 @@
 
 #### Development Process
 
-##### Projectile Blueprint
+##### Projectile Spawn
 
-![Projectile](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%202/Projectile%20Blueprint.png)
+![Projectile]()
+
+##### Projectile Particles
+
+![Projectile Particles](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%202/Projectile%20Blueprint.png)
 
 #### Final Result
 
