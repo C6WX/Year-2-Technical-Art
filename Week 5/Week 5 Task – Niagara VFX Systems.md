@@ -38,11 +38,16 @@
 
 ##### Projectile Spawn
 
-![Projectile]()
+What does it do? This blueprint is set up to spawn a fire projectile when E is pressed, aiming it in the direction the camera is facing and spawning it at the billboard component.
+<br>
+
+![Projectile](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%202/Projectile%20Blueprint%201.png)
 
 ##### Projectile Particles
+What does it do? This blueprint sets the direction of the fire projectile and also spawns a particle system wherever the fire projectile hits.
+<br>
 
-![Projectile Particles](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%202/Projectile%20Blueprint.png)
+![Projectile Particles](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%202/Projectile%20Particles.png)
 
 #### Final Result
 
@@ -158,6 +163,8 @@
 [NS Sword Slash](https://youtu.be/GJAZh_vbPUs)
 
 ##### Sword Slash Implementation
+What does it do? Using the script provided by the combat variant in Unreal Engine 5.6, this script is added in to spawn the sword system at a billboard that is in front of the player after the attack animation is played.
+<br>
 
 ![Sword Slash Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%204/Sword%20Slash%20Implementation.png)
 
@@ -177,6 +184,8 @@
 ![Decal Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%205/Decal%20Material.png)
 
 ##### Decal Spawning
+What does it do? When the decal spawning event is called after an attack animation plays, a damage particle system is spawned at the player's right hand. Then, a line trace is created to check if the player has hit a surface. If a surface is hit by the line trace, a decal is spawned where the line trace hit.
+<br>
 
 ![Decal Spawning](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%205/Decal%20Spawning.png)
 
@@ -201,6 +210,8 @@
 ![Fire Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%206/FlipBook%20Fire%20Material.png)
 
 ##### Fire Blueprint
+What does it do? This blueprint rotates the fire so that it is always facing the player and also causes the light intensity to constantly change based on a timeline to simulate the fire flickering. 
+<br>
 
 ![Fire Blueprint](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%206/Fire%20Blueprint.png)
 
@@ -209,6 +220,8 @@
 ![Flicker Timeline](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%206/Flicker%20Timeline.png)
 
 ##### Get Player Angle Function
+What does it do? This blueprint sets the rotation of the fire so that it is facing towards the player camera.
+<br>
 
 ![Get Angle](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%205/Images/Task%206/Get%20Angle%20Function.png)
 

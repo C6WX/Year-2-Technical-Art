@@ -25,10 +25,6 @@ The water material uses and reacts to light in different ways to create realisti
 
 #### Blueprints
 
-<br>
-<iframe width="600" height="600" src="https://blueprintue.com/render/nk_eyujq/" scrolling="no" allowfullscreen></iframe>
-<br>
-
 ##### Colour Blueprint
 ![Colour](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Water%20Material/Colour%20Script.png)
 
@@ -81,9 +77,6 @@ As well as being a more efficient method, using a MPC provides several performan
 
 #### Final result
 
-![Material Parameter Collection System](MPC.gif)
-<br>
-
 [Material Parameter Collection (MPC) System](https://youtu.be/deUyHrih2bI)
 
 
@@ -94,23 +87,14 @@ As well as being a more efficient method, using a MPC provides several performan
 
 
 ##### Landscape Material
-<iframe width="600" height="600" src="https://blueprintue.com/render/9t4olk6n/" scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
 
 ![Landscape Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/MPC/Landscape.png)
 
 ##### Bush Material
-<iframe width="600" height="600" src="https://blueprintue.com/render/iccj0cnb/"   scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
 
 ![Bush Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/MPC/Bush.png)
 
 ##### Global Controller
-<iframe width="600" height="600" src="https://blueprintue.com/render/p3g1jaar/"   scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
 
 ![Global Controller](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/MPC/Global%20Controller.png)
 
@@ -139,16 +123,10 @@ Gameplay scenarios that benefit from runtime material modification includes: dam
 #### Blueprints
 
 ##### Wood Material
-<iframe width="600" height="600" src="https://blueprintue.com/render/5zp4cm7t/" scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
 
 ![Wood](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/DMI/Wood%20Material.png)
 
 ##### Dynamic Panel
-<iframe width="600" height="600" src="https://blueprintue.com/render/xp2fivgm/" scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
 
 ![Dynamic Panel](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/DMI/Dynamic%20Panel.png)
 
@@ -171,7 +149,7 @@ When it comes to silhouette edges, POM cannot alter the the actual geometry silh
 
 #### Problems during creation
 
-1. A glitch occured with the material where the shadows took over the whole material so that it could'nt be seen.
+1. A glitch occurred with the material where the shadows took over the whole material so that it could'nt be seen.
 
 #### Solutions
 
@@ -179,15 +157,11 @@ When it comes to silhouette edges, POM cannot alter the the actual geometry silh
 
 #### Final result
 
-![Brick POM Material](https://raw.githubusercontent.com/C6WX/Images/refs/heads/main/Images/POM%20Brick%20material.png)
+[Brick POM Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/POM%20Brick%20material.png)
 
 #### Blueprints
 
 ##### Brick Texture
-<iframe width="600" height="600" src="https://blueprintue.com/render/chrrzmir/"   scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
-
 ![Brick](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/POM/POM.png)
 
 
@@ -200,16 +174,11 @@ A post process material is a type of material that applies visual effects to the
 
 #### Final result
 
-![Post Process Material](CellShading.gif)
-<br>
 [Cell Shading Showcase](https://youtu.be/tTgUgA00RYY)
 
 #### Blueprints
 
 ##### Cell Shader
-<iframe width="600" height="600" src="https://blueprintue.com/render/2costsu5/" scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
 
 ![Cell Shader Entire Blueprint](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Entire%20Blueprint.png)
 
@@ -229,9 +198,6 @@ A post process material is a type of material that applies visual effects to the
 ![Exclusions](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Exclusion.png)
 
 ##### Character Material
-<iframe width="600" height="600" src="https://blueprintue.com/render/4upsvvjy/" scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
 
 ![Character Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Character%20Entire%20Blueprint.png)
 <br>
@@ -244,17 +210,10 @@ A post process material is a type of material that applies visual effects to the
 ![Part 2](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Cell%20Shading%20Character%20P2.png)
 
 ##### Character Outline
-<iframe width="600" height="600" src="https://blueprintue.com/render/4zd15p_q/" scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
 
 ![Outline](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Outline.png)
 
 ##### Emissive Material
-<iframe width="600" height="600" src="https://blueprintue.com/render/a5raxtpb/" scrolling="no" allowfullscreen></iframe>
-<br>
-<br>
-
 ![Emissive Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%202/Images/Blueprints/Post%20Process%20Material/Emissive%20Material.png)
 
 
