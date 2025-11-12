@@ -22,8 +22,9 @@ For the ripple effect, I created two different ripples to give Cameron a choice 
 [NS Ripple 1 V1](https://youtu.be/ZKtMmx-E9b8)
 
 #### Implementation
+The ripple effect can be easily implemented into a game by just having it spawn at an actor's location after they die.
 
-
+![Ripple 1 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%201/Ripple%201%20Implementation.png)
 
 #### Final Result
 
@@ -33,7 +34,7 @@ For the ripple effect, I created two different ripples to give Cameron a choice 
 
 #### Development Process
 
-##### Material
+##### Ripple Material
 
 ![Ripple 2 Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%202/Ripple%20Material.png)
 
@@ -47,14 +48,45 @@ For the ripple effect, I created two different ripples to give Cameron a choice 
 
 #### Implementation
 
-
+![Ripple 2 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%202/Ripple%202%20Implementaion.png)
 
 #### Final Result
 
 [Ripple 2 V1](https://youtu.be/d02LWcNBAQU)
 
 
-### Cracks
+### Cracks In The Ground
+
+#### Development Process
+
+##### Crack Texture V1 (Photoshop)
+The reason that I didn't use the first version of the texture that I made is because it created a large mound in the centre of the material once parallax occlusion mapping was added.
+
+![Crack Texture V1]()
+
+##### Crack Texture V2 (Photoshop)
+
+![Crack Texture V2]()
+
+##### Crack Material
+
+![Crack Material]()
+
+##### Niagara System
+
+![NS Crack]()
+
+##### Niagara System Parameters
+
+[NS Crack Parameters]()
+
+##### Camera Shake
+
+
+
+##### Final Result
+
+
 
 
 ## Professional Practice
