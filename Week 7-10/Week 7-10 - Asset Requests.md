@@ -15,11 +15,15 @@ For the ripple effect, I created two different ripples to give Cameron a choice 
 
 ##### Niagara System
 
-![Ripple 1 V1]()
+![Ripple 1 V1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%201/NS_Ripple1V1.png)
 
 ##### Niagara System Parameters
 
 [NS Ripple 1 V1](https://youtu.be/ZKtMmx-E9b8)
+
+#### Implementation
+
+
 
 #### Final Result
 
@@ -31,22 +35,36 @@ For the ripple effect, I created two different ripples to give Cameron a choice 
 
 ##### Material
 
-![Ripple 2 Material]()
+![Ripple 2 Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%202/Ripple%20Material.png)
 
 ##### Niagara System
 
-![Ripple 2 V1]()
+![Ripple 2 V1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%202/NS_Ripple2V1.png)
 
 #### Niagara System Parameters
 
-[NS Ripple 2 V1]()
+[NS Ripple 2 V1](https://youtu.be/mKqvFqrRu1I)
+
+#### Implementation
+
+
 
 #### Final Result
 
-[Ripple 2 V1]()
+[Ripple 2 V1](https://youtu.be/d02LWcNBAQU)
+
+
+### Cracks
 
 
 ## Professional Practice
 
+### 12/11/25
+
 
 ## Bibliography
+
+### Ripple
+- UE5 l How to Create Shockwave Visual Effect using Niagara l 5-Minute VFX Tutorial l Unreal Engine 5 (2023) Directed by Coreb Games. At: https://www.youtube.com/watch?v=JjFzxM63KAs (Accessed  12/11/2025).
+- 2-Minute UE5 Tutorial: Create a Simple Shockwave Effect in Niagara 💥🌪️ (2024) Directed by CGHOW. At: https://www.youtube.com/watch?v=wGbr8XjejqE (Accessed  12/11/2025).
+
