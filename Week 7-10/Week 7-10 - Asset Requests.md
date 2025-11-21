@@ -30,6 +30,9 @@ The ripple effect can be easily implemented into a game by just having it spawn 
 
 [Ripple 1 V1](https://youtu.be/Nw6bGI1z9ew)
 
+
+
+
 ### Ripple Effect 2 V1 
 
 #### Development Process
@@ -53,35 +56,6 @@ The ripple effect can be easily implemented into a game by just having it spawn 
 #### Final Result
 
 [Ripple 2 V1](https://youtu.be/d02LWcNBAQU)
-
-
-### Crack In The Ground 1
-
-#### Development Process
-
-##### Crack Texture V1 (Photoshop)
-The reason that I didn't use the first version of the texture that I made is because it created a large mound in the centre of the material once parallax occlusion mapping was added.
-
-![Crack Texture V1]()
-
-##### Crack Texture V2 (Photoshop)
-
-![Crack Texture V2]()
-
-##### Crack Material
-
-![Crack Material]()
-
-##### Niagara System
-
-![NS Crack]()
-
-##### Niagara System Parameters
-
-[NS Crack Parameters]()
-
-##### Implementation
-
 
 
 ##### Final Result
@@ -120,11 +94,64 @@ The reason that I didn't use the first version of the texture that I made is bec
 ![Screen Shake](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Screen%20Shake.png)
 <br>
 
-![Screen Shake Implementation]()
+![Screen Shake Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Camera%20Shake%20Implementation.png)
 
 ##### Final Result
 
+![Crack 1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%201.png)
+<br>
+
 [Crack 1 Showcase](https://youtu.be/1ZWi6fP9BeQ)
+
+
+
+
+### Crack In The Ground 2
+The reason that I created a second one is because I didn't like the elevated section in the middle of the first crack that was caused by Photoshop during creation, so I decided to try again, using Designer instead of Photoshop.
+
+#### Development Process
+
+##### Crack 2 Texture (Designer)
+
+![Crack 2 Texture](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/Crack%202%20Designer.png)
+
+##### Crack 2 Material
+
+![Crack 2 Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/Crack%202%20Material.png)
+
+##### Niagara System
+At first, I created a niagara system for the crack but I decided to spawn a decal as the niagara system made the crack look dark instead of taking on the floor's colour, which is what just spawning the decal does.
+<br>
+
+![NS Crack 2]()
+
+##### Niagara System Parameters
+
+[NS Crack 2 Parameters](https://youtu.be/hrM0dFUO0wk)
+
+##### Implementation Using Niagara System
+
+![Crack 2 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/Crack%202%20Implementation.png)
+
+##### Crack Final Result Using Niagara System
+
+[NS Crack 2 Using NS](https://youtu.be/igKyyM94TnU)
+
+##### Implementation
+
+![Crack 2 Final Implementation]()
+
+##### Screen Shake
+
+![Screen Shake](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Screen%20Shake.png)
+<br>
+
+![Screen Shake Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Camera%20Shake%20Implementation.png)
+
+##### Final Result
+
+[Crack 2 Showcase](https://youtu.be/U2briDR3vgk)
+
 
 
 
@@ -134,19 +161,19 @@ The reason that I didn't use the first version of the texture that I made is bec
 
 ##### Niagara System
 
-![NS Rock Debris]()
+![NS Rock Debris](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Debris/NS%20Rock%20Debris.png)
 
 ##### Niagara System Parameters
 
-[NS Rock Debris Parameters]()
+[NS Rock Debris Parameters](https://youtu.be/11CfRPaXqPs)
 
 ##### Implementation
 
-![Rock Debris Implementation]()
+![Rock Debris Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Debris/Rock%20Debris%20Implementation.png)
 
 ##### Final Result
 
-[Rock Debris]()
+[Rock Debris](https://youtu.be/bxsuN1qjoyk)
 
 
 
@@ -155,21 +182,20 @@ The reason that I didn't use the first version of the texture that I made is bec
 
 #### Development Process
 
-
 ##### Rock Placeholder Model
 
-![Rock Model]()
+![Rock Model](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/RockPlaceholder.png)
 <br>
 
-![Rock Model Wireframe]()
+![Rock Model Wireframe](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Rock%20Placeholder%20Wireframe.png)
 
 ##### Blueprint
 
-![Rock Throw Blueprint]()
+![Rock Throw Blueprint](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Rock%20Throw%20BP.png)
 
 ##### Niagara System
 
-![NS Rock Throw]()
+![NS Rock Throw](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/NS%20Rock%20Throw.png)
 
 ##### Niagara System Parameters
 
@@ -177,12 +203,17 @@ The reason that I didn't use the first version of the texture that I made is bec
 
 ##### Implementation
 
-![Rock Throw Implementation]()
+![Rock Throw Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Rock%20Throw%20Implementation.png)
 
 ##### Final Result
 
 [Rock Throw](https://youtu.be/mMFGQ7q6JDQ)
 
+
+
+
+## Plugins
+-
 
 
 
