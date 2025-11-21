@@ -123,7 +123,7 @@ The reason that I created a second one is because I didn't like the elevated sec
 At first, I created a niagara system for the crack but I decided to spawn a decal as the niagara system made the crack look dark instead of taking on the floor's colour, which is what just spawning the decal does.
 <br>
 
-![NS Crack 2]()
+![NS Crack 2](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/NS%20Crack%202.png)
 
 ##### Niagara System Parameters
 
@@ -139,7 +139,7 @@ At first, I created a niagara system for the crack but I decided to spawn a deca
 
 ##### Implementation
 
-![Crack 2 Final Implementation]()
+![Crack 2 Final Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/Crack%202%20Final%20Implementation.png)
 
 ##### Screen Shake
 
