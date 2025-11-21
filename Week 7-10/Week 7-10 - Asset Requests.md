@@ -55,7 +55,7 @@ The ripple effect can be easily implemented into a game by just having it spawn 
 [Ripple 2 V1](https://youtu.be/d02LWcNBAQU)
 
 
-### Cracks In The Ground
+### Crack In The Ground 1
 
 #### Development Process
 
@@ -80,11 +80,74 @@ The reason that I didn't use the first version of the texture that I made is bec
 
 [NS Crack Parameters]()
 
-##### Camera Shake
+##### Implementation
 
 
 
 ##### Final Result
+
+### Crack In The Ground 1
+
+#### Development Process
+
+##### Crack 1 Texture V1 (Photoshop)
+The reason that I didn't use the first version of the texture that I made is because it created a large mound in the centre of the material once parallax occlusion mapping was added.
+
+![Crack 1 Texture V1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%20V1.png)
+
+##### Crack 1 Texture V2 (Photoshop)
+
+![Crack 1 Texture V2](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/CrackV2.png)
+
+##### Crack 1 Material
+
+![Crack 1 Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%20Material.png)
+
+##### Niagara System
+
+![NS Crack 1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/NS%20Crack.png)
+
+##### Niagara System Parameters
+
+[NS Crack 1 Parameters](https://youtu.be/D-8ekQud2S0)
+
+##### Implementation
+
+![Crack 1 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%20Implementation.png)
+
+##### Screen Shake
+
+![Screen Shake](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Screen%20Shake.png)
+<br>
+
+![Screen Shake Implementation]()
+
+##### Final Result
+
+[Crack 1 Showcase](https://youtu.be/1ZWi6fP9BeQ)
+
+
+
+### Rock Debris
+
+#### Development Process
+
+##### Niagara System
+
+![NS Rock Debris]()
+
+##### Niagara System Parameters
+
+[NS Rock Debris Parameters]()
+
+##### Implementation
+
+![Rock Debris Implementation]()
+
+##### Final Result
+
+[Rock Debris]()
+
 
 
 
@@ -93,8 +156,32 @@ The reason that I didn't use the first version of the texture that I made is bec
 #### Development Process
 
 
+##### Rock Placeholder Model
 
+![Rock Model]()
+<br>
 
+![Rock Model Wireframe]()
+
+##### Blueprint
+
+![Rock Throw Blueprint]()
+
+##### Niagara System
+
+![NS Rock Throw]()
+
+##### Niagara System Parameters
+
+[NS Rock Throw Parameters](https://youtu.be/LiLlMiH214Y)
+
+##### Implementation
+
+![Rock Throw Implementation]()
+
+##### Final Result
+
+[Rock Throw](https://youtu.be/mMFGQ7q6JDQ)
 
 
 
@@ -108,5 +195,6 @@ The reason that I didn't use the first version of the texture that I made is bec
 
 ### Ripple
 - UE5 l How to Create Shockwave Visual Effect using Niagara l 5-Minute VFX Tutorial l Unreal Engine 5 (2023) Directed by Coreb Games. At: https://www.youtube.com/watch?v=JjFzxM63KAs (Accessed  12/11/2025).
+
 - 2-Minute UE5 Tutorial: Create a Simple Shockwave Effect in Niagara 💥🌪️ (2024) Directed by CGHOW. At: https://www.youtube.com/watch?v=wGbr8XjejqE (Accessed  12/11/2025).
 
