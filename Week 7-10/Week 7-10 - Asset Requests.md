@@ -212,11 +212,19 @@ At first, I created a niagara system for the crack but I decided to spawn a deca
 
 
 
-### Punch animation
+### Movement Animations
+
+
+### Punch Animation
 
 
 
-### Throw animation
+### Throw Animation
+
+
+
+### Dash Animation
+
 
 
 ## Professional Practice (Emails)
