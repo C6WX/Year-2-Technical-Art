@@ -212,14 +212,25 @@ At first, I created a niagara system for the crack but I decided to spawn a deca
 
 
 
-## Plugins
+### Punch animation
+
+
+
+### Throw animation
+
+
+## Professional Practice (Emails)
+
+### Plugins
 -
 
 
+### Handover Sheets
 
-## Professional Practice
 
-### 12/11/25
+### Emails
+
+#### 12/11/25
 
 
 ## Bibliography
