@@ -12,7 +12,7 @@
 
 
 ## Asset Overview
-
+Three animations that play one by one for each click of the left mouse button to create an attack combo. Whilst the animations are playing, the player is frozen in place and once an animation stops and another hasn't been activated, the player movement reactivates.
 
 #### Integration Guide
 
