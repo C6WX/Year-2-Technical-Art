@@ -21,7 +21,7 @@ For the ripple effect, I created two different ripples to give Cameron a choice 
 
 [NS Ripple 1 V1](https://youtu.be/ZKtMmx-E9b8)
 
-#### Implementation
+##### Implementation
 The ripple effect can be easily implemented into a game by just having it spawn at an actor's location after they die.
 
 ![Ripple 1 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%201/Ripple%201%20Implementation.png)
@@ -53,12 +53,12 @@ The ripple effect can be easily implemented into a game by just having it spawn 
 
 ![Ripple 2 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%202/Ripple%202%20Implementaion.png)
 
-#### Final Result
+### Final Result
 
 [Ripple 2 V1](https://youtu.be/d02LWcNBAQU)
 
 
-##### Final Result
+
 
 ### Crack In The Ground 1
 
@@ -96,7 +96,7 @@ The reason that I didn't use the first version of the texture that I made is bec
 
 ![Screen Shake Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Camera%20Shake%20Implementation.png)
 
-##### Final Result
+#### Final Result
 
 ![Crack 1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%201.png)
 <br>
@@ -107,7 +107,7 @@ The reason that I didn't use the first version of the texture that I made is bec
 
 
 ### Crack In The Ground 2
-The reason that I created a second one is because I didn't like the elevated section in the middle of the first crack that was caused by Photoshop during creation, so I decided to try again, using Designer instead of Photoshop.
+The reason that I created a second one is because I didn't like the elevated section in the middle of the first crack that was caused by Photoshop during creation, so I decided to try again, using Designer instead of Photoshop. This crack took a few attempts to get working as I attempted to create it using a decal niagara system, however that caused a problem where the decal would be black instead of taking on the colour of the surface it is spawned on. To fix this, I just spawned the decal as a decal instead of using a niagara system.
 
 #### Development Process
 
@@ -148,7 +148,7 @@ At first, I created a niagara system for the crack but I decided to spawn a deca
 
 ![Screen Shake Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Camera%20Shake%20Implementation.png)
 
-##### Final Result
+#### Final Result
 
 [Crack 2 Showcase](https://youtu.be/U2briDR3vgk)
 
@@ -171,7 +171,7 @@ At first, I created a niagara system for the crack but I decided to spawn a deca
 
 ![Rock Debris Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Debris/Rock%20Debris%20Implementation.png)
 
-##### Final Result
+#### Final Result
 
 [Rock Debris](https://youtu.be/bxsuN1qjoyk)
 
@@ -205,25 +205,41 @@ At first, I created a niagara system for the crack but I decided to spawn a deca
 
 ![Rock Throw Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Rock%20Throw%20Implementation.png)
 
-##### Final Result
+#### Final Result
 
 [Rock Throw](https://youtu.be/mMFGQ7q6JDQ)
 
 
 
 
-### Movement Animations
+### Movement and Jump Animations
+For the movement animations, I downloaded a collection of movement and jumping animations and created omni-directional movement, where the animation changes based on the speed and direction that the player is moving, and the jumping animations use one animation that is broken down into three sections, with the player switching between them based on their velocity and wether they are on the ground or not.
+
+#### Development Process
 
 
-### Punch Animation
+#### Final Result
+
+[Movement Animations](https://youtu.be/_M7YWMvl530)
+
+### Attack Combo Animation
+For the attacks, I downloaded a collection of animations that fit the request and then went over the animations with my client until the only animations left were the one's he wanted. This ended up leaving the combo with only three attacks.
+
+#### Development Process
+
+#### Final Result
+
+[Attack Combo](https://youtu.be/q7146IV2LwE)
 
 
 
-### Throw Animation
+### Rock Throw Animation
 
+#### Development Process
 
+#### Final Result
 
-### Dash Animation
+[Rock Throw Animation]()
 
 
 

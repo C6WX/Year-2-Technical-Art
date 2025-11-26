@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Rock_Throw_and_Movement",
+	"Description": "A rock throw ability that also includes jumping and omni-directional movement animations.",
+	"Category": "Other",
+	"CreatedBy": "CW",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "5.6.0",
+	"CanContainContent": true,
+	"Installed": true
+}
