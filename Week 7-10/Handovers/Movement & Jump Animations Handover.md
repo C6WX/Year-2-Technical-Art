@@ -1,4 +1,4 @@
-# Movement Animations Handover
+# Movement & Jump Animations Handover
 
 **Movement Animations**
 
