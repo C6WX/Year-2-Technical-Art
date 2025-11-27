@@ -41,30 +41,30 @@ For the character to have omni-movement, an animgraph, a blend space, and an eve
 Jumping is implemented by adding it onto the locomotion state machine that works the blend space for the movement. The jumping is broken down into three parts: jump start, jump loop and jump land. Jump start activates when the player's Z velocity is greater than 100 and is falling equals true. Jump loop activates when the jump start animation is about to finish or if the players Z velocity is less than 100 and the player is falling. Jump end activates when the player is no longer falling.
 <br>
 
-![Locomotion Graph]()
+![Locomotion Graph](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Handovers/Movement/Locomotion%20Graph.png)
 <br>
 
-![Idle To Run to Jump Start]()
+![Idle To Run to Jump Start](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Handovers/Movement/Idle%20To%20Run%20to%20Jump%20Start.png)
 <br>
 
-![Jump Start]()
+![Jump Start](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Handovers/Movement/Jump%20Start.png)
 <br>
 
-![Jump Start to Jump Loop]()
+![Jump Start to Jump Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Handovers/Movement/Jump%20Start%20to%20Jump%20Loop.png)
 <br>
 
-![Idle To Run to Jump Loop]()
+![Idle To Run to Jump Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Handovers/Movement/Idle%20To%20Run%20to%20Jump%20Loop.png)
 <br>
 
-![Jump Loop]()
+![Jump Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Handovers/Movement/Jump%20Loop.png)
 <br>
 
-![Jump Loop to Jump Land]()
+![Jump Loop to Jump Land](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Handovers/Movement/Jump%20Loop%20to%20Jump%20Land.png)
 <br>
 
-![Jump Land]()
+![Jump Land](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Handovers/Movement/Jump%20Land.png)
 <br>
 
-![Jump Land to Idle TO Run]()
+![Jump Land to Idle TO Run](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Handovers/Movement/Jump%20Land%20to%20Idle%20To%20Run.png)
 
 
