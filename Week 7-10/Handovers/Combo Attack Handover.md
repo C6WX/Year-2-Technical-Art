@@ -6,7 +6,7 @@
 
 **Client: Cameron Gildea** **Project: "Name still to be decided"**
 
-**Delivery Date:**
+**Delivery Date: 28/11/25**
 
 **Version: 1.0**
 
@@ -15,8 +15,7 @@
 Three animations that play one by one for each click of the left mouse button to create an attack combo. Whilst the animations are playing, the player is frozen in place and once an animation stops and another hasn't been activated, the player movement reactivates.
 
 ### Integration Guide
-
-
+To add these to your project, you can either use the character provided or recreate the blueprint displayed below and change the skeleton on the animations provided.
 
 ### Customization Guide
 

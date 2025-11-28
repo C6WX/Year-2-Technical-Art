@@ -6,7 +6,7 @@
 
 **Client: Cameron Gildea** **Project: "Name still to be decided"**
 
-**Delivery Date:**
+**Delivery Date: 28/11/25**
 
 **Version: 1.0**
 
@@ -15,8 +15,7 @@
 When the right mouse button is held, a charge up animation will play and then change to a charging animation which continues to loop till the button is released. While the attack is being charged, a crack decal spawns behind the player and debris will start being thrown in the air from the crack while the camera also starts shaking. When the player releases the right mouse button, the debris stops spawning, the camera stops shaking, and the throw animation plays while a niagara system is spawned and shot forward in front of the player.
 
 ## Integration Guide
-
-
+To add this to your project, you can either copy or use the blueprint logic displayed below as reference to be added to your player blueprint. You may also need to change the button enhanced input action to another input node if you aren't using the unreal engine combat variant with your project.
 
 ## Customization Guide
 

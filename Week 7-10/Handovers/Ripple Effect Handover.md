@@ -6,7 +6,7 @@
 
 **Client: Cameron Gildea** **Project: "Name still to be decided"**
 
-**Delivery Date:**
+**Delivery Date: 28/11/25**
 
 **Version: 1.0**
 
@@ -15,7 +15,7 @@
 A ripple effect that is created by a niagara system, intended to be spawned once an enemy dies. 
 
 ### Integration Guide
-
+To add this effect to your project, use the implementation blueprint that I show below in your enemy death blueprint so that the effect will play whenever the enemy dies.
 
 
 ### Customization Guide

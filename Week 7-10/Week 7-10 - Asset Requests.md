@@ -6,6 +6,123 @@
 
 **[Request Document](https://ucreative-my.sharepoint.com/:w:/g/personal/2322268_students_ucreative_ac_uk/EdvLvx6UqlpMqSFkGqqkYycBbzzZW3iyfWnn-7DaSxcnPA?e=P9hHvU)**
 
+## Client Communication (How did you clarify requirements? What challenges arose in communication?)
+Whenever something wasn't clear from the request form, I emailed Cameron to clear up what was required of me. The main thing that I needed to ask about was the checking which style of visual effects or animation he preferred. An example of this is with the ripple effect. I created a two different effects based on the request he asked for and then asked for feedback on which one he preferred and if there was anything that he would like changing. Also when it came to the throw animation, I 
+
+
+### Emails
+
+#### 12/11/25
+
+12:48pm
+
+![1248](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/12%2048PM.png)
+<br>
+
+2:34pm
+
+![234](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/2%2034%20PM.png)
+<br>
+
+5:14pm
+
+![514](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/5%2014PM.png)
+<br>
+
+5:49pm
+
+![549](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/5%2049PM.png)
+<br>
+
+6:03pm
+
+![603](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/6%2003PM.png)
+<br>
+
+7:42pm
+
+![742](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/7%2042PM.png)
+<br>
+<br>
+
+#### 18/11/25
+
+10:51am
+
+![1051](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/18%2011%2025/10%2051AM.png)
+<br>
+<br>
+
+#### 21/11/25
+
+12:43pm
+
+![1243](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/12%2043PM.png)
+<br>
+
+3:33pm
+
+![333](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/3%2033PM.png)
+<br>
+
+4:22pm
+
+![422](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/4%2022PM.png)
+<br>
+
+4:58pm
+
+![458](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/4%2058PM.png)
+<br>
+
+5:52pm
+
+![552](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/5%2052PM.png)
+<br>
+<br>
+
+#### 22/11/25
+
+2:44pm
+
+![244](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/22%2011%2025/2%2044PM.png)
+<br>
+<br>
+
+#### 25/11/25
+
+4:33pm
+
+![433](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/25%2011%2025/4%2033PM.png)
+<br>
+<br>
+
+#### 26/11/25
+
+1:48pm
+
+![148](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/26%2011%2025/1%2048PM.png)
+<br>
+
+6:36pm
+
+![636](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/26%2011%2025/6%2036PM.png)
+
+
+## Technical Problem-Solving: What technical challenges did you encounter and how did you solve them?
+
+
+## Workflow & Time Management: How did you manage your time across 4 weeks? What would you do differently?
+
+
+## Professional Practice: What did you learn about working with external clients and delivering to specifications?
+
+
+## Quality vs Deadline: How did you balance quality with the project timeline?
+
+
+
+
 ## Ripple Effect 
 For the ripple effect, I created two different ripples to give Cameron a choice of which he prefers.
 
@@ -218,6 +335,7 @@ For the movement animations, I downloaded a collection of movement and jumping a
 #### Development Process
 
 
+
 #### Final Result
 
 [Movement Animations](https://youtu.be/_M7YWMvl530)
@@ -226,6 +344,9 @@ For the movement animations, I downloaded a collection of movement and jumping a
 For the attacks, I downloaded a collection of animations that fit the request and then went over the animations with my client until the only animations left were the one's he wanted. This ended up leaving the combo with only three attacks.
 
 #### Development Process
+
+
+
 
 #### Final Result
 
@@ -237,115 +358,13 @@ For the attacks, I downloaded a collection of animations that fit the request an
 
 #### Development Process
 
+
+
+
 #### Final Result
 
 [Rock Throw Animation]()
 
-
-
-## Professional Practice 
-
-
-### Handover Sheets
-
-
-### Emails
-
-#### 12/11/25
-
-12:48pm
-
-![1248](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/12%2048PM.png)
-<br>
-
-2:34pm
-
-![234](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/2%2034%20PM.png)
-<br>
-
-5:14pm
-
-![514](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/5%2014PM.png)
-<br>
-
-5:49pm
-
-![549](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/5%2049PM.png)
-<br>
-
-6:03pm
-
-![603](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/6%2003PM.png)
-<br>
-
-7:42pm
-
-![742](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/12%2011%2025/7%2042PM.png)
-<br>
-<br>
-
-#### 18/11/25
-
-10:51am
-
-![1051](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/18%2011%2025/10%2051AM.png)
-<br>
-<br>
-
-#### 21/11/25
-
-12:43pm
-
-![1243](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/12%2043PM.png)
-<br>
-
-3:33pm
-
-![333](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/3%2033PM.png)
-<br>
-
-4:22pm
-
-![422](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/4%2022PM.png)
-<br>
-
-4:58pm
-
-![458](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/4%2058PM.png)
-<br>
-
-5:52pm
-
-![552](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/21%2011%2025/5%2052PM.png)
-<br>
-<br>
-
-#### 22/11/25
-
-2:44pm
-
-![244](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/22%2011%2025/2%2044PM.png)
-<br>
-<br>
-
-#### 25/11/25
-
-4:33pm
-
-![433](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/25%2011%2025/4%2033PM.png)
-<br>
-<br>
-
-#### 26/11/25
-
-1:48pm
-
-![148](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/26%2011%2025/1%2048PM.png)
-<br>
-
-6:36pm
-
-![636](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/26%2011%2025/6%2036PM.png)
 
 
 ## Bibliography

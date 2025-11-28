@@ -6,7 +6,7 @@
 
 **Client: Cameron Gildea** **Project: "Name still to be decided"**
 
-**Delivery Date:**
+**Delivery Date: 28/11/25**
 
 **Version: 1.0**
 
@@ -14,10 +14,8 @@
 ## Asset Overview
 Movement and jump animations that play based on the players direction and speed and also wether the player is touching the ground and their current velocity.
 
-
 ### Integration Guide
-
-
+To add these animations to your project, you will need to use the provided  animation graphs, event graph and blend space displayed below for your character.
 
 ### Technical Documentation
 
