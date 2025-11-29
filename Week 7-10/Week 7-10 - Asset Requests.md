@@ -7,9 +7,13 @@
 **[Request Document](https://ucreative-my.sharepoint.com/:w:/g/personal/2322268_students_ucreative_ac_uk/EdvLvx6UqlpMqSFkGqqkYycBbzzZW3iyfWnn-7DaSxcnPA?e=P9hHvU)**
 
 ## Client Communication (How did you clarify requirements? What challenges arose in communication?)
-Whenever something wasn't clear from the request form, I emailed Cameron to clear up what was required of me. The main thing that I needed to ask about was the checking which style of visual effects or animation he preferred. An example of this is with the ripple effect. I created a two different effects based on the request he asked for and then asked for feedback on which one he preferred and if there was anything that he would like changing. Also when it came to the throw animation, I 
+Whenever something wasn't clear from the request form, I emailed Cameron to clear up what was required of me. The main thing that I needed to ask about was the checking which style of visual effects or animations he preferred. An example of this is with the ripple effect. I created a two different effects based on the request he asked for and then asked for feedback on which one he preferred and if there was anything that he would like changing. Also when it came to the throw animation, I found two animations that I felt work well for the final throwing animation, one where the character thrusts their hands forwards in a ball-shaped form (this animation worked the best and worked well with the start and charge up animation), and another where the character throws from over their head, which fit the client's description the best.
+<br>
+The main challenges that I felt came up with communication between me and my client was mainly due to the time I had to wait for a response. As a lot of my emails were sent to ask for feedback, a long delay before getting a response meant that I couldn't always continue with what I was working on for quite some time. As a result, I would move onto something else to keep me busy but this normally lead to me doing too many things at once. An example of this is when i created both of the ripple effects, I sent an email with both of them in but as I couldn't just directly speak to or message my client, it took a while to get a response so I ended up moving onto the crack effects. When it came to this, I didn't find it a problem to be doing the ripple effects and cracks at the same time, but it mainly became difficult while I was waiting for a response while creating the animations as I was working on the movement animations, the jumping animations, the combat animations, and the rock throw animations all at once. However, the delay before I received a reply to my emails were not the fault of my client as he did say that he was working quite a lot which I could definitely understand and relate too.
+<br>
+One thing I found to be a challenge but also a benefit was writing professionally within the emails I sent. Writing professionally is not new to me at all, but it is a lot different to how I normally message Cameron so it definitely took some getting used to. However, I felt that it created a separate professional relationship between us that helped communication between us when discussing the requested assets.
 
-
+<!--
 ### Emails
 
 #### 12/11/25
@@ -108,8 +112,14 @@ Whenever something wasn't clear from the request form, I emailed Cameron to clea
 
 ![636](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/26%2011%2025/6%2036PM.png)
 
+-->
 
 ## Technical Problem-Solving: What technical challenges did you encounter and how did you solve them?
+When creating the plugins, I has quite a few problems with the multiple plugins I was creating. At first I tried to make the ripple effect plugin by advanced copying all the files needed for the effect and the test map into the new plugin. For the test map I was going to have a combat enemy from the combat Unreal Engine variant, so I copied all the combat files into the plugin too. When I tested the test map in the original project, it worked perfectly fine, the player would spawn, they would attack the enemy and the enemy would die and spawn the ripple effect. However the problem arose when I tested it in a new project. After loading the test map, the combat enemy wouldn't spawn and neither would the effect. I also received multiple error messages saying that I was missing files. After checking what the error messages wanted, it turned out that the files it was missing were in the project, but it wanted them to be in different places to were they were. To fix this, I moved the ripple material to the exact file it wanted. Unfortunately, the second missing file was for the combat enemy, which it wanted to be outside of the plugin in a specific folder, like the original combat enemy was in my main project. I could've easily fixed this by creating that folder but that would mean that my client would have to mess around with the folders when they wanted to import the plugin. Because of this, I moved onto the next plugin and tried another method.
+<br>
+Instead of advanced copying the files into the plugin folders, creating multiples of the same file, I tried just moving the original files directly into the plugins
+
+
 
 
 ## Workflow & Time Management: How did you manage your time across 4 weeks? What would you do differently?
@@ -119,252 +129,6 @@ Whenever something wasn't clear from the request form, I emailed Cameron to clea
 
 
 ## Quality vs Deadline: How did you balance quality with the project timeline?
-
-
-
-
-## Ripple Effect 
-For the ripple effect, I created two different ripples to give Cameron a choice of which he prefers.
-
-### Ripple Effect 1 V1
-
-#### Development Process
-
-##### Niagara System
-
-![Ripple 1 V1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%201/NS_Ripple1V1.png)
-
-##### Niagara System Parameters
-
-[NS Ripple 1 V1](https://youtu.be/ZKtMmx-E9b8)
-
-##### Implementation
-The ripple effect can be easily implemented into a game by just having it spawn at an actor's location after they die.
-
-![Ripple 1 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%201/Ripple%201%20Implementation.png)
-
-#### Final Result
-
-[Ripple 1 V1](https://youtu.be/Nw6bGI1z9ew)
-
-
-
-
-### Ripple Effect 2 V1 
-
-#### Development Process
-
-##### Ripple Material
-
-![Ripple 2 Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%202/Ripple%20Material.png)
-
-##### Niagara System
-
-![Ripple 2 V1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%202/NS_Ripple2V1.png)
-
-#### Niagara System Parameters
-
-[NS Ripple 2 V1](https://youtu.be/mKqvFqrRu1I)
-
-#### Implementation
-
-![Ripple 2 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Ripple/Ripple%202/Ripple%202%20Implementaion.png)
-
-### Final Result
-
-[Ripple 2 V1](https://youtu.be/d02LWcNBAQU)
-
-
-
-
-### Crack In The Ground 1
-
-#### Development Process
-
-##### Crack 1 Texture V1 (Photoshop)
-The reason that I didn't use the first version of the texture that I made is because it created a large mound in the centre of the material once parallax occlusion mapping was added.
-
-![Crack 1 Texture V1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%20V1.png)
-
-##### Crack 1 Texture V2 (Photoshop)
-
-![Crack 1 Texture V2](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/CrackV2.png)
-
-##### Crack 1 Material
-
-![Crack 1 Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%20Material.png)
-
-##### Niagara System
-
-![NS Crack 1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/NS%20Crack.png)
-
-##### Niagara System Parameters
-
-[NS Crack 1 Parameters](https://youtu.be/D-8ekQud2S0)
-
-##### Implementation
-
-![Crack 1 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%20Implementation.png)
-
-##### Screen Shake
-
-![Screen Shake](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Screen%20Shake.png)
-<br>
-
-![Screen Shake Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Camera%20Shake%20Implementation.png)
-
-#### Final Result
-
-![Crack 1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%201.png)
-<br>
-
-[Crack 1 Showcase](https://youtu.be/1ZWi6fP9BeQ)
-
-
-
-
-### Crack In The Ground 2
-The reason that I created a second one is because I didn't like the elevated section in the middle of the first crack that was caused by Photoshop during creation, so I decided to try again, using Designer instead of Photoshop. This crack took a few attempts to get working as I attempted to create it using a decal niagara system, however that caused a problem where the decal would be black instead of taking on the colour of the surface it is spawned on. To fix this, I just spawned the decal as a decal instead of using a niagara system.
-
-#### Development Process
-
-##### Crack 2 Texture (Designer)
-
-![Crack 2 Texture](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/Crack%202%20Designer.png)
-
-##### Crack 2 Material
-
-![Crack 2 Material](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/Crack%202%20Material.png)
-
-##### Niagara System
-At first, I created a niagara system for the crack but I decided to spawn a decal as the niagara system made the crack look dark instead of taking on the floor's colour, which is what just spawning the decal does.
-<br>
-
-![NS Crack 2](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/NS%20Crack%202.png)
-
-##### Niagara System Parameters
-
-[NS Crack 2 Parameters](https://youtu.be/hrM0dFUO0wk)
-
-##### Implementation Using Niagara System
-
-![Crack 2 Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/Crack%202%20Implementation.png)
-
-##### Crack Final Result Using Niagara System
-
-[NS Crack 2 Using NS](https://youtu.be/igKyyM94TnU)
-
-##### Implementation
-
-![Crack 2 Final Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/Crack%202%20Final%20Implementation.png)
-
-##### Screen Shake
-
-![Screen Shake](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Screen%20Shake.png)
-<br>
-
-![Screen Shake Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Camera%20Shake%20Implementation.png)
-
-#### Final Result
-
-[Crack 2 Showcase](https://youtu.be/U2briDR3vgk)
-
-
-
-
-### Rock Debris
-
-#### Development Process
-
-##### Niagara System
-
-![NS Rock Debris](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Debris/NS%20Rock%20Debris.png)
-
-##### Niagara System Parameters
-
-[NS Rock Debris Parameters](https://youtu.be/11CfRPaXqPs)
-
-##### Implementation
-
-![Rock Debris Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Debris/Rock%20Debris%20Implementation.png)
-
-#### Final Result
-
-[Rock Debris](https://youtu.be/bxsuN1qjoyk)
-
-
-
-
-### Rock Throw
-
-#### Development Process
-
-##### Rock Placeholder Model
-
-![Rock Model](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/RockPlaceholder.png)
-<br>
-
-![Rock Model Wireframe](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Rock%20Placeholder%20Wireframe.png)
-
-##### Blueprint
-
-![Rock Throw Blueprint](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Rock%20Throw%20BP.png)
-
-##### Niagara System
-
-![NS Rock Throw](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/NS%20Rock%20Throw.png)
-
-##### Niagara System Parameters
-
-[NS Rock Throw Parameters](https://youtu.be/LiLlMiH214Y)
-
-##### Implementation
-
-![Rock Throw Implementation](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Rock%20Throw%20Implementation.png)
-
-#### Final Result
-
-[Rock Throw](https://youtu.be/mMFGQ7q6JDQ)
-
-
-
-
-### Movement and Jump Animations
-For the movement animations, I downloaded a collection of movement and jumping animations and created omni-directional movement, where the animation changes based on the speed and direction that the player is moving, and the jumping animations use one animation that is broken down into three sections, with the player switching between them based on their velocity and wether they are on the ground or not.
-
-#### Development Process
-
-
-
-#### Final Result
-
-[Movement Animations](https://youtu.be/_M7YWMvl530)
-
-### Attack Combo Animation
-For the attacks, I downloaded a collection of animations that fit the request and then went over the animations with my client until the only animations left were the one's he wanted. This ended up leaving the combo with only three attacks.
-
-#### Development Process
-
-
-
-
-#### Final Result
-
-[Attack Combo](https://youtu.be/q7146IV2LwE)
-
-
-
-### Rock Throw Animation
-
-#### Development Process
-
-
-
-
-#### Final Result
-
-[Rock Throw Animation]()
-
 
 
 ## Bibliography
