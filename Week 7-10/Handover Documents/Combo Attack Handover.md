@@ -17,7 +17,7 @@ Three animations that play one by one for each click of the left mouse button to
 ### Integration Guide
 To add these to your project, you can either use the character provided or recreate the blueprint displayed below and change the skeleton on the animations provided.
 
-### Customization Guide
+### Customisation Guide
 
 The attack animations can be shortened and have their play rate increased within their animation montages. The selected animations can be changed and added to within the attacks anim montage variable in the third person character blueprint. 
 

@@ -17,7 +17,7 @@ When the right mouse button is held, a charge up animation will play and then ch
 ## Integration Guide
 To add this to your project, you can either copy or use the blueprint logic displayed below as reference to be added to your player blueprint. You may also need to change the button enhanced input action to another input node if you aren't using the unreal engine combat variant with your project.
 
-## Customization Guide
+## Customisation Guide
 
 ### Rock Throw Niagara System
 The exposed parameters on the rock throw niagara system allows easy control over the size of the mesh rendered, the lifetime, amount of rocks spawned, the rock spread and the velocity of the rocks fired.

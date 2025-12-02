@@ -18,7 +18,7 @@ A ripple effect that is created by a niagara system, intended to be spawned once
 To add this effect to your project, use the implementation blueprint that I show below in your enemy death blueprint so that the effect will play whenever the enemy dies.
 
 
-### Customization Guide
+### Customisation Guide
 The niagara system has four open parameters that can be easily changed. These parameters can be changed to alter the colour, lifetime, size, and spawn count of the effect.
 <br>
 
