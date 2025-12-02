@@ -13,7 +13,7 @@ The main challenges that I felt came up with communication between me and my cli
 <br>
 One thing I found to be a challenge but also a benefit was writing professionally within the emails I sent. Writing professionally is not new to me at all, but it is a lot different to how I normally message Cameron so it definitely took some getting used to. However, I felt that it created a separate professional relationship between us that helped communication between us when discussing the requested assets.
 
-<!--
+
 ### Emails
 
 #### 12/11/25
@@ -111,14 +111,84 @@ One thing I found to be a challenge but also a benefit was writing professionall
 6:36pm
 
 ![636](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/26%2011%2025/6%2036PM.png)
+<br>
+<br>
 
--->
+#### 27/11/25   
+
+3:37pm
+
+![337](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/27%2011%2025/337.png)
+<br>
+
+3:38pm
+
+![338](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/27%2011%2025/338.png)
+<br>
+<br>
+
+#### 29/11/25
+
+12:03am
+
+![1203](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Professional%20Practice/29%2011%2025/1203.png)
+
 
 ## Technical Problem-Solving
+
+### The First Crack Texture and Parallax Occlusion Mapping 
+When I created the first version of the crack in the ground, I used Photoshop to build the texture before importing it into Unreal Engine and using parallax occlusion mapping and a Niagara System to create a crack behind the player when they charged up the rock throw. The problem that occured with this version - and was later fixed by using Designer instead of Photoshop with the second crack - was that the texture created by photoshop developed ab unintended bump in the centre when a stroke effect was added. Removing the effect would have fixed the issue, but the stroke was necessary for the crack to work properly with parallax occlusion mapping. 
+<br>
+As this wasn't working, I tried creating a new crack texture in Photoshop, since the texture is drawn manually so drawing a new one could fix the issue, however this still resulted in the same problem, although the bump was slightly smaller. Using designer to create another version of the crack completely avoided this issue and resulted in a far better texture overall, with minimal problems.
+<br>
+
+##### Crack Attempt 1 (Photoshop Texture)
+
+![Crack 1 Texture V1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%20V1.png)
+<br>
+
+##### Crack Attempt 2 (Photoshop Texture)
+
+![Crack 1 Texture V2](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/CrackV2.png)
+<br>
+
+##### Crack Attempt 2 Result
+
+![Crack 1](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%201/Crack%201.png)
+<br>
+
+[Crack 1 Showcase](https://youtu.be/1ZWi6fP9BeQ)
+<br>
+
+##### Crack Version 2 (Designer)
+
+![Crack 2 Texture](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Crack/Crack%202/Crack%202%20Designer.png)
+
+##### Crack 2 Result
+
+[Crack 2 Showcase](https://youtu.be/U2briDR3vgk)
+<br>
+<br>
+
+### Crack Version 2 Niagara System
+After creating the second version on the crack in the ground, I created a new niagara system for it but instead of using a sprite renderer, I used a decal renderer for it. When the decal was spawned, it worked as intended in terms of where it was spawning, but it was appearing with a dark colour taking over the surface it has spawned on. I knew it wasn't supposed to do this and instead take on the surface colour as I had placed an example decal on the ground in the scene that doesn't use a niagara system. The fist thing that I did to try and fix this issue is messing with colour controls in the system. Unfortunatley, as it is a decal, colour wasn't affecting the crack at all, no matter which colour is used. After messing with every colour setting possible, researching decal rendering and asking for help and getting no further in fixing this problem, I ended up spawning the decal using the spawn decal at location as I knew that would work from having spawned an example crack in the scene.
+
+##### Crack 2 Dark Colour Problem
+
+![Crack 2 Dark](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Problem%20Solving/Crack%202%20Dark%20Colour%20Problem.png)
+<br>
+
+##### Crack 2 Working
+
+![Crack 2 Working](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Problem%20Solving/Crack%202%20Working.png)
+<br>
+<br>
+
+
+### Plugins
 When creating the plugins, I has quite a few problems with the multiple plugins I was creating. At first I tried to make the ripple effect plugin by advanced copying all the files needed for the effect and the test map into the new plugin. For the test map I was going to have a combat enemy from the combat Unreal Engine variant, so I copied all the combat files into the plugin too. When I tested the test map in the original project, it worked perfectly fine, the player would spawn, they would attack the enemy and the enemy would die and spawn the ripple effect. However the problem arose when I tested it in a new project. After loading the test map, the combat enemy wouldn't spawn and neither would the effect. I also received multiple error messages saying that I was missing files. After checking what the error messages wanted, it turned out that the files it was missing were in the project, but it wanted them to be in different places to were they were. To fix this, I moved the ripple material to the exact file it wanted. Unfortunately, the second missing file was for the combat enemy, which it wanted to be outside of the plugin in a specific folder, like the original combat enemy was in my main project. I could've easily fixed this by creating that folder but that would mean that my client would have to mess around with the folders when they wanted to import the plugin. Because of this, I moved onto the next plugin and tried another method.
 <br>
 Instead of advanced copying the files into the plugin folders, creating multiples of the same file, I tried just moving the original files directly into the plugins which would mean that the only thing changing would be the directory of each file, not the file that each one now has to reference. Doing this would would solve the previous problem I had as there would be no files that are expecting a file they are referencing to be somewhere else. I once again created a test map and tested the plugin in a new project. This time I received a blueprint error. In each one of my blueprints, every single reference had been reset to none. This would mean that I would've had to set all the references again to test it and that my client would have to do the same thing. To try and fix this problem, I repackaged the plugin and made sure my importing method was correct, but that didn't work. So I then tried using the update redirector references feature in Unreal Engine, but it did nothing and I still had the same error. Due to this error happening a week before the client deadline, I decided to send my client my whole project instead of plugins so that they had enough time to implement the assets they requested.
-<!--CONTINUE WORKING ON THIS-->
 
 ## Workflow & Time Management<!-- S&G checked --> 
 When it came to time management during this project, I felt like I had lots of room for improvement, but at the same time I felt like I did really well with the time I was given and the time I get to work on it. The main thing I would improve is the fact that I didn't use any form of time manager such as Trello. This is because I normally prefer to work on whatever I feel is most important first and then I work on it whenever I am able to until I have finished it or am unable continue, then I will move onto the next asset. Using a time management application would have likely helped me get things done at a better pace than I did but I normally prefer to work free from lots of small deadlines and instead just focusing on the main deadline since I don't have much time to get work done at the moment so I feel like I would miss the small deadlines. 
