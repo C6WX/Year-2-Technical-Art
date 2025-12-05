@@ -200,12 +200,18 @@ To cut the delay out of the blueprint but still have the animations work, I move
 <br>
 
 
-### Charge Up Loop Animation Not Looping
-After fixing the previous problem, I discovered a new problem with the loop animation, the animation would only play once and then force the player into a T-pose. The first solution I thought of was to make sure the animation was set to loop in the animation sequence, which it was. Then I tried using a Play Animation node to loop the animation but still ended up with the same result. After researching my problem, I found out that the likely cause of the problem is due to the animations conflicting with the characters locomotion graph. To fix this, I added an extra state to the locomotion graph that used a variable from the player blueprint to play the looping animation whilst the player is holding the charge button and after the first animation played. Adding the animation to the locomotion graph logic stopped the confliction animations and fixed the problem.
-<br>
+### Charge Up Loop Animation Not Looping<!-- S&G checked -->
+After fixing the previous problem, I discovered a new problem with the loop animation, the animation would only play once and then force the player into a T-pose. The first solution I thought of was to make sure the animation was set to loop in the animation sequence, which it was. Then I tried using a Play Animation node to loop the animation but still ended up with the same result. After researching my problem, I found out that the likely cause of the problem is due to the animations conflicting with the character's locomotion state machine. To fix this, I added an extra state to the locomotion graph that used a variable from the player blueprint to play the looping animation while the player is holding the charge button and once the initial animation has finished. Adding the animation to the locomotion graph logic stopped the conflicting animations and fixed the problem.
 <br>
 
+[Locomotion Graph](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Animations/Locomotion%20Graph%20w%20Charge%20Loop.png)
+<br>
 
+[Idle To Run to Charge Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Animations/Idle%20To%20Run%20to%20Charge%20Loop.png)
+<br>
+
+[Charge Loop](https://raw.githubusercontent.com/C6WX/Year-2-Technical-Art/refs/heads/main/Week%207-10/Images/Rock%20Throw/Animations/Charge%20Loop.png)
+<br>
 
 ### Plugins<!-- S&G checked --> 
 When creating the plugins, I had quite a few problems with the multiple plugins I was creating. At first I tried to make the ripple effect plugin by advanced-copying all the files needed for the effect and the test map into the new plugin. For the test map I was going to have a combat enemy from the combat Unreal Engine variant, so I copied all the combat files into the plugin too. When I tested the test map in the original project, it worked perfectly fine, the player would spawn, they would attack the enemy and the enemy would die and spawn the ripple effect. 
